@@ -18,6 +18,12 @@ const links = [
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const currentPath = pathname.length > 1 ? pathname.replace(/\/+$/, "") : pathname;
+
+  function isActive(href: string) {
+    if (href === "/") return currentPath === "/";
+    return currentPath === href || currentPath.startsWith(`${href}/`);
+  }
 
   return (
     <header className="site-header">
@@ -33,11 +39,12 @@ export function SiteHeader() {
         </Link>
 
         <nav className="desktop-nav" aria-label="Main navigation">
-          {links.map((link) => (
-            <Link key={link.href} href={link.href} className={pathname === link.href ? "active" : undefined}>
+          {links.map((link) => {
+            const active = isActive(link.href);
+            return <Link key={link.href} href={link.href} className={active ? "active" : undefined} aria-current={active ? "page" : undefined}>
               {link.label}
-            </Link>
-          ))}
+            </Link>;
+          })}
         </nav>
 
         <div className="header-actions">
@@ -53,7 +60,10 @@ export function SiteHeader() {
 
       <div id="mobile-menu" className={`mobile-menu ${open ? "mobile-menu--open" : ""}`}>
         <nav className="shell" aria-label="Mobile navigation">
-          {links.map((link) => <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>{link.label}</Link>)}
+          {links.map((link) => {
+            const active = isActive(link.href);
+            return <Link key={link.href} href={link.href} className={active ? "active" : undefined} aria-current={active ? "page" : undefined} onClick={() => setOpen(false)}>{link.label}</Link>;
+          })}
           <Link href="/login" className="button button--primary" onClick={() => setOpen(false)}>Student login</Link>
         </nav>
       </div>
