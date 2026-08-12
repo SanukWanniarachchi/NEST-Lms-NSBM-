@@ -1,18 +1,18 @@
 # NEST LMS
 
-A responsive, frontend-only learning management system demonstration for NEST Club — NSBM Educators and Scholars Together.
+A responsive, statically published learning management experience for NEST Club — NSBM Educators and Scholars Together.
 
-## Demonstration scope
+## Current release
 
 - Public NEST Club website
 - Cybersecurity, networking, and robotics learning paths
 - Statically generated course and lesson pages
-- Simulated student and administrator dashboards
-- Simulated login and local UI states
+- Read-only learner portal and curriculum overview
+- 85 structured micro-lessons across 15 modules
 - Light and dark themes
 - GitHub Pages-compatible static export
 
-All accounts, instructors, course progress, testimonials, analytics, certificate requests, and administrative actions are mock data. This V1 does not include a database, authentication, or persistent state.
+This GitHub Pages release does not include authentication, persistent learner progress, message delivery, or administrative editing. Those services can be connected in a future platform phase without changing the published curriculum structure.
 
 ## Local development
 

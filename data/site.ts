@@ -1,5 +1,3 @@
-import type { Testimonial } from "@/types/lms";
-
 export const clubContent = {
   fullName: "NSBM Educators and Scholars Together",
   introduction:
@@ -23,26 +21,20 @@ export const objectives = [
   "Celebrate curiosity and create opportunities for meaningful student impact.",
 ];
 
-export const testimonials: Testimonial[] = [
+export const learnerBenefits = [
   {
-    quote:
-      "The short lessons make complex ideas feel approachable, and the next step is always clear.",
-    name: "Rivindu Silva",
-    detail: "Demo learner · Computing",
-    initials: "RS",
+    title: "Clear starting points",
+    description: "Short lessons introduce one idea at a time, making complex technical subjects easier to enter and revisit.",
+    initials: "01",
   },
   {
-    quote:
-      "It feels less like reading a manual and more like learning beside a group of curious friends.",
-    name: "Shenali Dias",
-    detail: "Demo learner · Engineering",
-    initials: "SD",
+    title: "Learning through examples",
+    description: "Visual explanations and familiar scenarios connect terminology to systems students recognise and use.",
+    initials: "02",
   },
   {
-    quote:
-      "The visual course paths helped me connect networking concepts I used to memorise separately.",
-    name: "Fahim Azeez",
-    detail: "Demo learner · Technology",
-    initials: "FA",
+    title: "A path to practise",
+    description: "Every lesson closes with a focused activity or reflection that turns understanding into active learning.",
+    initials: "03",
   },
 ];

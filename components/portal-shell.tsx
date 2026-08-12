@@ -12,27 +12,27 @@ export function PortalShell({ role, children }: { role: "student" | "admin"; chi
   const pathname = usePathname();
   const links = role === "student"
     ? [{ href: "/dashboard", label: "Overview", icon: <ChartIcon /> }, { href: "/courses", label: "My learning", icon: <BookIcon /> }]
-    : [{ href: "/admin", label: "Overview", icon: <ChartIcon /> }, { href: "/courses", label: "Courses", icon: <BookIcon /> }, { href: "/admin#students", label: "Students", icon: <UsersIcon /> }];
+    : [{ href: "/admin", label: "Overview", icon: <ChartIcon /> }, { href: "/courses", label: "Courses", icon: <BookIcon /> }, { href: "/dashboard", label: "Learner portal", icon: <UsersIcon /> }];
 
   return (
     <div className="portal-layout">
       <aside className="portal-sidebar">
         <Link href="/" className="portal-brand">
           <Image src={nestMark} alt="" width={42} height={40} />
-          <span><strong>NEST</strong><small>{role === "student" ? "Student" : "Admin"} demo</small></span>
+          <span><strong>NEST</strong><small>{role === "student" ? "Learner portal" : "Curriculum overview"}</small></span>
         </Link>
         <nav aria-label={`${role} dashboard navigation`}>
           {links.map((link) => <Link key={link.href} className={pathname === link.href ? "active" : undefined} href={link.href}>{link.icon}{link.label}</Link>)}
         </nav>
         <div className="portal-sidebar__note">
-          <strong>Frontend demo</strong>
-          <p>Changes are simulated and are not saved.</p>
+          <strong>Read-only release</strong>
+          <p>Account services and saved progress will be connected in a future platform phase.</p>
         </div>
         <Link href="/" className="portal-back">← Public website</Link>
       </aside>
       <div className="portal-main">
         <header className="portal-topbar">
-          <div><span className="status-dot" /> Demo data is active</div>
+          <div><span className="status-dot" /> Curriculum available</div>
           <ThemeToggle />
         </header>
         <main className="portal-content">{children}</main>

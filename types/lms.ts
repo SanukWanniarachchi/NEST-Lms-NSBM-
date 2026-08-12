@@ -14,7 +14,11 @@ export interface Lesson {
   title: string;
   duration: string;
   description: string;
-  youtubeUrl: string;
+  learningObjective: string;
+  keyPoints: string[];
+  activity: string;
+  recap: string;
+  youtubeUrl?: string;
   completed?: boolean;
 }
 
@@ -43,11 +47,4 @@ export interface Course {
   outcomes: string[];
   modules: CourseModule[];
   progress: number;
-}
-
-export interface Testimonial {
-  quote: string;
-  name: string;
-  detail: string;
-  initials: string;
 }
