@@ -44,7 +44,7 @@ export const courses: Course[] = [
     duration: "Approx. 58 min",
     lessonCount: 29,
     image: cybersecurityImage,
-    imageAlt: "University students discussing a protected digital network in a cybersecurity lab",
+    imageAlt: "A bright blue shield and keyhole connected to an abstract circuit network",
     accent: "violet",
     instructor: {
       name: "NEST Learning Team",
@@ -138,8 +138,8 @@ export const courses: Course[] = [
     duration: "Approx. 50 min",
     lessonCount: 25,
     image: networkingImage,
-    imageAlt: "University students connecting computers and a router in a networking laboratory",
-    accent: "cyan",
+    imageAlt: "A bright orange wireless router linking a balanced network of connected nodes",
+    accent: "amber",
     instructor: {
       name: "NEST Learning Team",
       role: "Networking learning path",
@@ -228,8 +228,8 @@ export const courses: Course[] = [
     duration: "Approx. 62 min",
     lessonCount: 31,
     image: roboticsImage,
-    imageAlt: "University students assembling a small robot in a campus makerspace",
-    accent: "amber",
+    imageAlt: "A bright teal educational rover connected to gears and a controller board",
+    accent: "cyan",
     instructor: {
       name: "NEST Learning Team",
       role: "Robotics learning path",

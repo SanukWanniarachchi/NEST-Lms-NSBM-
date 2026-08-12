@@ -32,7 +32,7 @@ export default function Home() {
             </div>
             <div className="hero-visual">
               <div className="hero-image-wrap">
-                <Image src={heroImage} alt="University students collaborating with a laptop and robot in a bright technology lab" priority sizes="(max-width: 900px) 100vw, 52vw" />
+                <Image src={heroImage} alt="Bright learning cards illustrating cybersecurity, networking, and robotics" priority sizes="(max-width: 900px) 100vw, 52vw" />
               </div>
               <div className="floating-card floating-card--top"><span className="floating-icon"><UsersIcon /></span><span><strong>Peer-powered</strong><small>Learn by sharing</small></span></div>
               <div className="floating-card floating-card--bottom"><span className="floating-icon floating-icon--warm"><BookIcon /></span><span><strong>{totalLessons} lessons</strong><small>Across 3 learning paths</small></span></div>
