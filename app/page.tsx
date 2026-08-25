@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { CourseCard } from "@/components/course-card";
 import { SectionHeading } from "@/components/section-heading";
 import { ArrowRightIcon, BookIcon, CheckIcon, NetworkIcon, RobotIcon, ShieldIcon, UsersIcon } from "@/components/icons";
+import { featuredAnnouncement } from "@/data/announcements";
 import { courses, totalLessons } from "@/data/courses";
 import { clubContent, learnerBenefits } from "@/data/site";
 
@@ -46,6 +47,16 @@ export default function Home() {
             <div><ShieldIcon /><span>Cybersecurity</span></div>
             <div><NetworkIcon /><span>Networking</span></div>
             <div><RobotIcon /><span>Robotics</span></div>
+          </div>
+        </section>
+
+        <section className="announcement-strip">
+          <div className="shell announcement-strip__inner">
+            <div>
+              <span className="category-pill">{featuredAnnouncement.category}</span>
+              <p><strong>{featuredAnnouncement.title}</strong> {featuredAnnouncement.summary}</p>
+            </div>
+            {featuredAnnouncement.actionHref && featuredAnnouncement.actionLabel ? <Link href={featuredAnnouncement.actionHref} className="text-link">{featuredAnnouncement.actionLabel} <ArrowRightIcon /></Link> : null}
           </div>
         </section>
 

@@ -16,6 +16,8 @@ export function SiteFooter() {
           <div className="footer-links">
             <Link href="/about">About NEST</Link>
             <Link href="/courses">Course catalogue</Link>
+            <Link href="/research">Research</Link>
+            <Link href="/announcements">Announcements</Link>
             <Link href="/dashboard">Learning portal</Link>
             <Link href="/admin">Curriculum overview</Link>
           </div>
@@ -33,6 +35,7 @@ export function SiteFooter() {
           <div className="footer-contact">
             <p><LocationIcon /> NSBM Green University, Sri Lanka</p>
             <p><MailIcon /> Connect through the official NEST Club channels</p>
+            <p><Link href="/community" className="text-link">Join the NEST community</Link></p>
           </div>
         </div>
       </div>
