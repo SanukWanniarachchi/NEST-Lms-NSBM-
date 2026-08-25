@@ -1,7 +1,6 @@
 "use client";
 
 import type { MouseEvent } from "react";
-import { MoonIcon, SunIcon } from "@/components/icons";
 
 export function ThemeToggle() {
   function toggleTheme(event: MouseEvent<HTMLButtonElement>) {
@@ -28,9 +27,28 @@ export function ThemeToggle() {
   return (
     <button className="theme-toggle" type="button" onClick={toggleTheme} aria-label="Toggle light and dark theme">
       <span className="theme-toggle__track" aria-hidden="true">
-        <span className="theme-toggle__sun"><SunIcon /></span>
-        <span className="theme-toggle__moon"><MoonIcon /></span>
-        <span className="theme-toggle__thumb" />
+        <span className="theme-toggle__sky" />
+        <span className="theme-toggle__clouds">
+          <span className="theme-toggle__cloud theme-toggle__cloud--one" />
+          <span className="theme-toggle__cloud theme-toggle__cloud--two" />
+          <span className="theme-toggle__cloud theme-toggle__cloud--three" />
+        </span>
+        <span className="theme-toggle__stars">
+          <span />
+          <span />
+          <span />
+          <span />
+          <span />
+          <span />
+          <span />
+          <span />
+          <span />
+          <span />
+          <span />
+        </span>
+        <span className="theme-toggle__thumb">
+          <span className="theme-toggle__moon-mark" />
+        </span>
       </span>
     </button>
   );

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import nestMark from "@/public/images/brand/nest-mark.webp";
+import nestMark from "@/public/images/brand/nest-mark-160.webp";
 import { CloseIcon, MenuIcon } from "@/components/icons";
 import { ThemeToggle } from "@/components/theme-toggle";
 
@@ -25,6 +25,7 @@ const mobileLinks = [...primaryLinks, ...moreLinks];
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
   const currentPath = pathname.length > 1 ? pathname.replace(/\/+$/, "") : pathname;
 
   function isActive(href: string) {
@@ -52,14 +53,20 @@ export function SiteHeader() {
               {link.label}
             </Link>;
           })}
-          <div className="more-menu">
-            <button type="button" className={moreLinks.some((link) => isActive(link.href)) ? "active" : undefined} aria-haspopup="true">
-              More
+          <div className={`more-menu ${moreOpen ? "more-menu--open" : ""}`}>
+            <button
+              type="button"
+              className={moreLinks.some((link) => isActive(link.href)) ? "active" : undefined}
+              aria-expanded={moreOpen}
+              aria-controls="more-menu-links"
+              onClick={() => setMoreOpen((value) => !value)}
+            >
+              <span>More</span>
             </button>
-            <div className="more-menu__panel">
+            <div id="more-menu-links" className="more-menu__panel">
               {moreLinks.map((link) => {
                 const active = isActive(link.href);
-                return <Link key={link.href} href={link.href} className={active ? "active" : undefined} aria-current={active ? "page" : undefined}>{link.label}</Link>;
+                return <Link key={link.href} href={link.href} className={active ? "active" : undefined} aria-current={active ? "page" : undefined} onClick={() => setMoreOpen(false)}>{link.label}</Link>;
               })}
             </div>
           </div>

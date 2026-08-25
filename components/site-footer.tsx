@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import nestLogo from "@/public/images/brand/nest-logo-transparent.webp";
+import nestLogo from "@/public/images/brand/nest-logo-footer.webp";
 import { MailIcon, LocationIcon } from "@/components/icons";
 
 export function SiteFooter() {

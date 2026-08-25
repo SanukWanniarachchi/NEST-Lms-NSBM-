@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import heroImage from "@/public/images/illustrations/campus-hero.webp";
-import nestMark from "@/public/images/brand/nest-mark.webp";
+import nestMark from "@/public/images/brand/nest-mark-160.webp";
 import { LoginForm } from "@/components/login-form";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { ArrowLeftIcon } from "@/components/icons";

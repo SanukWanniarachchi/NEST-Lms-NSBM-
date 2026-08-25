@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
-import nestMark from "@/public/images/brand/nest-mark.webp";
+import nestMark from "@/public/images/brand/nest-mark-160.webp";
 import { BookIcon, ChartIcon, UsersIcon } from "@/components/icons";
 import { ThemeToggle } from "@/components/theme-toggle";
 

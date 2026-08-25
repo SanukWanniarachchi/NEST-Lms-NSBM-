@@ -6,11 +6,18 @@ import { SiteFooter } from "@/components/site-footer";
 import { CourseCard } from "@/components/course-card";
 import { SectionHeading } from "@/components/section-heading";
 import { ArrowRightIcon, BookIcon, CheckIcon, NetworkIcon, RobotIcon, ShieldIcon, UsersIcon } from "@/components/icons";
-import { featuredAnnouncement } from "@/data/announcements";
 import { courses, totalLessons } from "@/data/courses";
 import { clubContent, learnerBenefits } from "@/data/site";
 
 export default function Home() {
+  const learningPaths = [
+    { label: "Cybersecurity", icon: <ShieldIcon /> },
+    { label: "Networking", icon: <NetworkIcon /> },
+    { label: "Robotics", icon: <RobotIcon /> },
+  ];
+  const tickerPaths = [...learningPaths, ...learningPaths, ...learningPaths];
+  const learningValues = ["Learn visually", "Build projects", "Share knowledge", "Peer-led sessions", "Micro-lessons", "Practical confidence"];
+
   return (
     <>
       <SiteHeader />
@@ -41,22 +48,27 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="trust-strip">
-          <div className="shell trust-grid">
-            <p>Three paths. One curious community.</p>
-            <div><ShieldIcon /><span>Cybersecurity</span></div>
-            <div><NetworkIcon /><span>Networking</span></div>
-            <div><RobotIcon /><span>Robotics</span></div>
+        <section className="trust-strip marquee-strip" aria-label="NEST learning paths">
+          <div className="marquee-window">
+            <div className="marquee-track marquee-track--paths">
+              {Array.from({ length: 2 }).map((_, index) => (
+                <div className="marquee-set marquee-set--paths" aria-hidden={index > 0} key={index}>
+                  {tickerPaths.map((item, itemIndex) => <span key={`${item.label}-${index}-${itemIndex}`}>{item.icon} {item.label}</span>)}
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
-        <section className="announcement-strip">
-          <div className="shell announcement-strip__inner">
-            <div>
-              <span className="category-pill">{featuredAnnouncement.category}</span>
-              <p><strong>{featuredAnnouncement.title}</strong> {featuredAnnouncement.summary}</p>
+        <section className="announcement-strip marquee-strip marquee-strip--values" aria-label="NEST learning values">
+          <div className="marquee-window">
+            <div className="marquee-track marquee-track--values">
+              {Array.from({ length: 2 }).map((_, index) => (
+                <div className="marquee-set marquee-set--values" aria-hidden={index > 0} key={index}>
+                  {learningValues.map((value) => <span key={`${value}-${index}`}>{value}</span>)}
+                </div>
+              ))}
             </div>
-            {featuredAnnouncement.actionHref && featuredAnnouncement.actionLabel ? <Link href={featuredAnnouncement.actionHref} className="text-link">{featuredAnnouncement.actionLabel} <ArrowRightIcon /></Link> : null}
           </div>
         </section>
 

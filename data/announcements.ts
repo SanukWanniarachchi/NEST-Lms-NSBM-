@@ -35,5 +35,3 @@ export const announcements: Announcement[] = [
     actionHref: "/research",
   },
 ];
-
-export const featuredAnnouncement = announcements.find((announcement) => announcement.featured) ?? announcements[0];
