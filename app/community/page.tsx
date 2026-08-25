@@ -5,6 +5,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { ArrowRightIcon, CheckIcon, UsersIcon } from "@/components/icons";
 import { community } from "@/data/community";
+import whatsappQr from "@/public/images/community/nest-whatsapp-qr.webp";
 
 export const metadata: Metadata = {
   title: "Join Community",
@@ -28,7 +29,7 @@ export default function CommunityPage() {
               </div>
             </div>
             <div className="qr-card">
-              <Image src={community.qrImage} alt={community.qrAlt} width={560} height={605} priority />
+              <Image src={whatsappQr} alt={community.qrAlt} priority />
               <div>
                 <span><UsersIcon /></span>
                 <strong>{community.title}</strong>
