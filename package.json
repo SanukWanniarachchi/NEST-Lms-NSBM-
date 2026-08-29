@@ -5,7 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "check": "npm run lint && npm run typecheck && npm run build",
+    "check": "npm run check:public && npm run check:admin",
+    "check:public": "npm run lint && npm run typecheck && npm run build",
+    "check:admin": "npm run admin:typecheck && npm run admin:build && npm run admin:test",
+    "admin:dev": "next dev admin -p 3001",
+    "admin:build": "next build admin",
+    "admin:typecheck": "tsc --noEmit -p admin/tsconfig.json",
+    "admin:test": "playwright test -c playwright.admin.config.ts",
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
@@ -13,9 +19,12 @@
     "test:visual:update": "playwright test --update-snapshots"
   },
   "dependencies": {
+    "jose": "^6.2.10",
     "next": "16.3.0",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "server-only": "^0.0.1",
+    "zod": "^4.5.2"
   },
   "devDependencies": {
     "@playwright/test": "^1.62.1",

@@ -24,6 +24,14 @@ npm install
 npm run dev
 ```
 
+The protected admin application runs separately so the public GitHub Pages build remains static:
+
+```bash
+npm run admin:dev
+```
+
+Open `http://localhost:3001`. Local credentials are read from the ignored `admin/.env.local` file and the local adapter is disabled in production builds.
+
 ## Validation
 
 ```bash
