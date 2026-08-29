@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import nestLogo from "@/public/images/brand/nest-logo-footer.webp";
-import { MailIcon, LocationIcon } from "@/components/icons";
+import { MailIcon, LocationIcon, PlayIcon } from "@/components/icons";
+import { community } from "@/data/community";
 
 export function SiteFooter() {
   return (
@@ -18,8 +19,6 @@ export function SiteFooter() {
             <Link href="/courses">Course catalogue</Link>
             <Link href="/research">Research</Link>
             <Link href="/announcements">Announcements</Link>
-            <Link href="/dashboard">Learning portal</Link>
-            <Link href="/admin">Curriculum overview</Link>
           </div>
         </div>
         <div>
@@ -36,6 +35,7 @@ export function SiteFooter() {
             <p><LocationIcon /> NSBM Green University, Sri Lanka</p>
             <p><MailIcon /> Connect through the official NEST Club channels</p>
             <p><Link href="/community" className="text-link">Join the NEST community</Link></p>
+            <p><a href={community.youtubeChannelUrl} target="_blank" rel="noopener noreferrer" className="text-link"><PlayIcon /> Official YouTube channel</a></p>
           </div>
         </div>
       </div>

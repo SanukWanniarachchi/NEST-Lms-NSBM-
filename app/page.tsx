@@ -30,7 +30,6 @@ export default function Home() {
               <p className="hero-lead">Focused, visual courses created for curious university students ready to explore cybersecurity, networking, and robotics.</p>
               <div className="hero-actions">
                 <Link href="/courses" className="button button--primary">Explore courses <ArrowRightIcon /></Link>
-                <Link href="/login" className="button button--secondary">Open learning portal</Link>
               </div>
               <div className="hero-proof" aria-label="NEST LMS highlights">
                 <span><CheckIcon /> Bite-sized lessons</span>
@@ -118,7 +117,7 @@ export default function Home() {
         <section className="cta-section">
           <div className="shell cta-card">
             <div><p className="eyebrow">Ready to explore?</p><h2>Your next skill starts with one small lesson.</h2><p>Choose a learning path and begin with a focused concept you can understand, discuss, and apply.</p></div>
-            <div className="cta-actions"><Link href="/courses" className="button button--light">Browse courses <ArrowRightIcon /></Link><Link href="/dashboard" className="button button--ghost-light">Open learning portal</Link></div>
+            <div className="cta-actions"><Link href="/courses" className="button button--light">Browse courses <ArrowRightIcon /></Link><Link href="/community" className="button button--ghost-light">Join the community</Link></div>
           </div>
         </section>
       </main>

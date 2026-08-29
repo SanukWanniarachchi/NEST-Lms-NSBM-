@@ -13,15 +13,13 @@ const visualPages = [
   { name: "announcements", path: "/announcements/" },
   { name: "community", path: "/community/" },
   { name: "about", path: "/about/" },
-  { name: "login", path: "/login/" },
+  { name: "contact", path: "/contact/" },
   { name: "course-cybersecurity", path: "/courses/cybersecurity-foundations/" },
   { name: "lesson-cybersecurity", path: "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/" },
 ];
 
 const layoutPages = [
   ...visualPages,
-  { name: "dashboard", path: "/dashboard/" },
-  { name: "admin", path: "/admin/" },
   { name: "course-networking", path: "/courses/networking-essentials/" },
   { name: "course-robotics", path: "/courses/robotics-fundamentals/" },
 ];
@@ -40,14 +38,26 @@ async function openPage(page: Page, path: string, theme: "light" | "dark", viewp
   await page.setViewportSize({ width: viewport.width, height: viewport.height });
   await page.addInitScript((selectedTheme) => {
     window.localStorage.setItem("nest-theme", selectedTheme);
-    document.documentElement.dataset.theme = selectedTheme;
-    document.documentElement.style.colorScheme = selectedTheme;
   }, theme);
   await page.goto(path);
   await page.waitForLoadState("networkidle");
   await page.evaluate(async () => {
     await document.fonts.ready;
   });
+}
+
+function watchRuntimeProblems(page: Page) {
+  const problems: string[] = [];
+
+  page.on("console", (message) => {
+    if (message.type() === "error") problems.push(`Console error: ${message.text()}`);
+  });
+  page.on("pageerror", (error) => problems.push(`Page error: ${error.message}`));
+  page.on("response", (response) => {
+    if (response.status() >= 400) problems.push(`HTTP ${response.status()}: ${response.url()}`);
+  });
+
+  return problems;
 }
 
 async function loadPageImages(page: Page) {
@@ -125,33 +135,19 @@ async function collectLayoutProblems(page: Page) {
 
 test.describe("visual snapshots", () => {
   for (const viewport of screenshotViewports) {
-    for (const item of visualPages) {
-      test(`${item.name} light ${viewport.name}`, async ({ page }) => {
-        await page.emulateMedia({ reducedMotion: "reduce", colorScheme: "light" });
-        await openPage(page, item.path, "light", viewport);
-        await loadPageImages(page);
-        await expect(page).toHaveScreenshot(`${item.name}-light-${viewport.name}.png`, {
-          animations: "disabled",
-          fullPage: true,
+    for (const theme of ["light", "dark"] as const) {
+      for (const item of visualPages) {
+        test(`${item.name} ${theme} ${viewport.name}`, async ({ page }) => {
+          await page.emulateMedia({ reducedMotion: "reduce", colorScheme: theme });
+          await openPage(page, item.path, theme, viewport);
+          await loadPageImages(page);
+          await expect(page).toHaveScreenshot(`${item.name}-${theme}-${viewport.name}.png`, {
+            animations: "disabled",
+            fullPage: true,
+          });
         });
-      });
+      }
     }
-  }
-
-  for (const item of [
-    { name: "home", path: "/" },
-    { name: "community", path: "/community/" },
-    { name: "login", path: "/login/" },
-  ]) {
-    test(`${item.name} dark desktop`, async ({ page }) => {
-      await page.emulateMedia({ reducedMotion: "reduce", colorScheme: "dark" });
-      await openPage(page, item.path, "dark", screenshotViewports[0]);
-      await loadPageImages(page);
-      await expect(page).toHaveScreenshot(`${item.name}-dark-desktop.png`, {
-        animations: "disabled",
-        fullPage: true,
-      });
-    });
   }
 });
 
@@ -160,11 +156,13 @@ test.describe("layout and integration checks", () => {
     for (const theme of ["light", "dark"] as const) {
       for (const item of layoutPages) {
         test(`${item.name} layout ${theme} ${viewport.name}`, async ({ page }) => {
+          const runtimeProblems = watchRuntimeProblems(page);
           await page.emulateMedia({ reducedMotion: "no-preference", colorScheme: theme });
           await openPage(page, item.path, theme, viewport);
           await loadPageImages(page);
           await expect.soft(page.locator("body")).toBeVisible();
           expect(await collectLayoutProblems(page)).toEqual([]);
+          expect(runtimeProblems).toEqual([]);
         });
       }
     }
@@ -217,13 +215,13 @@ test.describe("layout and integration checks", () => {
     await openPage(page, "/", "light", { name: "desktop", width: 1440, height: 900 });
     await loadPageImages(page);
 
-    const login = page.getByRole("link", { name: "Student login" }).first();
-    const before = await login.boundingBox();
-    await login.hover();
+    const community = page.getByRole("link", { name: "Join community" }).first();
+    const before = await community.boundingBox();
+    await community.hover();
     await page.waitForTimeout(850);
-    const mid = await login.boundingBox();
+    const mid = await community.boundingBox();
     await page.waitForTimeout(950);
-    const after = await login.boundingBox();
+    const after = await community.boundingBox();
 
     expect(mid?.width).toBeCloseTo(before?.width ?? 0, 0);
     expect(mid?.height).toBeCloseTo(before?.height ?? 0, 0);

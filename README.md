@@ -7,12 +7,15 @@ A responsive, statically published learning management experience for NEST Club 
 - Public NEST Club website
 - Cybersecurity, networking, and robotics learning paths
 - Statically generated course and lesson pages
-- Read-only learner portal and curriculum overview
+- Research library prepared for approved papers, videos, and documents
+- Official NEST community and YouTube links
 - 85 structured micro-lessons across 15 modules
 - Light and dark themes
 - GitHub Pages-compatible static export
 
-This GitHub Pages release does not include authentication, persistent learner progress, message delivery, or administrative editing. Those services can be connected in a future platform phase without changing the published curriculum structure.
+This GitHub Pages release does not include authentication, persistent learner progress, message delivery, or administrative editing. Those services will be introduced through the protected admin platform without changing the published curriculum structure.
+
+The protected platform architecture and NSBM handover boundary are documented in [`docs/ADMIN_PLATFORM_ARCHITECTURE.md`](docs/ADMIN_PLATFORM_ARCHITECTURE.md). GitHub Pages is a public preview target and will not host authentication or admin APIs.
 
 ## Local development
 
@@ -27,6 +30,8 @@ npm run dev
 npm run lint
 npm run typecheck
 npm run build
+# or run all three release gates
+npm run check
 ```
 
 The production build is exported to `out/` for static hosting. GitHub Pages deployment is defined in `.github/workflows/deploy-pages.yml`.

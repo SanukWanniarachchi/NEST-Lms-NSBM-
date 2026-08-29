@@ -1,6 +1,6 @@
 import { createReadStream, existsSync, statSync } from "node:fs";
 import { createServer } from "node:http";
-import { extname, join, normalize, resolve, sep } from "node:path";
+import { basename, dirname, extname, join, normalize, resolve, sep } from "node:path";
 
 const root = resolve(process.argv[2] ?? "out");
 const port = Number(process.argv[3] ?? 4173);
@@ -28,6 +28,14 @@ function resolveFile(urlPath) {
   }
 
   const candidates = [target];
+  const pagePayloadSuffix = ".__PAGE__.txt";
+  if (target.endsWith(pagePayloadSuffix)) {
+    const payloadBase = basename(target, pagePayloadSuffix);
+    const [prefix, route, ...segments] = payloadBase.split(".");
+    if (prefix && route) {
+      candidates.push(join(dirname(target), `${prefix}.${route}`, ...segments, "__PAGE__.txt"));
+    }
+  }
   if (existsSync(target) && statSync(target).isDirectory()) {
     candidates.push(join(target, "index.html"));
   } else if (!extname(target)) {

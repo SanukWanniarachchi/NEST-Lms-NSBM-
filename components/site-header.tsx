@@ -74,11 +74,8 @@ export function SiteHeader() {
 
         <div className="header-actions">
           <ThemeToggle />
-          <Link href="/community" className="button button--small button--secondary desktop-login desktop-community">
+          <Link href="/community" className="button button--small button--secondary desktop-action desktop-community">
             Join community
-          </Link>
-          <Link href="/login" className="button button--small button--primary desktop-login">
-            Student login
           </Link>
           <button type="button" className="menu-button" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? "Close navigation" : "Open navigation"}>
             {open ? <CloseIcon /> : <MenuIcon />}
@@ -93,7 +90,6 @@ export function SiteHeader() {
             return <Link key={link.href} href={link.href} className={active ? "active" : undefined} aria-current={active ? "page" : undefined} onClick={() => setOpen(false)}>{link.label}</Link>;
           })}
           <Link href="/community" className="button button--secondary" onClick={() => setOpen(false)}>Join community</Link>
-          <Link href="/login" className="button button--primary" onClick={() => setOpen(false)}>Student login</Link>
         </nav>
       </div>
     </header>

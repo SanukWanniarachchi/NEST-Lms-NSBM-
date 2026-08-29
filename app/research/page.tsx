@@ -3,15 +3,24 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { SectionHeading } from "@/components/section-heading";
-import { ArrowRightIcon, BookIcon, CheckIcon, ChartIcon } from "@/components/icons";
-import { publications, researchProjects } from "@/data/research";
+import { ArrowRightIcon, BookIcon, DocumentIcon, PlayIcon } from "@/components/icons";
+import { researchResources } from "@/data/research";
+import { isPublishedResearchResource, type ResearchResource } from "@/types/content";
 
 export const metadata: Metadata = {
   title: "Research",
-  description: "Explore NEST Club research projects, publication plans, and student-led academic collaboration.",
+  description: "Explore approved NEST Club research papers, videos, documents, and student-led academic work.",
 };
 
+function ResourceIcon({ type }: { type: ResearchResource["type"] }) {
+  if (type === "Video") return <PlayIcon />;
+  if (type === "Document") return <DocumentIcon />;
+  return <BookIcon />;
+}
+
 export default function ResearchPage() {
+  const publishedResources = researchResources.filter(isPublishedResearchResource);
+
   return (
     <>
       <SiteHeader />
@@ -26,45 +35,29 @@ export default function ResearchPage() {
 
         <section className="section research-section">
           <div className="shell">
-            <SectionHeading eyebrow="Ongoing work" title="Research projects" copy="Current and planned research tracks are kept lightweight, student-friendly, and open to future collaboration." />
-            <div className="research-grid">
-              {researchProjects.map((project) => (
-                <article className="research-card" key={project.title}>
-                  <span className="metric-icon metric-icon--blue"><ChartIcon /></span>
-                  <p className="eyebrow">{project.area}</p>
-                  <h2>{project.title}</h2>
-                  <p>{project.summary}</p>
-                  <strong>{project.status}</strong>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section publications-section">
-          <div className="shell">
-            <SectionHeading eyebrow="Publications" title="Publication pipeline" copy="This area is reserved for future papers, reports, posters, and student-led publications from NEST contributors." />
-            <div className="publication-list">
-              {publications.map((publication) => (
-                <article key={publication.title}>
-                  <span><BookIcon /></span>
-                  <div>
-                    <p className="eyebrow">{publication.status} · {publication.year}</p>
-                    <h2>{publication.title}</h2>
-                    <strong>{publication.authors}</strong>
-                    <p>{publication.summary}</p>
-                    {publication.href ? <Link href={publication.href} className="text-link">Open publication <ArrowRightIcon /></Link> : <small>Publication link will be added when available.</small>}
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section research-note-section">
-          <div className="shell service-note">
-            <strong><CheckIcon /> Research content is static for this release</strong>
-            <p>Projects and publications can be updated through the research data file without adding a backend or increasing the site runtime requirements.</p>
+            <SectionHeading eyebrow="Research library" title="Published research and resources" copy="Approved papers, project reports, videos, and supporting documents from NEST contributors are collected here." />
+            {publishedResources.length > 0 ? (
+              <div className="research-resource-grid">
+                {publishedResources.map((resource) => (
+                  <article className="research-resource-card" key={resource.id}>
+                    <span className="research-resource-card__icon"><ResourceIcon type={resource.type} /></span>
+                    <p className="eyebrow">{resource.type} · {resource.publishedOn}</p>
+                    <h2>{resource.title}</h2>
+                    <p>{resource.summary}</p>
+                    <strong>{resource.authors.join(", ")}</strong>
+                    <div className="research-resource-card__tags">{resource.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+                    <Link href={resource.href} target="_blank" rel="noopener noreferrer" className="text-link">Open resource <ArrowRightIcon /></Link>
+                  </article>
+                ))}
+              </div>
+            ) : (
+              <div className="research-empty">
+                <span><BookIcon /></span>
+                <p className="eyebrow">No published research</p>
+                <h2>Research resources will appear here once approved.</h2>
+                <p>NEST will use this library for reviewed research papers, project reports, videos, and supporting documents. New entries will be published with clear authorship, dates, topics, and source links.</p>
+              </div>
+            )}
           </div>
         </section>
       </main>
