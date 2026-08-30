@@ -12,13 +12,18 @@ type LessonVideoProps = {
   title: string;
   youtubeUrl: string;
   duration?: string;
+  loadOnMount?: boolean;
 };
 
-export function LessonVideo({ title, youtubeUrl, duration }: LessonVideoProps) {
-  const [playerLoaded, setPlayerLoaded] = useState(false);
+export function LessonVideo({ title, youtubeUrl, duration, loadOnMount = false }: LessonVideoProps) {
+  const [playerLoaded, setPlayerLoaded] = useState(loadOnMount);
   const videoId = getYouTubeVideoId(youtubeUrl);
 
   if (!videoId) return null;
+
+  const facadeStyle = {
+    "--video-thumbnail": `url("${getYouTubeThumbnailUrl(videoId)}")`,
+  } as CSSProperties;
 
   if (playerLoaded) {
     return <iframe
@@ -30,10 +35,6 @@ export function LessonVideo({ title, youtubeUrl, duration }: LessonVideoProps) {
       allowFullScreen
     />;
   }
-
-  const facadeStyle = {
-    "--video-thumbnail": `url("${getYouTubeThumbnailUrl(videoId)}")`,
-  } as CSSProperties;
 
   return <button
     className="lesson-video-facade"
