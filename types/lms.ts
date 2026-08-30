@@ -19,6 +19,7 @@ export interface Lesson {
   activity: string;
   recap: string;
   youtubeUrl?: string;
+  videoDuration?: string;
   completed?: boolean;
 }
 
