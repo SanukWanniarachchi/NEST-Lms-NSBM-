@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { ArrowRightIcon, PlayIcon } from "@/components/icons";
 import { LessonVideo } from "@/components/lesson-video";
-import { getYouTubeVideoId } from "@/lib/youtube";
+import { getYouTubeVideoId, getYouTubeWatchUrl } from "@/lib/youtube";
 import type { Course } from "@/types/lms";
 
 export function CurriculumAccordion({ course }: { course: Course }) {
@@ -48,7 +48,10 @@ export function CurriculumAccordion({ course }: { course: Course }) {
             </button>
             <div className={`lesson-video-expansion${isOpen ? " is-open" : ""}`} id={panelId} aria-hidden={!isOpen}>
               <div>
-                {isOpen && lesson.youtubeUrl ? <div className="lesson-video-shell"><LessonVideo title={lesson.title} youtubeUrl={lesson.youtubeUrl} duration={lesson.videoDuration} /></div> : null}
+                {isOpen && lesson.youtubeUrl ? <div className="lesson-video-panel">
+                  <div className="lesson-video-shell"><LessonVideo title={lesson.title} youtubeUrl={lesson.youtubeUrl} duration={lesson.videoDuration} loadOnMount /></div>
+                  <a className="lesson-video-external" href={getYouTubeWatchUrl(videoId)} target="_blank" rel="noreferrer">Open on YouTube <ArrowRightIcon /></a>
+                </div> : null}
               </div>
             </div>
           </div>;

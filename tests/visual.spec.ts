@@ -272,10 +272,10 @@ test.describe("lesson videos", () => {
       expect((box?.width ?? 0) / (box?.height ?? 1)).toBeCloseTo(16 / 9, 1);
       expect(await collectLayoutProblems(page)).toEqual([]);
 
-      await page.getByRole("button", { name: "Load video player for What is Networking?" }).click();
       const iframe = shell.locator("iframe");
       await expect(iframe).toHaveAttribute("src", /youtube-nocookie\.com\/embed\/keeqnciDVOo/);
       await expect(iframe).toHaveCount(1);
+      await expect(page.getByRole("link", { name: "Open on YouTube" })).toHaveAttribute("href", "https://www.youtube.com/watch?v=keeqnciDVOo");
     });
   }
 
