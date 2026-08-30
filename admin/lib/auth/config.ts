@@ -7,3 +7,7 @@ export function isLocalAuthEnabled() {
 export function getLocalAdminName() {
   return process.env.NEST_DEV_ADMIN_NAME?.trim() || "NEST Administrator";
 }
+
+export function getLocalAdminSubject() {
+  return process.env.NEST_DEV_ADMIN_SUBJECT?.trim() || "local-admin";
+}

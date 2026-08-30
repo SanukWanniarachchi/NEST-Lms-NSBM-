@@ -25,14 +25,15 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
         <label htmlFor="access-code">Local access code</label>
         <input id="access-code" name="accessCode" type="password" autoComplete="current-password" required minLength={8} maxLength={128} />
         {error === "invalid" ? <p className="form-error" role="alert">The access code is incorrect.</p> : null}
+        {error === "forbidden" ? <p className="form-error" role="alert">This identity is not on the active admin allowlist.</p> : null}
         <button type="submit">Continue to workspace</button>
       </form> : <div className="auth-unavailable"><strong>NSBM SSO required</strong><p>The production workspace opens only after the NSBM identity provider is connected.</p></div>}
       <small className="login-note">Local access is available only in the development environment.</small>
     </section>
     <aside className="login-context">
-      <span>Phase 1</span>
+      <span>Phase 2</span>
       <h2>A clear, accountable publishing workflow.</h2>
-      <ul><li>Protected server-side sessions</li><li>One authorised admin role</li><li>Draft-to-publish content lifecycle</li></ul>
+      <ul><li>Protected server-side sessions</li><li>Database-backed admin allowlist</li><li>Audited content persistence</li></ul>
     </aside>
   </main>;
 }

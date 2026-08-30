@@ -2,6 +2,7 @@ import "server-only";
 import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { isAdminSubjectAllowed } from "@admin/lib/data/admin-data";
 
 const COOKIE_NAME = "nest-admin-session";
 const SESSION_DURATION_SECONDS = 8 * 60 * 60;
@@ -57,6 +58,7 @@ export async function getAdminSession(): Promise<AdminSession | null> {
       return null;
     }
 
+    if (!await isAdminSubjectAllowed(payload.sub)) return null;
     return { subject: payload.sub, role: "admin", name: payload.name };
   } catch {
     return null;

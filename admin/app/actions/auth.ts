@@ -3,8 +3,9 @@
 import { timingSafeEqual } from "node:crypto";
 import { redirect } from "next/navigation";
 import { z } from "zod";
-import { getLocalAdminName, isLocalAuthEnabled } from "@admin/lib/auth/config";
+import { getLocalAdminName, getLocalAdminSubject, isLocalAuthEnabled } from "@admin/lib/auth/config";
 import { createAdminSession, deleteAdminSession } from "@admin/lib/auth/session";
+import { isAdminSubjectAllowed } from "@admin/lib/data/admin-data";
 
 const LoginSchema = z.object({
   accessCode: z.string().trim().min(8).max(128),
@@ -25,8 +26,11 @@ export async function login(formData: FormData) {
     redirect("/?error=invalid");
   }
 
+  const subject = getLocalAdminSubject();
+  if (!await isAdminSubjectAllowed(subject)) redirect("/?error=forbidden");
+
   await createAdminSession({
-    subject: "local-admin",
+    subject,
     role: "admin",
     name: getLocalAdminName(),
   });

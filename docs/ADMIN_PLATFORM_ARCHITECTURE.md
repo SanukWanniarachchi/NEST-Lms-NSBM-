@@ -82,6 +82,29 @@ draft-review-publish lifecycle.
 5. **Phase 5 - NSBM integration**: replace the local adapter with NSBM SSO,
    connect approved database and media storage, and complete deployment testing.
 
+## Phase 2 implementation
+
+Phase 2 uses one PostgreSQL schema across both environments:
+
+- Local development uses PGlite persistence under the ignored `admin/.data/`
+  directory, with no separate database service required.
+- Production uses the `postgres` adapter with the NSBM-supplied `DATABASE_URL`.
+- Numbered SQL migrations are stored in `admin/db/migrations/` and recorded in
+  the database `schema_migrations` table.
+- The server-only data layer checks the active admin allowlist on every
+  protected request, including requests with an existing signed session.
+- Repository mutations write an audit event in the same database transaction
+  as the allowlist or content change.
+
+Phase 2 creates `admin_allowlist`, `research_resources`, and `audit_events`.
+Research editing and lifecycle screens remain Phase 3 work; this phase provides
+their persistence and audit boundary only.
+
+Required database environment variables are documented in
+`admin/.env.example`. Local setup runs `npm run admin:db:migrate` followed by
+`npm run admin:db:seed-local`. Production migrations must run as a controlled
+deployment step before the new application version starts.
+
 ## Handover contract
 
 The NSBM infrastructure owner will supply the SSO issuer details, registered

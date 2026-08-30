@@ -49,3 +49,7 @@
 - Centralized the research publication types for future draft, published, and archived admin workflows without changing the public website.
 - Completed Phase 1 with a separate server-rendered admin application, development-only signed-session login, protected workspace routes, responsive admin navigation, and local authentication tests.
 - Kept the public GitHub Pages application isolated from server-only authentication code while preparing the admin deployment for future NSBM SSO.
+- Completed Phase 2 with a shared PostgreSQL schema, versioned migrations, local PGlite persistence, and a production PostgreSQL connection adapter.
+- Added database-backed admin allowlisting with immediate session revocation checks and idempotent local administrator seeding.
+- Added audited repositories for administrator access and research drafts, with database transactions preserving content and audit consistency.
+- Added migration, repository, authorization, build, and responsive visual QA coverage for the Phase 2 data foundation.

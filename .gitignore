@@ -19,6 +19,7 @@
 /.next/
 /out/
 /admin/.next/
+/admin/.data/
 
 # production
 /build

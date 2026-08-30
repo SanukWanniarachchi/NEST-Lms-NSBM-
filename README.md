@@ -27,10 +27,14 @@ npm run dev
 The protected admin application runs separately so the public GitHub Pages build remains static:
 
 ```bash
+npm run admin:db:migrate
+npm run admin:db:seed-local
 npm run admin:dev
 ```
 
-Open `http://localhost:3001`. Local credentials are read from the ignored `admin/.env.local` file and the local adapter is disabled in production builds.
+Open `http://localhost:3001`. Local credentials and database settings are read from the ignored `admin/.env.local` file. The local adapter uses a PostgreSQL-compatible PGlite database under the ignored `admin/.data/` directory and is disabled in production builds.
+
+Set `NEST_DATABASE_DRIVER=postgres` and provide `DATABASE_URL` for the future NSBM PostgreSQL environment. The same versioned migrations and repository schema are used by both adapters.
 
 ## Validation
 
@@ -41,5 +45,7 @@ npm run build
 # or run all three release gates
 npm run check
 ```
+
+Admin validation also runs the migration/repository integration test and the protected workspace Playwright suite.
 
 The production build is exported to `out/` for static hosting. GitHub Pages deployment is defined in `.github/workflows/deploy-pages.yml`.
