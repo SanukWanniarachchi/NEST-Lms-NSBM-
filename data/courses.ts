@@ -10,6 +10,7 @@ function microLesson(
   keyPoints: string[],
   activity: string,
   duration = "2 min",
+  video?: Pick<Lesson, "youtubeUrl" | "videoDuration">,
 ): Lesson {
   const whatMatch = title.match(/^What is (.+)\?$/i);
   const objective = whatMatch
@@ -24,6 +25,7 @@ function microLesson(
     keyPoints,
     activity,
     recap: description,
+    ...video,
   };
 }
 
@@ -159,7 +161,7 @@ export const courses: Course[] = [
         title: "Introduction to Networking",
         description: "Discover why networks exist and the devices and links that make them possible.",
         lessons: [
-          network("what-is-networking", "What is Networking?", "See how connected devices communicate, share resources, and reach internet services.", ["Connected devices", "Communication", "Internet basics"], "Draw a network containing two devices and one shared service."),
+          network("what-is-networking", "What is Networking?", "See how connected devices communicate, share resources, and reach internet services.", ["Connected devices", "Communication", "Internet basics"], "Draw a network containing two devices and one shared service.", "2 min", { youtubeUrl: "https://www.youtube.com/watch?v=keeqnciDVOo", videoDuration: "1:40" }),
           network("types-of-networks", "Types of Networks", "Compare LAN, WAN, and MAN networks by coverage, ownership, and purpose.", ["LAN", "WAN", "MAN"], "Classify home, campus, city, and global network examples."),
           network("networking-devices", "Networking Devices", "Understand the basic roles of routers, switches, modems, and hubs.", ["Router", "Switch", "Modem and hub"], "Match each device to the traffic-handling job it performs."),
           network("wired-vs-wireless", "Wired vs Wireless Networks", "Compare Ethernet and Wi-Fi for speed, mobility, interference, and deployment.", ["Ethernet", "Wi-Fi", "Performance trade-offs"], "Recommend wired or wireless connectivity for three campus situations."),
