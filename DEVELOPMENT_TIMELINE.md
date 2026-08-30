@@ -47,3 +47,10 @@
 - Confirmed the 98-page static release passes lint, type checking, production build, and 104 Playwright checks.
 - Completed Phase 0 of the admin platform: documented the NSBM SSO architecture, protected admin boundary, content lifecycle, environment contract, and infrastructure handover requirements.
 - Centralized the research publication types for future draft, published, and archived admin workflows without changing the public website.
+
+## 2026-08-30
+
+- Added expandable YouTube video lessons to the public course curriculum and lesson pages.
+- Added privacy-enhanced, interaction-loaded players with responsive 16:9 framing for desktop and mobile screens.
+- Added support for standard, shortened, Shorts, embed, and privacy-enhanced YouTube links.
+- Confirmed live sample playback and completed production, responsive, theme, accessibility, and visual regression checks.
