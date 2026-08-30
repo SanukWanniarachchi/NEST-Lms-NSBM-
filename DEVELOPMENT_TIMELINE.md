@@ -53,3 +53,10 @@
 - Added database-backed admin allowlisting with immediate session revocation checks and idempotent local administrator seeding.
 - Added audited repositories for administrator access and research drafts, with database transactions preserving content and audit consistency.
 - Added migration, repository, authorization, build, and responsive visual QA coverage for the Phase 2 data foundation.
+
+## 2026-08-30
+
+- Added expandable YouTube video lessons to the public course curriculum and lesson pages.
+- Added privacy-enhanced, interaction-loaded players with responsive 16:9 framing for desktop and mobile screens.
+- Added support for standard, shortened, Shorts, embed, and privacy-enhanced YouTube links.
+- Confirmed live sample playback and completed production, responsive, theme, accessibility, and visual regression checks.
