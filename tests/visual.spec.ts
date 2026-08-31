@@ -179,9 +179,9 @@ test.describe("layout and integration checks", () => {
       scrollWidth: document.documentElement.scrollWidth,
       viewport: window.innerWidth,
       pathHeight: document.querySelector(".marquee-track--paths")?.getBoundingClientRect().height ?? 0,
-      valueHeight: document.querySelector(".marquee-track--values")?.getBoundingClientRect().height ?? 0,
+      technologyHeight: document.querySelector(".marquee-track--technologies")?.getBoundingClientRect().height ?? 0,
       pathTransform: getComputedStyle(document.querySelector(".marquee-track--paths") as Element).transform,
-      valueTransform: getComputedStyle(document.querySelector(".marquee-track--values") as Element).transform,
+      technologyTransform: getComputedStyle(document.querySelector(".marquee-track--technologies") as Element).transform,
     }));
 
     await page.waitForTimeout(1400);
@@ -190,17 +190,17 @@ test.describe("layout and integration checks", () => {
       scrollWidth: document.documentElement.scrollWidth,
       viewport: window.innerWidth,
       pathHeight: document.querySelector(".marquee-track--paths")?.getBoundingClientRect().height ?? 0,
-      valueHeight: document.querySelector(".marquee-track--values")?.getBoundingClientRect().height ?? 0,
+      technologyHeight: document.querySelector(".marquee-track--technologies")?.getBoundingClientRect().height ?? 0,
       pathTransform: getComputedStyle(document.querySelector(".marquee-track--paths") as Element).transform,
-      valueTransform: getComputedStyle(document.querySelector(".marquee-track--values") as Element).transform,
+      technologyTransform: getComputedStyle(document.querySelector(".marquee-track--technologies") as Element).transform,
     }));
 
     expect(before.scrollWidth).toBeLessThanOrEqual(before.viewport + 2);
     expect(after.scrollWidth).toBeLessThanOrEqual(after.viewport + 2);
     expect(after.pathHeight).toBeCloseTo(before.pathHeight, 0);
-    expect(after.valueHeight).toBeCloseTo(before.valueHeight, 0);
+    expect(after.technologyHeight).toBeCloseTo(before.technologyHeight, 0);
     expect(after.pathTransform).not.toBe(before.pathTransform);
-    expect(after.valueTransform).not.toBe(before.valueTransform);
+    expect(after.technologyTransform).not.toBe(before.technologyTransform);
 
     await page.mouse.wheel(0, 900);
     await page.waitForTimeout(250);
@@ -232,6 +232,31 @@ test.describe("layout and integration checks", () => {
     await page.getByRole("button", { name: "Toggle light and dark theme" }).click();
     await page.waitForTimeout(650);
     expect(await page.evaluate(() => document.documentElement.dataset.theme)).toBe("dark");
+    expect(await collectLayoutProblems(page)).toEqual([]);
+  });
+});
+
+test.describe("about leadership", () => {
+  test("centres the Master-in-Charge above four board profiles per desktop row", async ({ page }) => {
+    await openPage(page, "/about/", "light", { name: "desktop", width: 1440, height: 900 });
+    await loadPageImages(page);
+
+    const cards = page.locator(".board-profile");
+    await expect(cards).toHaveCount(6);
+    const boxes = await Promise.all(Array.from({ length: 6 }, (_, index) => cards.nth(index).boundingBox()));
+    const firstRowTop = boxes[0]?.y ?? 0;
+
+    for (const box of boxes.slice(0, 4)) expect(Math.abs((box?.y ?? 0) - firstRowTop)).toBeLessThanOrEqual(2);
+    expect(boxes[4]?.y ?? 0).toBeGreaterThan(firstRowTop);
+
+    const mentor = await page.locator(".mentor-profile").boundingBox();
+    const container = await page.locator(".leadership-section .shell").boundingBox();
+    expect(mentor).not.toBeNull();
+    expect(container).not.toBeNull();
+    expect(Math.abs(
+      ((mentor?.x ?? 0) + (mentor?.width ?? 0) / 2) -
+      ((container?.x ?? 0) + (container?.width ?? 0) / 2),
+    )).toBeLessThanOrEqual(2);
     expect(await collectLayoutProblems(page)).toEqual([]);
   });
 });

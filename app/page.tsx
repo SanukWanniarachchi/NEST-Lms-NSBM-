@@ -5,7 +5,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { CourseCard } from "@/components/course-card";
 import { SectionHeading } from "@/components/section-heading";
-import { ArrowRightIcon, BookIcon, CheckIcon, NetworkIcon, RobotIcon, ShieldIcon, UsersIcon } from "@/components/icons";
+import { ArduinoIcon, ArrowRightIcon, BluetoothIcon, BookIcon, CheckIcon, CloudIcon, HttpsIcon, IotIcon, NetworkIcon, PacketTracerIcon, RobotIcon, ShieldIcon, UsersIcon, VpnIcon, WifiIcon } from "@/components/icons";
 import { courses, totalLessons } from "@/data/courses";
 import { clubContent, learnerBenefits } from "@/data/site";
 
@@ -16,7 +16,17 @@ export default function Home() {
     { label: "Robotics", icon: <RobotIcon /> },
   ];
   const tickerPaths = [...learningPaths, ...learningPaths, ...learningPaths];
-  const learningValues = ["Learn visually", "Build projects", "Share knowledge", "Peer-led sessions", "Micro-lessons", "Practical confidence"];
+  const technologies = [
+    { label: "Arduino", icon: <ArduinoIcon /> },
+    { label: "Packet Tracer", icon: <PacketTracerIcon /> },
+    { label: "Wi-Fi", icon: <WifiIcon /> },
+    { label: "Bluetooth", icon: <BluetoothIcon /> },
+    { label: "IoT", icon: <IotIcon /> },
+    { label: "Cloud", icon: <CloudIcon /> },
+    { label: "HTTPS", icon: <HttpsIcon /> },
+    { label: "VPN", icon: <VpnIcon /> },
+  ];
+  const tickerTechnologies = [...technologies, ...technologies];
 
   return (
     <>
@@ -59,12 +69,12 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="announcement-strip marquee-strip marquee-strip--values" aria-label="NEST learning values">
+        <section className="announcement-strip marquee-strip marquee-strip--technologies" aria-label="Technologies explored in NEST courses">
           <div className="marquee-window">
-            <div className="marquee-track marquee-track--values">
+            <div className="marquee-track marquee-track--technologies">
               {Array.from({ length: 2 }).map((_, index) => (
-                <div className="marquee-set marquee-set--values" aria-hidden={index > 0} key={index}>
-                  {learningValues.map((value) => <span key={`${value}-${index}`}>{value}</span>)}
+                <div className="marquee-set marquee-set--technologies" aria-hidden={index > 0} key={index}>
+                  {tickerTechnologies.map((item, itemIndex) => <span key={`${item.label}-${index}-${itemIndex}`}>{item.icon} {item.label}</span>)}
                 </div>
               ))}
             </div>

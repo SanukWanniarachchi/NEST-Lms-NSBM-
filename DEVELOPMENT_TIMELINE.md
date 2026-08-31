@@ -54,3 +54,9 @@
 - Added privacy-enhanced, interaction-loaded players with responsive 16:9 framing for desktop and mobile screens.
 - Added support for standard, shortened, Shorts, embed, and privacy-enhanced YouTube links.
 - Confirmed live sample playback and completed production, responsive, theme, accessibility, and visual regression checks.
+
+## 2026-08-31
+
+- Added a compact club leadership section with placeholders for the Master-in-Charge and student board profiles.
+- Replaced the lower homepage learning-values ribbon with consistently styled course-technology icons.
+- Confirmed the updated public release passes production build and all 109 Playwright checks.
