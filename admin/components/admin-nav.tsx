@@ -14,7 +14,7 @@ export function AdminNav() {
   const pathname = usePathname();
   return <nav className="admin-nav" aria-label="Admin navigation">
     {links.map((link) => {
-      const active = pathname === link.href;
+      const active = pathname === link.href || pathname.startsWith(`${link.href}/`);
       return <Link key={link.href} href={link.href} className={active ? "active" : ""} aria-current={active ? "page" : undefined}>{link.label}</Link>;
     })}
   </nav>;

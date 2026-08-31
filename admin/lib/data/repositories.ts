@@ -27,6 +27,8 @@ export type ResearchDraftInput = {
   tags: string[];
 };
 
+export class ResearchStateError extends Error {}
+
 export function createAdminRepository(db: AdminDatabase) {
   return {
     async findBySubject(subject: string) {
@@ -117,6 +119,12 @@ export function createResearchRepository(db: AdminDatabase) {
         : query.orderBy(desc(researchResources.updatedAt));
     },
 
+    async findById(id: string) {
+      const [record] = await db.select().from(researchResources)
+        .where(eq(researchResources.id, id)).limit(1);
+      return record ?? null;
+    },
+
     async createDraft(actorSubject: string, input: ResearchDraftInput) {
       return db.transaction(async (transaction) => {
         const [record] = await transaction.insert(researchResources).values({
@@ -137,7 +145,84 @@ export function createResearchRepository(db: AdminDatabase) {
         return record;
       });
     },
+
+    async updateDraft(actorSubject: string, id: string, input: ResearchDraftInput) {
+      return db.transaction(async (transaction) => {
+        const [previous] = await transaction.select().from(researchResources)
+          .where(eq(researchResources.id, id)).limit(1);
+        if (!previous) return null;
+        if (previous.status !== "draft") {
+          throw new ResearchStateError("Only draft research can be edited.");
+        }
+
+        const [next] = await transaction.update(researchResources).set({
+          ...input,
+          updatedBy: actorSubject,
+          updatedAt: new Date(),
+        }).where(eq(researchResources.id, id)).returning();
+        await transaction.insert(auditEvents).values({
+          actorSubject,
+          action: "research.updated",
+          entityType: "research_resource",
+          entityId: id,
+          previousState: auditState(previous),
+          nextState: auditState(next),
+        });
+        return next;
+      });
+    },
+
+    async publish(actorSubject: string, id: string, publishedOn: string) {
+      return changeResearchStatus(db, actorSubject, id, "draft", "published", publishedOn, "research.published");
+    },
+
+    async archive(actorSubject: string, id: string) {
+      return changeResearchStatus(db, actorSubject, id, ["draft", "published"], "archived", null, "research.archived");
+    },
+
+    async restore(actorSubject: string, id: string) {
+      return changeResearchStatus(db, actorSubject, id, "archived", "draft", null, "research.restored");
+    },
   };
+}
+
+async function changeResearchStatus(
+  db: AdminDatabase,
+  actorSubject: string,
+  id: string,
+  expectedStatus: "draft" | "published" | "archived" | Array<"draft" | "published" | "archived">,
+  status: "draft" | "published" | "archived",
+  publishedOn: string | null,
+  action: string,
+) {
+  return db.transaction(async (transaction) => {
+    const [previous] = await transaction.select().from(researchResources)
+      .where(eq(researchResources.id, id)).limit(1);
+    if (!previous) return null;
+
+    const allowed = Array.isArray(expectedStatus)
+      ? expectedStatus.includes(previous.status)
+      : previous.status === expectedStatus;
+    if (!allowed) {
+      throw new ResearchStateError(`Research cannot move from ${previous.status} to ${status}.`);
+    }
+
+    const [next] = await transaction.update(researchResources).set({
+      status,
+      publishedOn,
+      updatedBy: actorSubject,
+      updatedAt: new Date(),
+    }).where(eq(researchResources.id, id)).returning();
+    await transaction.insert(auditEvents).values({
+      actorSubject,
+      action,
+      entityType: "research_resource",
+      entityId: id,
+      previousState: auditState(previous),
+      nextState: auditState(next),
+    });
+    return next;
+  });
 }
 
 export function createAuditRepository(db: AdminDatabase) {

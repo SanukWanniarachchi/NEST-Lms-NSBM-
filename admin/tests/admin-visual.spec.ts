@@ -59,5 +59,17 @@ for (const viewport of viewports) {
       await expect(page).toHaveScreenshot(`admin-dashboard-${theme}-${viewport.name}.png`, { animations: "disabled", fullPage: true });
       expect(problems).toEqual([]);
     });
+
+    test(`research form ${theme} ${viewport.name}`, async ({ page }) => {
+      const problems = watchRuntimeProblems(page);
+      await page.setViewportSize(viewport);
+      await page.emulateMedia({ colorScheme: theme, reducedMotion: "reduce" });
+      await signIn(page);
+      await page.goto("/research/new");
+      await expect(page.getByLabel("Admin navigation").getByRole("link", { name: "Research" })).toHaveAttribute("aria-current", "page");
+      await expectStableLayout(page);
+      await expect(page).toHaveScreenshot(`admin-research-form-${theme}-${viewport.name}.png`, { animations: "disabled", fullPage: true });
+      expect(problems).toEqual([]);
+    });
   }
 }

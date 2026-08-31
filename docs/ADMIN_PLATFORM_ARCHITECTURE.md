@@ -105,6 +105,20 @@ Required database environment variables are documented in
 `npm run admin:db:seed-local`. Production migrations must run as a controlled
 deployment step before the new application version starts.
 
+## Phase 3 implementation
+
+Phase 3 adds an authenticated research workspace on top of the Phase 2 data
+boundary. Administrators can search and filter records, create and edit drafts,
+preview the intended public presentation, publish reviewed drafts, archive
+active records, and restore archived records to drafts. Every Server Action
+revalidates the active admin session, validates its input, and writes an audit
+event in the same transaction as the content mutation.
+
+Published records remain in the admin database during this phase. The public
+application stays static and does not query the protected database directly;
+the approved publishing bridge is delivered separately before production
+launch.
+
 ## Handover contract
 
 The NSBM infrastructure owner will supply the SSO issuer details, registered

@@ -65,13 +65,50 @@ test("migrations and repositories preserve allowlist, content, and audit history
     assert.equal(draft.status, "draft");
     assert.equal((await research.list("draft")).length, 1);
 
+    const updated = await research.updateDraft("admin:test-editor", draft.id, {
+      slug: "secure-campus-networking",
+      title: "Secure Campus Networking",
+      summary: "An updated record that verifies durable research editing and publication.",
+      type: "research_paper",
+      authors: ["NEST Research Team", "Test Editor"],
+      href: "https://example.edu/research/secure-campus-networking",
+      tags: ["Cybersecurity", "Networking"],
+    });
+    assert.equal(updated?.title, "Secure Campus Networking");
+
+    const published = await research.publish("admin:test-editor", draft.id, "2026-08-31");
+    assert.equal(published?.status, "published");
+    assert.equal(published?.publishedOn, "2026-08-31");
+    await assert.rejects(
+      research.updateDraft("admin:test-editor", draft.id, {
+        slug: "should-not-save",
+        title: "Should Not Save",
+        summary: "Published records must not be edited without a new workflow transition.",
+        type: "document",
+        authors: ["Test Editor"],
+        href: "https://example.edu/research/should-not-save",
+        tags: ["Testing"],
+      }),
+      /Only draft research can be edited/,
+    );
+
+    const archived = await research.archive("admin:test-editor", draft.id);
+    assert.equal(archived?.status, "archived");
+    assert.equal(archived?.publishedOn, null);
+    const restored = await research.restore("admin:test-editor", draft.id);
+    assert.equal(restored?.status, "draft");
+
     await admins.setActive("system:test", "admin:test-editor", false);
     assert.equal(await admins.isAllowed("admin:test-editor"), false);
 
     const metrics = await getContentMetrics(db);
-    assert.deepEqual(metrics, { activeAdmins: 0, researchResources: 1, auditEvents: 3 });
+    assert.deepEqual(metrics, { activeAdmins: 0, researchResources: 1, auditEvents: 7 });
     assert.deepEqual((await audit.listRecent()).map((event) => event.action), [
       "admin.deactivated",
+      "research.restored",
+      "research.archived",
+      "research.published",
+      "research.updated",
       "research.created",
       "admin.created",
     ]);

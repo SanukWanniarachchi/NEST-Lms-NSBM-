@@ -13,12 +13,13 @@ export default async function DashboardPage() {
       <article><small>Active administrators</small><strong>{metrics.activeAdmins}</strong><p>Identities currently authorised by the allowlist.</p></article>
     </section>
     <section className="admin-section">
-      <div className="section-heading"><div><p className="eyebrow">Phase 2 status</p><h2>Protected data foundation is active</h2></div></div>
+      <div className="section-heading"><div><p className="eyebrow">Phase 3 status</p><h2>Research publishing workflow is active</h2></div></div>
       <div className="status-list">
         <div><span className="status-dot complete" /><div><strong>Session boundary</strong><p>Protected pages verify the signed admin session on the server.</p></div><small>Complete</small></div>
         <div><span className="status-dot complete" /><div><strong>Local identity adapter</strong><p>Development access is isolated from production SSO configuration.</p></div><small>Complete</small></div>
         <div><span className="status-dot complete" /><div><strong>Persistent content</strong><p>PostgreSQL migrations, repositories, and audit logging are active.</p></div><small>Complete</small></div>
-        <div><span className="status-dot pending" /><div><strong>Research workflow</strong><p>Create, preview, publish, archive, and restore screens begin in Phase 3.</p></div><small>Next phase</small></div>
+        <div><span className="status-dot complete" /><div><strong>Research workflow</strong><p>Create, edit, preview, publish, archive, and restore actions are audited and available.</p></div><small>Complete</small></div>
+        <div><span className="status-dot pending" /><div><strong>Course and announcement workflows</strong><p>Managed learning content and club updates begin in Phase 4.</p></div><small>Next phase</small></div>
       </div>
     </section>
   </div>;

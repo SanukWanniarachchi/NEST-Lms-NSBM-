@@ -34,6 +34,8 @@ npm run admin:dev
 
 Open `http://localhost:3001`. Local credentials and database settings are read from the ignored `admin/.env.local` file. The local adapter uses a PostgreSQL-compatible PGlite database under the ignored `admin/.data/` directory and is disabled in production builds.
 
+The Phase 3 admin workspace supports audited research drafts, editing, publication previews, publishing, archiving, and restoration. Publishing to the static public website remains isolated until the deployment bridge is introduced in a later phase.
+
 Set `NEST_DATABASE_DRIVER=postgres` and provide `DATABASE_URL` for the future NSBM PostgreSQL environment. The same versioned migrations and repository schema are used by both adapters.
 
 ## Validation

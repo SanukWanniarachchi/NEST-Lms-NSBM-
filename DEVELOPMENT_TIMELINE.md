@@ -66,3 +66,5 @@
 - Added a compact club leadership section with placeholders for the Master-in-Charge and student board profiles.
 - Replaced the lower homepage learning-values ribbon with consistently styled course-technology icons.
 - Confirmed the updated public release passes production build and all 109 Playwright checks.
+- Completed Phase 3 with an authenticated research workflow for creating, editing, previewing, publishing, archiving, and restoring resources.
+- Added server-side research validation, audited lifecycle transitions, repeatable database test setup, and responsive admin form coverage.

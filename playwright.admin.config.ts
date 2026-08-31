@@ -5,6 +5,7 @@ export default defineConfig({
   testDir: "./admin/tests",
   testMatch: "**/*.spec.ts",
   fullyParallel: false,
+  workers: 1,
   reporter: [["list"], ["html", { open: "never", outputFolder: "playwright-report/admin" }]],
   expect: {
     toHaveScreenshot: {
