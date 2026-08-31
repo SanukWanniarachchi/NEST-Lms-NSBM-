@@ -22,3 +22,11 @@ export function SunIcon(props: IconProps) { return <svg {...base} {...props}><ci
 export function MoonIcon(props: IconProps) { return <svg {...base} {...props}><path d="M20 15.3A8.5 8.5 0 0 1 8.7 4 8.5 8.5 0 1 0 20 15.3"/></svg>; }
 export function MailIcon(props: IconProps) { return <svg {...base} {...props}><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>; }
 export function LocationIcon(props: IconProps) { return <svg {...base} {...props}><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0"/><circle cx="12" cy="10" r="2.5"/></svg>; }
+export function ArduinoIcon(props: IconProps) { return <svg {...base} {...props}><path d="M8.3 8.2c-3.4 0-5.5 1.7-5.5 3.8s2.1 3.8 5.5 3.8c4 0 6.2-7.6 10.1-7.6 1.7 0 2.8 1.7 2.8 3.8s-1.1 3.8-2.8 3.8c-3.9 0-6.1-7.6-10.1-7.6Z"/><path d="M5.7 12h5.1m6.1 0h3m-1.5-1.5v3"/></svg>; }
+export function PacketTracerIcon(props: IconProps) { return <svg {...base} {...props}><circle cx="5" cy="12" r="2.4"/><circle cx="19" cy="6" r="2.4"/><circle cx="19" cy="18" r="2.4"/><path d="m7.4 11 9.2-4m-9.2 6 9.2 4M12 8.9v6.2"/></svg>; }
+export function WifiIcon(props: IconProps) { return <svg {...base} {...props}><path d="M3 9a14 14 0 0 1 18 0M6.2 12.2a9 9 0 0 1 11.6 0M9.3 15.4a4.3 4.3 0 0 1 5.4 0"/><circle cx="12" cy="19" r="1" fill="currentColor" stroke="none"/></svg>; }
+export function BluetoothIcon(props: IconProps) { return <svg {...base} {...props}><path d="m7 7 10 10-5 4V3l5 4L7 17"/></svg>; }
+export function IotIcon(props: IconProps) { return <svg {...base} {...props}><circle cx="12" cy="12" r="3"/><circle cx="12" cy="3.5" r="1.7"/><circle cx="4.5" cy="17" r="1.7"/><circle cx="19.5" cy="17" r="1.7"/><path d="M12 5.2V9m-2.5 4.8-3.6 2.3m8.6-2.3 3.6 2.3"/></svg>; }
+export function CloudIcon(props: IconProps) { return <svg {...base} {...props}><path d="M6.5 18.5h11a4 4 0 0 0 .6-8 6.2 6.2 0 0 0-11.8-1.2A4.7 4.7 0 0 0 6.5 18.5Z"/></svg>; }
+export function HttpsIcon(props: IconProps) { return <svg {...base} {...props}><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10M12 14v3"/></svg>; }
+export function VpnIcon(props: IconProps) { return <svg {...base} {...props}><path d="M12 3 5 6v5c0 4.6 2.9 8 7 10 4.1-2 7-5.4 7-10V6Z"/><path d="M9 12h6m-3-3v6"/></svg>; }
