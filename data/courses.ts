@@ -10,7 +10,7 @@ function microLesson(
   keyPoints: string[],
   activity: string,
   duration = "2 min",
-  video?: Pick<Lesson, "youtubeUrl" | "videoDuration">,
+  video?: Pick<Lesson, "youtubeUrl" | "videoDuration" | "videoOrientation">,
 ): Lesson {
   const whatMatch = title.match(/^What is (.+)\?$/i);
   const objective = whatMatch
@@ -32,6 +32,15 @@ function microLesson(
 const cyber = microLesson;
 const network = microLesson;
 const robot = microLesson;
+
+const portraitVideo = (
+  youtubeUrl: string,
+  videoDuration: string,
+): Pick<Lesson, "youtubeUrl" | "videoDuration" | "videoOrientation"> => ({
+  youtubeUrl,
+  videoDuration,
+  videoOrientation: "portrait",
+});
 
 export const courses: Course[] = [
   {
@@ -67,11 +76,11 @@ export const courses: Course[] = [
         title: "Introduction to Cybersecurity",
         description: "Build the vocabulary needed to discuss threats, protection, and digital trust.",
         lessons: [
-          cyber("what-is-cybersecurity", "What is Cybersecurity?", "Understand how people, processes, and technology protect systems and information.", ["Digital assets", "Threats and safeguards", "Real-world incidents"], "List three digital assets you use at university and one protection for each."),
-          cyber("why-cybersecurity-matters", "Why Cybersecurity Matters", "Connect security incidents to privacy, finances, learning, reputation, and organisational continuity.", ["Personal impact", "Organisational impact", "Shared responsibility"], "Trace the possible impact of a compromised university account."),
-          cyber("types-of-hackers", "Types of Hackers", "Compare white-hat, black-hat, and grey-hat activity through permission and intent.", ["White-hat", "Black-hat", "Grey-hat"], "Classify three short scenarios by intent and authorisation."),
-          cyber("common-cyber-threats", "Common Cyber Threats Overview", "Survey the attacks beginners are most likely to encounter online.", ["Malware", "Phishing", "Account compromise"], "Match each threat to the warning sign that best reveals it."),
-          cyber("cia-triad", "The CIA Triad", "Use confidentiality, integrity, and availability to describe what security protects.", ["Confidentiality", "Integrity", "Availability"], "Apply the CIA triad to a student records system."),
+          cyber("what-is-cybersecurity", "What is Cybersecurity?", "Understand how people, processes, and technology protect systems and information.", ["Digital assets", "Threats and safeguards", "Real-world incidents"], "List three digital assets you use at university and one protection for each.", "2 min", portraitVideo("https://www.youtube.com/watch?v=4j9becKu17g", "1:56")),
+          cyber("why-cybersecurity-matters", "Why Cybersecurity Matters", "Connect security incidents to privacy, finances, learning, reputation, and organisational continuity.", ["Personal impact", "Organisational impact", "Shared responsibility"], "Trace the possible impact of a compromised university account.", "2 min", portraitVideo("https://www.youtube.com/watch?v=AEE9xxLteqA", "1:12")),
+          cyber("types-of-hackers", "Types of Hackers", "Compare white-hat, black-hat, and grey-hat activity through permission and intent.", ["White-hat", "Black-hat", "Grey-hat"], "Classify three short scenarios by intent and authorisation.", "2 min", portraitVideo("https://www.youtube.com/watch?v=0iaHiwzGpjQ", "1:02")),
+          cyber("common-cyber-threats", "Common Cyber Threats Overview", "Survey the attacks beginners are most likely to encounter online.", ["Malware", "Phishing", "Account compromise"], "Match each threat to the warning sign that best reveals it.", "2 min", portraitVideo("https://www.youtube.com/watch?v=56CoPa25U9s", "1:02")),
+          cyber("cia-triad", "The CIA Triad", "Use confidentiality, integrity, and availability to describe what security protects.", ["Confidentiality", "Integrity", "Availability"], "Apply the CIA triad to a student records system.", "2 min", portraitVideo("https://www.youtube.com/watch?v=2AkZoOVsAh8", "1:07")),
         ],
       },
       {
@@ -79,12 +88,12 @@ export const courses: Course[] = [
         title: "Common Attacks",
         description: "Recognise how common attacks work and the signals that help expose them.",
         lessons: [
-          cyber("what-is-malware", "What is Malware?", "Learn how malicious software disrupts, spies on, damages, or controls devices.", ["Malicious software", "Delivery methods", "Warning signs"], "Identify safe first actions after noticing suspicious device behaviour."),
+          cyber("what-is-malware", "What is Malware?", "Learn how malicious software disrupts, spies on, damages, or controls devices.", ["Malicious software", "Delivery methods", "Warning signs"], "Identify safe first actions after noticing suspicious device behaviour.", "2 min", portraitVideo("https://www.youtube.com/watch?v=tzHGuYhDGKk", "1:07")),
           cyber("virus-worm-trojan", "Virus vs Worm vs Trojan", "Separate three common malware types by how they spread and disguise themselves.", ["Virus", "Worm", "Trojan"], "Sort example behaviours into virus, worm, or Trojan categories."),
-          cyber("what-is-phishing", "What is Phishing?", "Spot messages designed to steal information or pressure you into an unsafe action.", ["Sender clues", "Suspicious links", "Urgency and impersonation"], "Inspect a sample email and mark every phishing indicator."),
+          cyber("what-is-phishing", "What is Phishing?", "Spot messages designed to steal information or pressure you into an unsafe action.", ["Sender clues", "Suspicious links", "Urgency and impersonation"], "Inspect a sample email and mark every phishing indicator.", "2 min", portraitVideo("https://www.youtube.com/watch?v=-qbco0aZ6uI", "1:07")),
           cyber("password-attacks", "Password Attacks", "Understand brute-force and dictionary attacks and why predictable passwords fail.", ["Brute force", "Dictionary attacks", "Credential reuse"], "Compare weak and strong passphrases without revealing a real password."),
           cyber("man-in-the-middle", "Man-in-the-Middle Attacks", "See how an attacker can intercept communication between two trusted endpoints.", ["Interception", "Untrusted networks", "Encrypted connections"], "Draw the normal path and intercepted path of a web request."),
-          cyber("social-engineering", "Social Engineering Basics", "Recognise manipulation that targets human trust rather than technical weaknesses.", ["Pretexting", "Authority", "Urgency"], "Rewrite a pressured response into a calm verification step."),
+          cyber("social-engineering", "Social Engineering Basics", "Recognise manipulation that targets human trust rather than technical weaknesses.", ["Pretexting", "Authority", "Urgency"], "Rewrite a pressured response into a calm verification step.", "2 min", portraitVideo("https://www.youtube.com/watch?v=7V9lRQVQLbk", "0:58")),
           cyber("ransomware", "Ransomware Explained", "Understand how ransomware blocks access to data and why recovery planning matters.", ["Encryption for extortion", "Backups", "Incident reporting"], "Choose the safest first responses to a ransomware warning."),
           cyber("zero-day-attacks", "Zero-Day Attacks", "Learn why previously unknown vulnerabilities can be difficult to defend against.", ["Unknown vulnerability", "Exploit window", "Layered defence"], "Explain why updates and multiple safeguards still matter when no patch exists."),
         ],
@@ -161,7 +170,7 @@ export const courses: Course[] = [
         title: "Introduction to Networking",
         description: "Discover why networks exist and the devices and links that make them possible.",
         lessons: [
-          network("what-is-networking", "What is Networking?", "See how connected devices communicate, share resources, and reach internet services.", ["Connected devices", "Communication", "Internet basics"], "Draw a network containing two devices and one shared service.", "2 min", { youtubeUrl: "https://www.youtube.com/watch?v=keeqnciDVOo", videoDuration: "1:40" }),
+          network("what-is-networking", "What is Networking?", "See how connected devices communicate, share resources, and reach internet services.", ["Connected devices", "Communication", "Internet basics"], "Draw a network containing two devices and one shared service."),
           network("types-of-networks", "Types of Networks", "Compare LAN, WAN, and MAN networks by coverage, ownership, and purpose.", ["LAN", "WAN", "MAN"], "Classify home, campus, city, and global network examples."),
           network("networking-devices", "Networking Devices", "Understand the basic roles of routers, switches, modems, and hubs.", ["Router", "Switch", "Modem and hub"], "Match each device to the traffic-handling job it performs."),
           network("wired-vs-wireless", "Wired vs Wireless Networks", "Compare Ethernet and Wi-Fi for speed, mobility, interference, and deployment.", ["Ethernet", "Wi-Fi", "Performance trade-offs"], "Recommend wired or wireless connectivity for three campus situations."),

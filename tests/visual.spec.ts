@@ -263,13 +263,13 @@ test.describe("about leadership", () => {
 
 test.describe("lesson videos", () => {
   test("accepts common YouTube URL formats and rejects unrelated URLs", () => {
-    const id = "keeqnciDVOo";
+    const id = "4j9becKu17g";
 
     expect(getYouTubeVideoId(`https://www.youtube.com/watch?v=${id}`)).toBe(id);
     expect(getYouTubeVideoId(`https://youtu.be/${id}`)).toBe(id);
     expect(getYouTubeVideoId(`https://www.youtube.com/shorts/${id}`)).toBe(id);
     expect(getYouTubeVideoId(`https://www.youtube-nocookie.com/embed/${id}`)).toBe(id);
-    expect(getYouTubeVideoId("https://example.com/watch?v=keeqnciDVOo")).toBeNull();
+    expect(getYouTubeVideoId("https://example.com/watch?v=4j9becKu17g")).toBeNull();
     expect(getYouTubeVideoId("not-a-valid-video-id")).toBeNull();
   });
 
@@ -283,9 +283,9 @@ test.describe("lesson videos", () => {
         body: "<!doctype html><title>YouTube test player</title>",
       }));
       await page.emulateMedia({ reducedMotion: "no-preference", colorScheme: "light" });
-      await openPage(page, "/courses/networking-essentials/", "light", viewport);
+      await openPage(page, "/courses/cybersecurity-foundations/", "light", viewport);
 
-      const trigger = page.getByRole("button", { name: /Watch What is Networking\? video/ });
+      const trigger = page.getByRole("button", { name: /Watch What is Cybersecurity\? video/ });
       await expect(trigger).toHaveAttribute("aria-expanded", "false");
       await trigger.click();
       await expect(trigger).toHaveAttribute("aria-expanded", "true");
@@ -294,13 +294,13 @@ test.describe("lesson videos", () => {
       await expect(shell).toBeVisible();
       const box = await shell.boundingBox();
       expect(box).not.toBeNull();
-      expect((box?.width ?? 0) / (box?.height ?? 1)).toBeCloseTo(16 / 9, 1);
+      expect((box?.width ?? 0) / (box?.height ?? 1)).toBeCloseTo(9 / 16, 1);
       expect(await collectLayoutProblems(page)).toEqual([]);
 
       const iframe = shell.locator("iframe");
-      await expect(iframe).toHaveAttribute("src", /youtube-nocookie\.com\/embed\/keeqnciDVOo/);
+      await expect(iframe).toHaveAttribute("src", /youtube-nocookie\.com\/embed\/4j9becKu17g/);
       await expect(iframe).toHaveCount(1);
-      await expect(page.getByRole("link", { name: "Open on YouTube" })).toHaveAttribute("href", "https://www.youtube.com/watch?v=keeqnciDVOo");
+      await expect(page.getByRole("link", { name: "Open on YouTube" })).toHaveAttribute("href", "https://www.youtube.com/watch?v=4j9becKu17g");
     });
   }
 
@@ -312,14 +312,17 @@ test.describe("lesson videos", () => {
     await page.emulateMedia({ reducedMotion: "reduce", colorScheme: "dark" });
     await openPage(
       page,
-      "/courses/networking-essentials/lessons/what-is-networking/",
+      "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
       "dark",
       { name: "desktop", width: 1440, height: 900 },
     );
 
     const frame = page.locator(".video-frame");
     await expect(frame.locator("iframe")).toHaveCount(0);
-    await page.getByRole("button", { name: "Load video player for What is Networking?" }).click();
+    const box = await frame.boundingBox();
+    expect(box).not.toBeNull();
+    expect((box?.width ?? 0) / (box?.height ?? 1)).toBeCloseTo(9 / 16, 1);
+    await page.getByRole("button", { name: "Load video player for What is Cybersecurity?" }).click();
     await expect(frame.locator("iframe")).toHaveCount(1);
     expect(await collectLayoutProblems(page)).toEqual([]);
   });

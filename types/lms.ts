@@ -20,6 +20,7 @@ export interface Lesson {
   recap: string;
   youtubeUrl?: string;
   videoDuration?: string;
+  videoOrientation?: "landscape" | "portrait";
   completed?: boolean;
 }
 
