@@ -331,6 +331,16 @@ export function getCourse(slug: string) {
   return courses.find((course) => course.slug === slug);
 }
 
+export function getCourseModule(courseSlug: string, moduleId: string) {
+  const course = getCourse(courseSlug);
+  const courseModule = course?.modules.find((item) => item.id === moduleId);
+  return course && courseModule ? { course, module: courseModule } : undefined;
+}
+
+export function getAllModuleParams() {
+  return courses.flatMap((course) => course.modules.map((module) => ({ slug: course.slug, module: module.id })));
+}
+
 export function getLesson(courseSlug: string, lessonSlug: string) {
   const course = getCourse(courseSlug);
   if (!course) return undefined;

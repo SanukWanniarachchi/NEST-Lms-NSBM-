@@ -1,5 +1,6 @@
 import { expect, test, type Page } from "@playwright/test";
 import { getModuleRecommendations, getRecommendationMappings } from "../data/follow-up-courses";
+import { getModuleQuiz, moduleQuizzes } from "../data/module-quizzes";
 import { getYouTubeVideoId } from "../lib/youtube";
 
 type Viewport = {
@@ -19,6 +20,7 @@ const visualPages = [
   { name: "course-cybersecurity", path: "/courses/cybersecurity-foundations/" },
   { name: "lesson-cybersecurity", path: "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/" },
   { name: "module-end-cybersecurity", path: "/courses/cybersecurity-foundations/lessons/cia-triad/" },
+  { name: "checkpoint-cybersecurity", path: "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/" },
 ];
 
 const layoutPages = [
@@ -330,31 +332,47 @@ test.describe("lesson videos", () => {
   });
 });
 
-test.describe("module completion recommendations", () => {
-  test("covers every module with three current course links", () => {
+test.describe("module checkpoints and recommendations", () => {
+  const expectedModules = [
+    "cybersecurity-foundations/introduction-to-cybersecurity",
+    "cybersecurity-foundations/common-attacks",
+    "cybersecurity-foundations/authentication-password-security",
+    "cybersecurity-foundations/network-security-basics",
+    "cybersecurity-foundations/safe-practices",
+    "networking-essentials/introduction-to-networking",
+    "networking-essentials/network-fundamentals",
+    "networking-essentials/network-security-basics",
+    "networking-essentials/internet-communication",
+    "networking-essentials/practical-networking",
+    "robotics-fundamentals/introduction-to-robotics",
+    "robotics-fundamentals/electronics-basics",
+    "robotics-fundamentals/microcontrollers",
+    "robotics-fundamentals/motion-control",
+    "robotics-fundamentals/smart-robotics-iot",
+  ];
+
+  test("covers every module with accountable questions and three current course links", () => {
     const mappings = getRecommendationMappings();
-    const expectedModules = [
-      "cybersecurity-foundations/introduction-to-cybersecurity",
-      "cybersecurity-foundations/common-attacks",
-      "cybersecurity-foundations/authentication-password-security",
-      "cybersecurity-foundations/network-security-basics",
-      "cybersecurity-foundations/safe-practices",
-      "networking-essentials/introduction-to-networking",
-      "networking-essentials/network-fundamentals",
-      "networking-essentials/network-security-basics",
-      "networking-essentials/internet-communication",
-      "networking-essentials/practical-networking",
-      "robotics-fundamentals/introduction-to-robotics",
-      "robotics-fundamentals/electronics-basics",
-      "robotics-fundamentals/microcontrollers",
-      "robotics-fundamentals/motion-control",
-      "robotics-fundamentals/smart-robotics-iot",
-    ];
     expect(Object.keys(mappings).sort()).toEqual(expectedModules.sort());
+    expect(moduleQuizzes.map((quiz) => quiz.id).sort()).toEqual(expectedModules.sort());
 
     for (const moduleKey of expectedModules) {
       const [courseSlug, moduleId] = moduleKey.split("/");
       const recommendations = getModuleRecommendations(courseSlug, moduleId);
+      const quiz = getModuleQuiz(courseSlug, moduleId);
+      expect(quiz, moduleKey).toBeDefined();
+      expect(quiz?.questions).toHaveLength(3);
+      expect(quiz?.passingScore).toBe(2);
+      expect(new Set(quiz?.questions.map((question) => question.id)).size).toBe(3);
+      for (const question of quiz?.questions ?? []) {
+        expect(question.choices).toContain(question.correctAnswer);
+        expect(new Set(question.choices).size).toBe(question.choices.length);
+        expect(question.explanation.length).toBeGreaterThan(30);
+        expect(question.source.href).toMatch(/^https:\/\//);
+        expect(question.source.publisher.length).toBeGreaterThan(3);
+        expect(question.source.section.length).toBeGreaterThan(8);
+        expect(question.source.reviewedOn).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      }
       expect(recommendations, moduleKey).toHaveLength(3);
       expect(new Set(recommendations.map((item) => item.id)).size).toBe(3);
       for (const recommendation of recommendations) {
@@ -370,26 +388,64 @@ test.describe("module completion recommendations", () => {
     { name: "desktop-16-10", width: 1440, height: 900 },
     { name: "mobile", width: 390, height: 844 },
   ]) {
-    test(`opens and remembers the completion dialog on ${viewport.name}`, async ({ page }) => {
-      await openPage(page, "/courses/cybersecurity-foundations/lessons/cia-triad/", "light", viewport);
-      await page.getByRole("button", { name: "Complete module" }).click();
+    test(`passes, explains, and remembers a checkpoint on ${viewport.name}`, async ({ page }) => {
+      await openPage(page, "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/", "light", viewport);
+      await page.getByRole("button", { name: "Start checkpoint" }).click();
 
-      const dialog = page.getByRole("dialog");
-      await expect(dialog).toBeVisible();
-      await expect(dialog.getByRole("article")).toHaveCount(3);
-      await expect(dialog.getByRole("link", { name: /View course and registration/ })).toHaveCount(3);
+      const answers: Record<string, string> = {
+        "Which NIST CSF 2.0 function was added to place organizational decision-making around the other five functions?": "Govern",
+        "Which security objective protects information from unauthorized disclosure?": "Confidentiality",
+        "Which security objective is affected when records are changed without authorization?": "Integrity",
+      };
+      for (let index = 0; index < 3; index += 1) {
+        const prompt = (await page.locator(".quiz-question h1").textContent()) ?? "";
+        await page.locator(".quiz-choice").filter({ hasText: answers[prompt] }).click();
+        await expect(page.locator(".quiz-feedback.correct")).toBeVisible();
+        await expect(page.locator(".quiz-feedback a")).toHaveAttribute("href", /^https:\/\//);
+        await page.getByRole("button", { name: index === 2 ? "View results" : "Next question" }).click();
+      }
+
+      await expect(page.locator(".quiz-result-mark")).toContainText("3/3");
+      await expect(page.locator(".course-recommendation")).toHaveCount(3);
+      await expect(page.getByRole("link", { name: /View official course/ })).toHaveCount(3);
+      await page.evaluate(() => {
+        document.documentElement.style.scrollBehavior = "auto";
+        window.scrollTo(0, 0);
+      });
+      await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0);
       expect(await collectLayoutProblems(page)).toEqual([]);
-
+      await expect(page.locator(".checkpoint-shell")).toHaveScreenshot(`checkpoint-result-light-${viewport.name}.png`, { animations: "disabled" });
       expect(await page.evaluate(() => JSON.parse(localStorage.getItem("nest-module-completions-v1") ?? "[]"))).toContain("cybersecurity-foundations/introduction-to-cybersecurity");
-      await dialog.getByRole("button", { name: "Done" }).click();
-      await expect(page.getByRole("button", { name: "View certificate courses" })).toBeVisible();
-      await page.getByRole("button", { name: "View certificate courses" }).click();
-      await expect(dialog).toBeVisible();
+      expect(await page.evaluate(() => JSON.parse(localStorage.getItem("nest-module-quiz-results-v1") ?? "{}")["cybersecurity-foundations/introduction-to-cybersecurity"].passed)).toBe(true);
+      await page.reload();
+      await expect(page.locator(".quiz-previous")).toContainText("3/3");
     });
   }
 
-  test("does not show completion controls before the final lesson", async ({ page }) => {
+  test("links only the final lesson to its module checkpoint", async ({ page }) => {
+    await openPage(page, "/courses/cybersecurity-foundations/lessons/cia-triad/", "light", { name: "desktop", width: 1440, height: 900 });
+    await expect(page.getByRole("link", { name: "Start checkpoint" })).toHaveAttribute("href", "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/");
     await openPage(page, "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/", "light", { name: "desktop", width: 1440, height: 900 });
-    await expect(page.getByRole("button", { name: "Complete module" })).toHaveCount(0);
+    await expect(page.getByRole("link", { name: "Start checkpoint" })).toHaveCount(0);
+  });
+
+  test("keeps recommendations hidden when the learner does not pass", async ({ page }) => {
+    await openPage(page, "/courses/networking-essentials/checkpoints/network-fundamentals/", "light", { name: "desktop", width: 1440, height: 900 });
+    await page.getByRole("button", { name: "Start checkpoint" }).click();
+    for (let index = 0; index < 3; index += 1) {
+      const prompt = await page.locator(".quiz-question h1").textContent();
+      const correct = getModuleQuiz("networking-essentials", "network-fundamentals")?.questions.find((question) => question.prompt === prompt)?.correctAnswer;
+      const wrongChoice = page.locator(".quiz-choice").filter({ hasNotText: correct ?? "" }).first();
+      await wrongChoice.click();
+      await page.getByRole("button", { name: index === 2 ? "View results" : "Next question" }).click();
+    }
+    await expect(page.locator(".quiz-result-mark")).toContainText("0/3");
+    await expect(page.locator(".checkpoint-recommendations")).toHaveCount(0);
+    await expect(page.getByRole("button", { name: "Retry checkpoint" })).toBeVisible();
+  });
+
+  test("does not show checkpoint controls before the final lesson", async ({ page }) => {
+    await openPage(page, "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/", "light", { name: "desktop", width: 1440, height: 900 });
+    await expect(page.getByRole("link", { name: "Start checkpoint" })).toHaveCount(0);
   });
 });
