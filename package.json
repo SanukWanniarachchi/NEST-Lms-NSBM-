@@ -10,8 +10,7 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "test:visual": "playwright test",
-    "test:visual:update": "playwright test --update-snapshots",
-    "test:activity-lab": "playwright test --config prototypes/learning-activity-lab/playwright.config.ts"
+    "test:visual:update": "playwright test --update-snapshots"
   },
   "dependencies": {
     "next": "16.3.0",
