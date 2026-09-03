@@ -1,4 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
+import { getModuleRecommendations, getRecommendationMappings } from "../data/follow-up-courses";
 import { getYouTubeVideoId } from "../lib/youtube";
 
 type Viewport = {
@@ -10,13 +11,14 @@ type Viewport = {
 const visualPages = [
   { name: "home", path: "/" },
   { name: "courses", path: "/courses/" },
-  { name: "research", path: "/research/" },
+  { name: "news", path: "/news/" },
   { name: "announcements", path: "/announcements/" },
   { name: "community", path: "/community/" },
   { name: "about", path: "/about/" },
   { name: "contact", path: "/contact/" },
   { name: "course-cybersecurity", path: "/courses/cybersecurity-foundations/" },
   { name: "lesson-cybersecurity", path: "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/" },
+  { name: "module-end-cybersecurity", path: "/courses/cybersecurity-foundations/lessons/cia-triad/" },
 ];
 
 const layoutPages = [
@@ -325,5 +327,69 @@ test.describe("lesson videos", () => {
     await page.getByRole("button", { name: "Load video player for What is Cybersecurity?" }).click();
     await expect(frame.locator("iframe")).toHaveCount(1);
     expect(await collectLayoutProblems(page)).toEqual([]);
+  });
+});
+
+test.describe("module completion recommendations", () => {
+  test("covers every module with three current course links", () => {
+    const mappings = getRecommendationMappings();
+    const expectedModules = [
+      "cybersecurity-foundations/introduction-to-cybersecurity",
+      "cybersecurity-foundations/common-attacks",
+      "cybersecurity-foundations/authentication-password-security",
+      "cybersecurity-foundations/network-security-basics",
+      "cybersecurity-foundations/safe-practices",
+      "networking-essentials/introduction-to-networking",
+      "networking-essentials/network-fundamentals",
+      "networking-essentials/network-security-basics",
+      "networking-essentials/internet-communication",
+      "networking-essentials/practical-networking",
+      "robotics-fundamentals/introduction-to-robotics",
+      "robotics-fundamentals/electronics-basics",
+      "robotics-fundamentals/microcontrollers",
+      "robotics-fundamentals/motion-control",
+      "robotics-fundamentals/smart-robotics-iot",
+    ];
+    expect(Object.keys(mappings).sort()).toEqual(expectedModules.sort());
+
+    for (const moduleKey of expectedModules) {
+      const [courseSlug, moduleId] = moduleKey.split("/");
+      const recommendations = getModuleRecommendations(courseSlug, moduleId);
+      expect(recommendations, moduleKey).toHaveLength(3);
+      expect(new Set(recommendations.map((item) => item.id)).size).toBe(3);
+      for (const recommendation of recommendations) {
+        expect(recommendation.href).toMatch(/^https:\/\//);
+        expect(recommendation.registration.length).toBeGreaterThan(30);
+        expect(recommendation.credential.length).toBeGreaterThan(20);
+        expect(recommendation.verifiedOn).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      }
+    }
+  });
+
+  for (const viewport of [
+    { name: "desktop-16-10", width: 1440, height: 900 },
+    { name: "mobile", width: 390, height: 844 },
+  ]) {
+    test(`opens and remembers the completion dialog on ${viewport.name}`, async ({ page }) => {
+      await openPage(page, "/courses/cybersecurity-foundations/lessons/cia-triad/", "light", viewport);
+      await page.getByRole("button", { name: "Complete module" }).click();
+
+      const dialog = page.getByRole("dialog");
+      await expect(dialog).toBeVisible();
+      await expect(dialog.getByRole("article")).toHaveCount(3);
+      await expect(dialog.getByRole("link", { name: /View course and registration/ })).toHaveCount(3);
+      expect(await collectLayoutProblems(page)).toEqual([]);
+
+      expect(await page.evaluate(() => JSON.parse(localStorage.getItem("nest-module-completions-v1") ?? "[]"))).toContain("cybersecurity-foundations/introduction-to-cybersecurity");
+      await dialog.getByRole("button", { name: "Done" }).click();
+      await expect(page.getByRole("button", { name: "View certificate courses" })).toBeVisible();
+      await page.getByRole("button", { name: "View certificate courses" }).click();
+      await expect(dialog).toBeVisible();
+    });
+  }
+
+  test("does not show completion controls before the final lesson", async ({ page }) => {
+    await openPage(page, "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/", "light", { name: "desktop", width: 1440, height: 900 });
+    await expect(page.getByRole("button", { name: "Complete module" })).toHaveCount(0);
   });
 });

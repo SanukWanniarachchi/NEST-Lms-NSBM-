@@ -60,3 +60,10 @@
 - Added a compact club leadership section with placeholders for the Master-in-Charge and student board profiles.
 - Replaced the lower homepage learning-values ribbon with consistently styled course-technology icons.
 - Confirmed the updated public release passes production build and all 109 Playwright checks.
+
+## 2026-09-03
+
+- Replaced the public Research navigation with a News section for NEST stories, learning releases, and community updates.
+- Added module-completion prompts with three relevant university course recommendations for every module.
+- Added clear registration guidance and free or paid certificate information while confirming that NEST modules do not issue certificates.
+- Kept lesson sequencing, chatbot, forum, and server-backed progress outside this public static release.

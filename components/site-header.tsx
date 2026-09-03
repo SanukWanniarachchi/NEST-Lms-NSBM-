@@ -11,7 +11,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 const primaryLinks = [
   { href: "/", label: "Home" },
   { href: "/courses", label: "Courses" },
-  { href: "/research", label: "Research" },
+  { href: "/news", label: "News" },
   { href: "/announcements", label: "Announcements" },
 ];
 
