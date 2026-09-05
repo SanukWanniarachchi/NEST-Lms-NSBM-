@@ -238,6 +238,15 @@ test.describe("layout and integration checks", () => {
     expect(await page.evaluate(() => document.documentElement.dataset.theme)).toBe("dark");
     expect(await collectLayoutProblems(page)).toEqual([]);
   });
+
+  test("course text stays readable during a mobile theme switch", async ({ page }) => {
+    await openPage(page, "/courses/cybersecurity-foundations/", "dark", { name: "mobile", width: 390, height: 844 });
+    await page.getByRole("button", { name: "Toggle light and dark theme" }).click();
+
+    expect(await page.evaluate(() => document.documentElement.dataset.theme)).toBe("light");
+    expect(await page.locator(".course-hero h1").evaluate((element) => getComputedStyle(element).color)).toBe("rgb(23, 32, 51)");
+    expect(await page.locator(".course-hero .button--secondary").evaluate((element) => getComputedStyle(element).color)).toBe("rgb(23, 32, 51)");
+  });
 });
 
 test.describe("about leadership", () => {

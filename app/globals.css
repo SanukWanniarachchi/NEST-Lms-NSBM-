@@ -70,7 +70,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-inter), Arial, sans-serif; line-height: 1.6; transition: background-color .28s ease, color .28s ease; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-inter), Arial, sans-serif; line-height: 1.6; transition: background-color .28s ease; }
 button, input, select, textarea { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 a { color: inherit; text-decoration: none; }
@@ -87,7 +87,7 @@ h3 { font-size: 1.25rem; }
 .shell { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
 .section { padding: 104px 0; }
 .eyebrow { margin-bottom: 12px; color: var(--primary); font-size: .76rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
-.button { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; gap: 9px; border: 1px solid transparent; border-radius: 999px; padding: 12px 22px; cursor: pointer; font-weight: 750; line-height: 1; transition: transform .2s ease, background-color .2s ease, border-color .2s ease, color .2s ease, box-shadow .2s ease; }
+.button { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; gap: 9px; border: 1px solid transparent; border-radius: 999px; padding: 12px 22px; cursor: pointer; font-weight: 750; line-height: 1; transition: transform .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease; }
 .button:hover { transform: translateY(-2px); }
 .button:disabled { cursor: wait; opacity: .68; transform: none; }
 .button--primary { background: linear-gradient(135deg, var(--button-start), var(--button-end)); color: white; box-shadow: 0 10px 26px color-mix(in srgb, var(--primary) 25%, transparent); }
