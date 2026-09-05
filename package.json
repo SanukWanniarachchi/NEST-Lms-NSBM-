@@ -10,7 +10,7 @@
     "check:admin": "npm run admin:typecheck && npm run admin:build && npm run admin:test:data && npm run admin:test",
     "admin:dev": "next dev admin -p 3001",
     "admin:build": "next build admin",
-    "admin:typecheck": "tsc --noEmit -p admin/tsconfig.json",
+    "admin:typecheck": "next typegen admin && tsc --noEmit -p admin/tsconfig.json",
     "admin:db:migrate": "tsx admin/scripts/db-migrate.ts",
     "admin:db:seed-local": "tsx admin/scripts/db-seed-local.ts",
     "admin:test:data": "tsx --test admin/tests/repositories.test.ts",
@@ -19,7 +19,7 @@
     "admin:test": "playwright test -c playwright.admin.config.ts",
     "start": "next start",
     "lint": "eslint",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "next typegen && tsc --noEmit",
     "test:visual": "playwright test",
     "test:visual:update": "playwright test --update-snapshots"
   },

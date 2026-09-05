@@ -68,3 +68,13 @@
 - Confirmed the updated public release passes production build and all 109 Playwright checks.
 - Completed Phase 3 with an authenticated research workflow for creating, editing, previewing, publishing, archiving, and restoring resources.
 - Added server-side research validation, audited lifecycle transitions, repeatable database test setup, and responsive admin form coverage.
+
+## 2026-09-03
+
+- Replaced the public Research navigation with a News section for NEST stories, learning releases, and community updates.
+- Added module-completion prompts with three relevant university course recommendations for every module.
+- Added clear registration guidance and free or paid certificate information while confirming that NEST modules do not issue certificates.
+- Added source-backed module checkpoints across all 15 modules with 45 reviewed multiple-choice questions.
+- Added immediate answer explanations, authoritative source links, unlimited retries, and local best-score tracking.
+- Moved follow-up course recommendations to successful checkpoint results.
+- Kept lesson sequencing, chatbot, forum, and server-backed progress outside this public static release.

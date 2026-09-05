@@ -17,7 +17,7 @@ export function SiteFooter() {
           <div className="footer-links">
             <Link href="/about">About NEST</Link>
             <Link href="/courses">Course catalogue</Link>
-            <Link href="/research">Research</Link>
+            <Link href="/news">News</Link>
             <Link href="/announcements">Announcements</Link>
           </div>
         </div>

@@ -27,11 +27,11 @@ export const announcements: Announcement[] = [
     actionHref: "/courses",
   },
   {
-    title: "Research and publications area prepared",
-    date: "2026-08-25",
-    category: "Research",
-    summary: "A dedicated research area is being prepared for ongoing student projects, publications, and academic collaboration.",
-    actionLabel: "View research",
-    actionHref: "/research",
+    title: "NEST News is now available",
+    date: "2026-09-03",
+    category: "Notice",
+    summary: "Course releases, community stories, achievements, partnerships, and research updates now have a shared home in NEST News.",
+    actionLabel: "Read NEST News",
+    actionHref: "/news",
   },
 ];

@@ -15,6 +15,19 @@
 /playwright-report/
 /test-results/
 
+# AI assistant configuration
+/AGENTS.md
+/CLAUDE.md
+/.claude/
+/.codex/
+
+# standalone experiments and retired source files
+/prototypes/
+/components/progress-bar.tsx
+
+# protected server/admin workspace (maintained on its separate branch)
+/admin/
+
 # next.js
 /.next/
 /out/

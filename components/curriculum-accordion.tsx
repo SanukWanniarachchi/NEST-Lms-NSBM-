@@ -23,6 +23,7 @@ export function CurriculumAccordion({ course }: { course: Course }) {
           const videoId = getYouTubeVideoId(lesson.youtubeUrl);
           const panelId = `lesson-video-${course.slug}-${lesson.slug}`;
           const isOpen = activeVideo === panelId;
+          const videoShellClassName = `lesson-video-shell${lesson.videoOrientation === "portrait" ? " lesson-video-shell--portrait" : ""}`;
 
           if (!videoId || !lesson.youtubeUrl) {
             return <Link href={`/courses/${course.slug}/lessons/${lesson.slug}`} key={lesson.slug}><span className="lesson-status">{lessonIndex + 1}</span><span><strong>{lesson.title}</strong><small>{lesson.description}</small></span><span className="lesson-duration">{lesson.duration}<ArrowRightIcon /></span></Link>;
@@ -49,7 +50,7 @@ export function CurriculumAccordion({ course }: { course: Course }) {
             <div className={`lesson-video-expansion${isOpen ? " is-open" : ""}`} id={panelId} aria-hidden={!isOpen}>
               <div>
                 {isOpen && lesson.youtubeUrl ? <div className="lesson-video-panel">
-                  <div className="lesson-video-shell"><LessonVideo title={lesson.title} youtubeUrl={lesson.youtubeUrl} duration={lesson.videoDuration} loadOnMount /></div>
+                  <div className={videoShellClassName}><LessonVideo title={lesson.title} youtubeUrl={lesson.youtubeUrl} duration={lesson.videoDuration} loadOnMount /></div>
                   <a className="lesson-video-external" href={getYouTubeWatchUrl(videoId)} target="_blank" rel="noreferrer">Open on YouTube <ArrowRightIcon /></a>
                 </div> : null}
               </div>
