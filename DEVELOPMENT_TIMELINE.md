@@ -78,3 +78,9 @@
 - Added immediate answer explanations, authoritative source links, unlimited retries, and local best-score tracking.
 - Moved follow-up course recommendations to successful checkpoint results.
 - Kept lesson sequencing, chatbot, forum, and server-backed progress outside this public static release.
+
+## 2026-09-05
+
+- Added audited super-admin, admin, and user roles to the protected admin database and session boundary.
+- Added a super-admin-only account directory with safeguards against self-lockout and removal of the final privileged account.
+- Added responsive account-management coverage across desktop and mobile admin workflows.

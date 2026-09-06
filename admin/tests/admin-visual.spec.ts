@@ -45,6 +45,7 @@ for (const viewport of viewports) {
       await page.setViewportSize(viewport);
       await page.emulateMedia({ colorScheme: theme, reducedMotion: "reduce" });
       await page.goto("/");
+      await page.waitForLoadState("networkidle");
       await expectStableLayout(page);
       await expect(page).toHaveScreenshot(`admin-login-${theme}-${viewport.name}.png`, { animations: "disabled", fullPage: true });
       expect(problems).toEqual([]);
@@ -69,6 +70,18 @@ for (const viewport of viewports) {
       await expect(page.getByLabel("Admin navigation").getByRole("link", { name: "Research" })).toHaveAttribute("aria-current", "page");
       await expectStableLayout(page);
       await expect(page).toHaveScreenshot(`admin-research-form-${theme}-${viewport.name}.png`, { animations: "disabled", fullPage: true });
+      expect(problems).toEqual([]);
+    });
+
+    test(`users ${theme} ${viewport.name}`, async ({ page }) => {
+      const problems = watchRuntimeProblems(page);
+      await page.setViewportSize(viewport);
+      await page.emulateMedia({ colorScheme: theme, reducedMotion: "reduce" });
+      await signIn(page);
+      await page.goto("/users");
+      await expect(page.getByLabel("Admin navigation").getByRole("link", { name: "Users" })).toHaveAttribute("aria-current", "page");
+      await expectStableLayout(page);
+      await expect(page).toHaveScreenshot(`admin-users-${theme}-${viewport.name}.png`, { animations: "disabled", fullPage: true });
       expect(problems).toEqual([]);
     });
   }

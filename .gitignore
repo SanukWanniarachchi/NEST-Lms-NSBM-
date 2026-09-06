@@ -25,9 +25,6 @@
 /prototypes/
 /components/progress-bar.tsx
 
-# protected server/admin workspace (maintained on its separate branch)
-/admin/
-
 # next.js
 /.next/
 /out/

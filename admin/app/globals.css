@@ -59,6 +59,7 @@ button { cursor: pointer; }
 .admin-nav a { min-height: 42px; display: flex; align-items: center; padding: 0 13px; border-radius: 6px; color: var(--sidebar-muted); font-weight: 650; }
 .admin-nav a:hover, .admin-nav a.active { color: white; background: rgba(116, 168, 255, .13); }
 .admin-nav a.active { box-shadow: inset 3px 0 var(--blue); }
+.admin-nav__mobile-label { display: none; }
 .admin-sidebar__footer { display: grid; gap: 8px; margin-top: auto; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.1); }
 .admin-sidebar__footer a, .admin-sidebar__footer button { width: 100%; min-height: 40px; display: flex; align-items: center; padding: 0 12px; border: 0; border-radius: 6px; color: var(--sidebar-muted); background: transparent; font-weight: 650; text-align: left; }
 .admin-sidebar__footer a:hover, .admin-sidebar__footer button:hover { color: white; background: rgba(255,255,255,.07); }
@@ -74,7 +75,7 @@ button { cursor: pointer; }
 .page-heading p:not(.eyebrow) { max-width: 680px; margin: 10px 0 0; color: var(--muted); line-height: 1.6; }
 .page-heading > button { min-width: 138px; padding: 0 18px; }
 .page-heading > button:disabled { cursor: not-allowed; color: #7d8798; background: #dde4ec; box-shadow: none; }
-.metric-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.metric-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
 .metric-grid article, .admin-section, .empty-collection { border: 1px solid var(--line); border-radius: 7px; background: var(--surface); box-shadow: 0 14px 34px rgba(38, 72, 120, .07); }
 .metric-grid article { min-height: 180px; padding: 24px; }
 .metric-grid small { color: var(--muted); font-weight: 700; }
@@ -153,6 +154,32 @@ button { cursor: pointer; }
 .record-actions--stacked { display: grid; justify-content: stretch; margin-top: 20px; }
 .record-actions--stacked a, .record-actions--stacked button { width: 100%; }
 
+.account-summary { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.account-summary > div { min-height: 100px; display: grid; align-content: center; gap: 4px; padding: 18px; border: 1px solid var(--line); border-radius: 7px; background: var(--surface); }
+.account-summary strong { font-size: 30px; font-weight: 600; }
+.account-summary span { color: var(--muted); font-size: 13px; font-weight: 700; }
+.account-create .section-heading p:not(.eyebrow) { max-width: 720px; margin: 8px 0 0; color: var(--muted); line-height: 1.55; }
+.account-form { margin-top: 22px; }
+.account-form--existing { margin: 0; padding: 22px; border-top: 1px solid var(--line); }
+.account-form__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.account-form input, .account-form select { width: 100%; min-height: 44px; padding: 0 13px; border: 1px solid var(--line); border-radius: 6px; color: var(--ink); background: var(--surface-strong); outline: none; }
+.account-form input:focus, .account-form select:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(54,140,245,.13); }
+.account-form input[readonly], .account-form select:disabled, .account-form input:disabled { color: var(--muted); background: color-mix(in srgb, var(--surface-strong) 75%, var(--line)); cursor: not-allowed; }
+.account-form button[type="submit"] { min-height: 44px; padding: 0 17px; border: 0; border-radius: 6px; color: white; background: linear-gradient(120deg, var(--blue), var(--violet)); font-weight: 760; }
+.account-form button:disabled { cursor: progress; opacity: .62; }
+.account-form .form-message { margin-bottom: 18px; }
+.account-form .form-actions small { color: var(--muted); line-height: 1.4; }
+.account-active { display: flex; align-items: center; gap: 9px; align-self: end; min-height: 44px; font-size: 13px; font-weight: 750; }
+.account-active input { width: 18px; min-height: 18px; margin: 0; accent-color: var(--blue); }
+.account-directory { display: grid; gap: 12px; margin-top: 30px; }
+.account-directory > .section-heading { margin-bottom: 4px; }
+.account-record { overflow: hidden; border: 1px solid var(--line); border-radius: 7px; background: var(--surface); box-shadow: 0 12px 28px rgba(38,72,120,.055); }
+.account-record summary { min-height: 76px; display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: 12px; padding: 16px 20px; cursor: pointer; list-style: none; }
+.account-record summary::-webkit-details-marker { display: none; }
+.account-record summary > span:first-child { min-width: 0; display: grid; gap: 3px; }
+.account-record summary strong, .account-record summary small { overflow-wrap: anywhere; }
+.account-record summary small { color: var(--muted); }
+
 @media (prefers-color-scheme: dark) {
   :root { --ink: #f4f7fc; --muted: #a8b3c5; --line: rgba(180,199,227,.18); --surface: rgba(20,31,48,.82); --surface-strong: #142031; --page: #0c131f; color-scheme: dark; }
   .login-page { background: #0c131f; }
@@ -174,12 +201,14 @@ button { cursor: pointer; }
   .admin-shell { grid-template-columns: 1fr; padding-bottom: 72px; }
   .admin-sidebar { position: fixed; z-index: 20; inset: auto 0 0; width: 100%; height: 68px; display: block; padding: 8px 10px; border-top: 1px solid rgba(255,255,255,.12); }
   .admin-brand, .admin-sidebar__footer { display: none; }
-  .admin-nav { grid-template-columns: repeat(4, 1fr); gap: 3px; margin: 0; }
+  .admin-nav { grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 3px; margin: 0; }
   .admin-nav a { min-height: 50px; justify-content: center; padding: 0 5px; font-size: 12px; }
   .admin-nav a.active { box-shadow: inset 0 -3px var(--blue); }
+  .admin-nav__desktop-label { display: none; }
+  .admin-nav__mobile-label { display: inline; }
   .admin-topbar { min-height: 64px; padding: 10px 18px; }
   .admin-workspace main { padding: 28px 18px; }
-  .metric-grid { grid-template-columns: 1fr; }
+  .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .research-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .collection-toolbar { grid-template-columns: minmax(0, 1fr) minmax(130px, .45fr); }
   .collection-toolbar button, .collection-toolbar .button-link { width: fit-content; }
@@ -192,8 +221,10 @@ button { cursor: pointer; }
 }
 
 @media (max-width: 560px) {
-  .research-summary, .form-grid, .collection-toolbar { grid-template-columns: 1fr; }
+  .metric-grid, .research-summary, .form-grid, .collection-toolbar, .account-summary, .account-form__grid { grid-template-columns: 1fr; }
   .form-field--wide { grid-column: auto; }
   .research-row { padding: 19px; }
   .record-actions a, .record-actions button { flex: 1 1 auto; }
+  .account-record summary { grid-template-columns: minmax(0, 1fr) auto; }
+  .account-record summary .admin-role { grid-column: 1 / -1; width: fit-content; }
 }

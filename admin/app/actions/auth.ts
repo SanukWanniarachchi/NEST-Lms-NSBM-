@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 import { z } from "zod";
 import { getLocalAdminName, getLocalAdminSubject, isLocalAuthEnabled } from "@admin/lib/auth/config";
 import { createAdminSession, deleteAdminSession } from "@admin/lib/auth/session";
-import { isAdminSubjectAllowed } from "@admin/lib/data/admin-data";
+import { getAuthorizedAdminIdentity } from "@admin/lib/data/admin-data";
 
 const LoginSchema = z.object({
   accessCode: z.string().trim().min(8).max(128),
@@ -27,12 +27,13 @@ export async function login(formData: FormData) {
   }
 
   const subject = getLocalAdminSubject();
-  if (!await isAdminSubjectAllowed(subject)) redirect("/?error=forbidden");
+  const identity = await getAuthorizedAdminIdentity(subject);
+  if (!identity || identity.role === "user") redirect("/?error=forbidden");
 
   await createAdminSession({
-    subject,
-    role: "admin",
-    name: getLocalAdminName(),
+    subject: identity.subject,
+    role: identity.role,
+    name: identity.displayName || getLocalAdminName(),
   });
   redirect("/dashboard");
 }

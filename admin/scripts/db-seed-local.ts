@@ -13,13 +13,18 @@ async function main() {
   const subject = process.env.NEST_DEV_ADMIN_SUBJECT?.trim() || "local-admin";
   const displayName = process.env.NEST_DEV_ADMIN_NAME?.trim() || "NEST Local Administrator";
   const email = process.env.NEST_DEV_ADMIN_EMAIL?.trim() || null;
+  const configuredRole = process.env.NEST_DEV_ADMIN_ROLE?.trim() || "super_admin";
+  if (configuredRole !== "super_admin" && configuredRole !== "admin") {
+    throw new Error("NEST_DEV_ADMIN_ROLE must be either super_admin or admin.");
+  }
   const connection = await openDatabase(getDatabaseConfig());
 
   try {
-    await createAdminRepository(connection.db).upsert("system:local-bootstrap", {
+    await createAdminRepository(connection.db).bootstrap({
       subject,
       displayName,
       email,
+      role: configuredRole,
       active: true,
     });
     console.log(`Local admin allowlist entry is ready for ${subject}.`);

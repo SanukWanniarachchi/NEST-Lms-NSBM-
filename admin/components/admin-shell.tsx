@@ -15,7 +15,7 @@ export function AdminShell({ children, session }: { children: ReactNode; session
         <Image src={mark} alt="" width={42} height={42} priority />
         <span><strong>NEST LMS</strong><small>Admin workspace</small></span>
       </Link>
-      <AdminNav />
+      <AdminNav role={session.role} />
       <div className="admin-sidebar__footer">
         <Link href={publicSite} target="_blank" rel="noopener noreferrer">View public site</Link>
         <form action={logout}><button type="submit">Sign out</button></form>
@@ -24,7 +24,7 @@ export function AdminShell({ children, session }: { children: ReactNode; session
     <div className="admin-workspace">
       <header className="admin-topbar">
         <div><small>Signed in as</small><strong>{session.name}</strong></div>
-        <span className="admin-role">Admin</span>
+        <span className="admin-role">{session.role === "super_admin" ? "Super admin" : "Admin"}</span>
       </header>
       <main>{children}</main>
     </div>

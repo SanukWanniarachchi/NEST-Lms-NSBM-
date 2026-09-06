@@ -33,7 +33,7 @@ test("migrations and repositories preserve allowlist, content, and audit history
 
   try {
     const adapter = pgliteMigrationAdapter(client);
-    assert.deepEqual(await applyPendingMigrations(adapter), ["0001_admin_platform"]);
+    assert.deepEqual(await applyPendingMigrations(adapter), ["0001_admin_platform", "0002_account_roles"]);
     assert.deepEqual(await applyPendingMigrations(adapter), []);
 
     const db = drizzle({ client, schema });
@@ -41,17 +41,49 @@ test("migrations and repositories preserve allowlist, content, and audit history
     const research = createResearchRepository(db);
     const audit = createAuditRepository(db);
 
-    await admins.upsert("system:test", {
-      subject: "admin:test-editor",
-      email: "editor@example.edu",
-      displayName: "Test Editor",
+    await admins.bootstrap({
+      subject: "admin:master",
+      email: "master@example.edu",
+      displayName: "Master in Charge",
+      role: "super_admin",
     });
-    await admins.upsert("system:test", {
+    await admins.bootstrap({
+      subject: "admin:master",
+      email: "master@example.edu",
+      displayName: "Master in Charge",
+      role: "super_admin",
+    });
+    await admins.save("admin:master", {
       subject: "admin:test-editor",
       email: "editor@example.edu",
       displayName: "Test Editor",
+      role: "admin",
+    });
+    await admins.save("admin:master", {
+      subject: "user:test-learner",
+      email: "learner@example.edu",
+      displayName: "Test Learner",
+      role: "user",
     });
     assert.equal(await admins.isAllowed("admin:test-editor"), true);
+    assert.equal(await admins.isAllowed("user:test-learner"), false);
+    await assert.rejects(
+      admins.save("admin:test-editor", {
+        subject: "user:unauthorised-change",
+        displayName: "Unauthorised Change",
+        role: "user",
+      }),
+      /Only an active super admin/,
+    );
+    await assert.rejects(
+      admins.save("admin:master", {
+        subject: "admin:master",
+        email: "master@example.edu",
+        displayName: "Master in Charge",
+        role: "admin",
+      }),
+      /cannot deactivate or demote your own/,
+    );
 
     const draft = await research.createDraft("admin:test-editor", {
       slug: "secure-campus-networks",
@@ -98,19 +130,26 @@ test("migrations and repositories preserve allowlist, content, and audit history
     const restored = await research.restore("admin:test-editor", draft.id);
     assert.equal(restored?.status, "draft");
 
-    await admins.setActive("system:test", "admin:test-editor", false);
-    assert.equal(await admins.isAllowed("admin:test-editor"), false);
+    await admins.save("admin:master", {
+      subject: "user:test-learner",
+      email: "learner@example.edu",
+      displayName: "Test Learner",
+      role: "user",
+      active: false,
+    });
 
     const metrics = await getContentMetrics(db);
-    assert.deepEqual(metrics, { activeAdmins: 0, researchResources: 1, auditEvents: 7 });
+    assert.deepEqual(metrics, { activeAdmins: 2, activeUsers: 0, researchResources: 1, auditEvents: 9 });
     assert.deepEqual((await audit.listRecent()).map((event) => event.action), [
-      "admin.deactivated",
+      "account.updated",
       "research.restored",
       "research.archived",
       "research.published",
       "research.updated",
       "research.created",
-      "admin.created",
+      "account.created",
+      "account.created",
+      "account.created",
     ]);
   } finally {
     await client.close();

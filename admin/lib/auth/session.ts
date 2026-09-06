@@ -2,16 +2,18 @@ import "server-only";
 import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import { isAdminSubjectAllowed } from "@admin/lib/data/admin-data";
+import { getAuthorizedAdminIdentity } from "@admin/lib/data/admin-data";
 
 const COOKIE_NAME = "nest-admin-session";
 const SESSION_DURATION_SECONDS = 8 * 60 * 60;
 const ISSUER = "nest-lms-admin";
 const AUDIENCE = "nest-lms-admin-workspace";
 
+export type AdminSessionRole = "super_admin" | "admin";
+
 export type AdminSession = {
   subject: string;
-  role: "admin";
+  role: AdminSessionRole;
   name: string;
 };
 
@@ -54,12 +56,17 @@ export async function getAdminSession(): Promise<AdminSession | null> {
       audience: AUDIENCE,
     });
 
-    if (payload.role !== "admin" || typeof payload.sub !== "string" || typeof payload.name !== "string") {
+    if (
+      (payload.role !== "super_admin" && payload.role !== "admin")
+      || typeof payload.sub !== "string"
+      || typeof payload.name !== "string"
+    ) {
       return null;
     }
 
-    if (!await isAdminSubjectAllowed(payload.sub)) return null;
-    return { subject: payload.sub, role: "admin", name: payload.name };
+    const identity = await getAuthorizedAdminIdentity(payload.sub);
+    if (!identity || identity.role === "user") return null;
+    return { subject: identity.subject, role: identity.role, name: identity.displayName };
   } catch {
     return null;
   }
@@ -68,6 +75,12 @@ export async function getAdminSession(): Promise<AdminSession | null> {
 export async function requireAdminSession() {
   const session = await getAdminSession();
   if (!session) redirect("/");
+  return session;
+}
+
+export async function requireSuperAdminSession() {
+  const session = await requireAdminSession();
+  if (session.role !== "super_admin") redirect("/dashboard?error=forbidden");
   return session;
 }
 

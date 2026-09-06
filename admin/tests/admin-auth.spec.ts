@@ -15,7 +15,7 @@ test("invalid local credentials are rejected", async ({ page }) => {
   await expect(page).toHaveURL(/error=invalid/);
 });
 
-test("an authorised local admin can navigate and sign out", async ({ page }) => {
+test("an authorised local super admin can navigate and sign out", async ({ page }) => {
   await page.goto("/");
   await page.getByLabel("Local access code").fill(e2eAccessCode);
   await page.getByRole("button", { name: "Continue to workspace" }).click();
@@ -23,6 +23,7 @@ test("an authorised local admin can navigate and sign out", async ({ page }) => 
   await expect(page).toHaveURL("http://127.0.0.1:3001/dashboard");
   await expect(page.getByRole("heading", { name: "Content operations" })).toBeVisible();
   await expect(page.getByText("NEST Local Administrator")).toBeVisible();
+  await expect(page.getByText("Super admin", { exact: true })).toBeVisible();
 
   await page.getByRole("link", { name: "Research" }).click();
   await expect(page).toHaveURL("http://127.0.0.1:3001/research");
@@ -32,6 +33,36 @@ test("an authorised local admin can navigate and sign out", async ({ page }) => 
   await expect(page).toHaveURL("http://127.0.0.1:3001/");
   await page.goto("/dashboard");
   await expect(page).toHaveURL("http://127.0.0.1:3001/");
+});
+
+test("a super admin can create and maintain role-based accounts", async ({ page }) => {
+  await page.goto("/");
+  await page.getByLabel("Local access code").fill(e2eAccessCode);
+  await page.getByRole("button", { name: "Continue to workspace" }).click();
+  await page.getByRole("link", { name: "Users" }).click();
+
+  await expect(page).toHaveURL("http://127.0.0.1:3001/users");
+  await expect(page.getByRole("heading", { name: "Users", exact: true })).toBeVisible();
+  const createForm = page.locator(".account-create form");
+  await createForm.getByLabel("Identity subject").fill("admin:phase-two");
+  await createForm.getByLabel("Display name").fill("Phase Two Administrator");
+  await createForm.getByLabel("Email address").fill("phase-two@example.edu");
+  await createForm.getByLabel("Role").selectOption("admin");
+  await createForm.getByRole("button", { name: "Add account" }).click();
+
+  await expect(page).toHaveURL(/\/users\?changed=created$/);
+  const record = page.locator(".account-record").filter({ hasText: "Phase Two Administrator" });
+  await expect(record).toBeVisible();
+  await record.locator("summary").click();
+  await record.getByLabel("Display name").fill("Phase Two Admin");
+  await record.getByLabel("Active account").uncheck();
+  await record.getByRole("button", { name: "Save account" }).click();
+
+  await expect(page).toHaveURL(/\/users\?changed=updated$/);
+  await expect(page.locator(".account-record").filter({ hasText: "Phase Two Admin" }).getByText("Inactive", { exact: true })).toBeVisible();
+  const ownRecord = page.locator(".account-record").filter({ hasText: "NEST Local Administrator" });
+  await expect(ownRecord.getByLabel("Role")).toBeDisabled();
+  await expect(ownRecord.getByLabel("Active account")).toBeDisabled();
 });
 
 test("an authorised admin can create, edit, publish, archive, and restore research", async ({ page }) => {
