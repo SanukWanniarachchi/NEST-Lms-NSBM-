@@ -16,10 +16,14 @@ writes, or admin APIs.
 
 ## Access model
 
-Public visitors do not have an account or application role. The first protected
-release has one role only:
+Public visitors do not have an account or application role. Managed accounts
+use three roles:
 
+- `super_admin`: has full content permissions and manages administrator and
+  user accounts.
 - `admin`: may create, edit, publish, archive, and restore managed content.
+- `user`: is reserved for future authenticated learner features and cannot
+  enter the admin workspace.
 
 Authentication should use NSBM's OpenID Connect or OAuth 2.0 SSO service. Access
 is granted only when the authenticated NSBM identity is also present in the NEST
@@ -52,8 +56,8 @@ Managed records use three states:
 
 Research resources support papers, videos, and documents. A published record
 must include a title, summary, author list, publication date, topic tags, and a
-valid resource URL. Future course and announcement records will follow the same
-draft-review-publish lifecycle.
+valid resource URL. Courses and announcements use the same lifecycle. Their
+working payload can be revised without replacing the last published payload.
 
 ## Security requirements
 
@@ -78,9 +82,11 @@ draft-review-publish lifecycle.
 3. **Phase 3 - Research workflow**: build create, edit, preview, publish, archive,
    and restore flows for research resources.
 4. **Phase 4 - Courses and announcements**: move the remaining managed content
-   behind the same validated service layer.
-5. **Phase 5 - NSBM integration**: replace the local adapter with NSBM SSO,
-   connect approved database and media storage, and complete deployment testing.
+   behind the same validated service layer. **Implemented.**
+5. **Phase 5 - NSBM integration**: connect the prepared OIDC adapter to NSBM
+   SSO, use the approved PostgreSQL service, select media storage, and complete
+   infrastructure testing. **Application adapter implemented; institutional
+   activation pending.**
 
 ## Phase 2 implementation
 
@@ -118,6 +124,35 @@ Published records remain in the admin database during this phase. The public
 application stays static and does not query the protected database directly;
 the approved publishing bridge is delivered separately before production
 launch.
+
+## Phase 4 implementation
+
+Phase 4 adds audited course and announcement management. Administrators can
+edit the three course curricula, including module lessons and portrait or
+landscape YouTube settings, and can create and maintain public announcements.
+Server-side schemas validate all managed payloads and safe announcement links.
+
+The publishing bridge exports only published payloads to
+`data/generated/admin-content.json`. The static public build reads that snapshot
+and never connects to the protected database. Publishing a record in the admin
+workspace does not deploy it by itself: an authorised release operator runs
+`npm run admin:publish:snapshot`, reviews the generated change, and deploys the
+public application.
+
+## Phase 5 readiness
+
+The application provides an OpenID Connect Authorization Code flow using PKCE,
+state, and nonce validation. The returned stable subject must already exist as
+an active `super_admin` or `admin` account; SSO authentication alone never
+grants admin access. Local code authentication remains unavailable in
+production.
+
+The admin runtime also exposes `/health/live` and `/health/ready`. Readiness
+checks database access and required authentication configuration without
+returning credentials or provider details. The remaining Phase 5 work is an
+infrastructure handover: NSBM must provide and approve the real identity
+provider registration, PostgreSQL service, media-storage policy, TLS endpoint,
+backup policy, and deployment environment.
 
 ## Handover contract
 

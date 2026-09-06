@@ -84,3 +84,11 @@
 - Added audited super-admin, admin, and user roles to the protected admin database and session boundary.
 - Added a super-admin-only account directory with safeguards against self-lockout and removal of the final privileged account.
 - Added responsive account-management coverage across desktop and mobile admin workflows.
+
+## 2026-09-06
+
+- Added audited course and announcement draft, publish, archive, and restore workflows to the protected admin platform.
+- Added a validated publishing snapshot that keeps the public static website isolated from drafts, accounts, audit data, and database credentials.
+- Added an NSBM-ready OpenID Connect adapter with PKCE, state, nonce, allowlist enforcement, and production-only HTTPS requirements.
+- Added liveness and readiness endpoints plus an infrastructure deployment and recovery runbook.
+- Expanded desktop and mobile admin coverage for content editing, publishing, health checks, and role-protected access.

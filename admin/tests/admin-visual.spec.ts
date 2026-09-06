@@ -84,5 +84,18 @@ for (const viewport of viewports) {
       await expect(page).toHaveScreenshot(`admin-users-${theme}-${viewport.name}.png`, { animations: "disabled", fullPage: true });
       expect(problems).toEqual([]);
     });
+
+    test(`course editor ${theme} ${viewport.name}`, async ({ page }) => {
+      const problems = watchRuntimeProblems(page);
+      await page.setViewportSize(viewport);
+      await page.emulateMedia({ colorScheme: theme, reducedMotion: "reduce" });
+      await signIn(page);
+      await page.goto("/courses");
+      await page.locator(".research-row").first().getByRole("link", { name: "Edit" }).click();
+      await expect(page.getByLabel("Admin navigation").getByRole("link", { name: "Courses" })).toHaveAttribute("aria-current", "page");
+      await expectStableLayout(page);
+      await expect(page.getByRole("heading", { name: "Edit course" })).toBeVisible();
+      expect(problems).toEqual([]);
+    });
   }
 }
