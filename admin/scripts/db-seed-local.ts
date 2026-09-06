@@ -1,7 +1,9 @@
 import { join } from "node:path";
 import { loadEnvConfig } from "@next/env";
 import { getDatabaseConfig, openDatabase } from "../db/connection";
-import { createAdminRepository } from "../lib/data/repositories";
+import { createAdminRepository, createManagedContentRepository } from "../lib/data/repositories";
+import { announcements } from "../../data/announcements";
+import { courseContent } from "../../data/course-content";
 
 loadEnvConfig(join(process.cwd(), "admin"));
 
@@ -27,6 +29,16 @@ async function main() {
       role: configuredRole,
       active: true,
     });
+    const content = createManagedContentRepository(connection.db);
+    for (const announcement of announcements) {
+      const slug = `${announcement.date}-${announcement.title}`.toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "");
+      await content.seedPublished({ kind: "announcement", slug, title: announcement.title, payload: announcement });
+    }
+    for (const course of courseContent) {
+      await content.seedPublished({ kind: "course", slug: course.slug, title: course.title, payload: course });
+    }
     console.log(`Local admin allowlist entry is ready for ${subject}.`);
   } finally {
     await connection.close();

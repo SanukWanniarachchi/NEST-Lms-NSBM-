@@ -1,7 +1,14 @@
 import { randomUUID } from "node:crypto";
-import { and, count, desc, eq, inArray } from "drizzle-orm";
+import { and, count, desc, eq, inArray, isNotNull, ne } from "drizzle-orm";
 import type { AdminDatabase } from "../../db/connection";
-import { adminAllowlist, auditEvents, researchResources, type AdminRole } from "../../db/schema";
+import {
+  adminAllowlist,
+  auditEvents,
+  managedContent,
+  researchResources,
+  type AdminRole,
+  type ManagedContentKind,
+} from "../../db/schema";
 
 type AuditState = Record<string, unknown> | null;
 
@@ -26,6 +33,14 @@ export type ResearchDraftInput = {
   authors: string[];
   href: string;
   tags: string[];
+};
+
+export type ManagedContentInput = {
+  id?: string;
+  kind: ManagedContentKind;
+  slug: string;
+  title: string;
+  payload: Record<string, unknown>;
 };
 
 export class ResearchStateError extends Error {}
@@ -183,6 +198,170 @@ export function createAdminRepository(db: AdminDatabase) {
       });
     },
   };
+}
+
+export function createManagedContentRepository(db: AdminDatabase) {
+  return {
+    list(kind: ManagedContentKind) {
+      return db.select().from(managedContent)
+        .where(eq(managedContent.kind, kind))
+        .orderBy(desc(managedContent.updatedAt));
+    },
+
+    listPublished(kind: ManagedContentKind) {
+      return db.select().from(managedContent)
+        .where(and(
+          eq(managedContent.kind, kind),
+          ne(managedContent.status, "archived"),
+          isNotNull(managedContent.publishedPayload),
+        ))
+        .orderBy(desc(managedContent.publishedOn));
+    },
+
+    async findById(id: string) {
+      const [record] = await db.select().from(managedContent).where(eq(managedContent.id, id)).limit(1);
+      return record ?? null;
+    },
+
+    async seedPublished(input: ManagedContentInput) {
+      const [existing] = await db.select().from(managedContent)
+        .where(and(eq(managedContent.kind, input.kind), eq(managedContent.slug, input.slug)))
+        .limit(1);
+      if (existing) return existing;
+
+      return db.transaction(async (transaction) => {
+        const today = new Date().toISOString().slice(0, 10);
+        const [record] = await transaction.insert(managedContent).values({
+          id: input.id ?? randomUUID(),
+          kind: input.kind,
+          slug: input.slug,
+          title: input.title,
+          workingPayload: input.payload,
+          publishedPayload: input.payload,
+          status: "published",
+          publishedOn: today,
+          createdBy: "system:local-bootstrap",
+          updatedBy: "system:local-bootstrap",
+        }).returning();
+        await transaction.insert(auditEvents).values({
+          actorSubject: "system:local-bootstrap",
+          action: `${input.kind}.seeded`,
+          entityType: "managed_content",
+          entityId: record.id,
+          nextState: auditState(record),
+        });
+        return record;
+      });
+    },
+
+    async saveDraft(actorSubject: string, input: ManagedContentInput) {
+      return db.transaction(async (transaction) => {
+        const [previous] = input.id
+          ? await transaction.select().from(managedContent).where(eq(managedContent.id, input.id)).limit(1)
+          : [];
+        if (input.id && !previous) return null;
+        if (previous && previous.kind !== input.kind) {
+          throw new ManagedContentStateError("The content type cannot be changed.");
+        }
+
+        const [next] = previous
+          ? await transaction.update(managedContent).set({
+            slug: input.slug,
+            title: input.title,
+            workingPayload: input.payload,
+            status: "draft",
+            updatedBy: actorSubject,
+            updatedAt: new Date(),
+          }).where(eq(managedContent.id, previous.id)).returning()
+          : await transaction.insert(managedContent).values({
+            id: randomUUID(),
+            kind: input.kind,
+            slug: input.slug,
+            title: input.title,
+            workingPayload: input.payload,
+            status: "draft",
+            createdBy: actorSubject,
+            updatedBy: actorSubject,
+          }).returning();
+
+        await transaction.insert(auditEvents).values({
+          actorSubject,
+          action: previous ? `${input.kind}.updated` : `${input.kind}.created`,
+          entityType: "managed_content",
+          entityId: next.id,
+          previousState: auditState(previous),
+          nextState: auditState(next),
+        });
+        return next;
+      });
+    },
+
+    async publish(actorSubject: string, id: string, publishedOn: string) {
+      return db.transaction(async (transaction) => {
+        const [previous] = await transaction.select().from(managedContent).where(eq(managedContent.id, id)).limit(1);
+        if (!previous) return null;
+        if (previous.status === "archived") throw new ManagedContentStateError("Restore archived content before publishing it.");
+
+        const [next] = await transaction.update(managedContent).set({
+          publishedPayload: previous.workingPayload,
+          status: "published",
+          publishedOn,
+          updatedBy: actorSubject,
+          updatedAt: new Date(),
+        }).where(eq(managedContent.id, id)).returning();
+        await transaction.insert(auditEvents).values({
+          actorSubject,
+          action: `${previous.kind}.published`,
+          entityType: "managed_content",
+          entityId: id,
+          previousState: auditState(previous),
+          nextState: auditState(next),
+        });
+        return next;
+      });
+    },
+
+    archive(actorSubject: string, id: string) {
+      return changeManagedContentStatus(db, actorSubject, id, "archived", "archived");
+    },
+
+    restore(actorSubject: string, id: string) {
+      return changeManagedContentStatus(db, actorSubject, id, "draft", "restored");
+    },
+  };
+}
+
+export class ManagedContentStateError extends Error {}
+
+async function changeManagedContentStatus(
+  db: AdminDatabase,
+  actorSubject: string,
+  id: string,
+  status: "draft" | "archived",
+  action: string,
+) {
+  return db.transaction(async (transaction) => {
+    const [previous] = await transaction.select().from(managedContent).where(eq(managedContent.id, id)).limit(1);
+    if (!previous) return null;
+    if (status === "draft" && previous.status !== "archived") {
+      throw new ManagedContentStateError("Only archived content can be restored.");
+    }
+
+    const [next] = await transaction.update(managedContent).set({
+      status,
+      updatedBy: actorSubject,
+      updatedAt: new Date(),
+    }).where(eq(managedContent.id, id)).returning();
+    await transaction.insert(auditEvents).values({
+      actorSubject,
+      action: `${previous.kind}.${action}`,
+      entityType: "managed_content",
+      entityId: id,
+      previousState: auditState(previous),
+      nextState: auditState(next),
+    });
+    return next;
+  });
 }
 
 export function createResearchRepository(db: AdminDatabase) {

@@ -2,6 +2,9 @@
   "name": "nest-lms",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,11 +12,13 @@
     "check:public": "npm run lint && npm run typecheck && npm run build",
     "check:admin": "npm run admin:typecheck && npm run admin:build && npm run admin:test:data && npm run admin:test",
     "admin:dev": "next dev admin -p 3001",
+    "admin:start": "next start admin -p 3001",
     "admin:build": "next build admin",
     "admin:typecheck": "next typegen admin && tsc --noEmit -p admin/tsconfig.json",
     "admin:db:migrate": "tsx admin/scripts/db-migrate.ts",
     "admin:db:seed-local": "tsx admin/scripts/db-seed-local.ts",
-    "admin:test:data": "tsx --test admin/tests/repositories.test.ts",
+    "admin:publish:snapshot": "tsx admin/scripts/publish-content-snapshot.ts",
+    "admin:test:data": "tsx --test admin/tests/repositories.test.ts admin/tests/content-validation.test.ts",
     "admin:test:reset": "tsx admin/scripts/db-reset-e2e.ts",
     "admin:test:serve": "npm run admin:test:reset && npm run admin:db:migrate && npm run admin:db:seed-local && npm run admin:dev",
     "admin:test": "playwright test -c playwright.admin.config.ts",
@@ -28,6 +33,7 @@
     "drizzle-orm": "^0.45.2",
     "jose": "^6.2.10",
     "next": "16.3.0",
+    "openid-client": "^6.8.8",
     "postgres": "^3.4.9",
     "react": "19.2.8",
     "react-dom": "19.2.8",

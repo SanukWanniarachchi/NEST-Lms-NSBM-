@@ -8,6 +8,7 @@ import { applyPendingMigrations, pgliteMigrationAdapter } from "../db/migrator";
 import {
   createAdminRepository,
   createAuditRepository,
+  createManagedContentRepository,
   createResearchRepository,
   getContentMetrics,
 } from "../lib/data/repositories";
@@ -33,12 +34,13 @@ test("migrations and repositories preserve allowlist, content, and audit history
 
   try {
     const adapter = pgliteMigrationAdapter(client);
-    assert.deepEqual(await applyPendingMigrations(adapter), ["0001_admin_platform", "0002_account_roles"]);
+    assert.deepEqual(await applyPendingMigrations(adapter), ["0001_admin_platform", "0002_account_roles", "0003_managed_content"]);
     assert.deepEqual(await applyPendingMigrations(adapter), []);
 
     const db = drizzle({ client, schema });
     const admins = createAdminRepository(db);
     const research = createResearchRepository(db);
+    const content = createManagedContentRepository(db);
     const audit = createAuditRepository(db);
 
     await admins.bootstrap({
@@ -130,6 +132,28 @@ test("migrations and repositories preserve allowlist, content, and audit history
     const restored = await research.restore("admin:test-editor", draft.id);
     assert.equal(restored?.status, "draft");
 
+    const seededAnnouncement = await content.seedPublished({
+      kind: "announcement",
+      slug: "test-notice",
+      title: "Test notice",
+      payload: { title: "Test notice", date: "2026-09-06", category: "Notice", summary: "A sufficiently detailed test announcement summary." },
+    });
+    const announcementDraft = await content.saveDraft("admin:test-editor", {
+      id: seededAnnouncement.id,
+      kind: "announcement",
+      slug: "test-notice",
+      title: "Updated test notice",
+      payload: { title: "Updated test notice", date: "2026-09-06", category: "Notice", summary: "An updated and sufficiently detailed announcement summary." },
+    });
+    assert.equal(announcementDraft?.status, "draft");
+    const publishedWhileDraft = (await content.listPublished("announcement"))[0];
+    assert.equal((publishedWhileDraft.publishedPayload as Record<string, unknown>).title, "Test notice");
+    await content.publish("admin:test-editor", seededAnnouncement.id, "2026-09-06");
+    assert.equal(((await content.listPublished("announcement"))[0]?.publishedPayload as Record<string, unknown>).title, "Updated test notice");
+    await content.archive("admin:test-editor", seededAnnouncement.id);
+    assert.equal((await content.listPublished("announcement")).length, 0);
+    await content.restore("admin:test-editor", seededAnnouncement.id);
+
     await admins.save("admin:master", {
       subject: "user:test-learner",
       email: "learner@example.edu",
@@ -139,9 +163,14 @@ test("migrations and repositories preserve allowlist, content, and audit history
     });
 
     const metrics = await getContentMetrics(db);
-    assert.deepEqual(metrics, { activeAdmins: 2, activeUsers: 0, researchResources: 1, auditEvents: 9 });
+    assert.deepEqual(metrics, { activeAdmins: 2, activeUsers: 0, researchResources: 1, auditEvents: 14 });
     assert.deepEqual((await audit.listRecent()).map((event) => event.action), [
       "account.updated",
+      "announcement.restored",
+      "announcement.archived",
+      "announcement.published",
+      "announcement.updated",
+      "announcement.seeded",
       "research.restored",
       "research.archived",
       "research.published",

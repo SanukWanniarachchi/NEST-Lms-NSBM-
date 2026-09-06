@@ -15,6 +15,7 @@ import {
 export const publicationStatus = pgEnum("publication_status", ["draft", "published", "archived"]);
 export const researchResourceType = pgEnum("research_resource_type", ["research_paper", "video", "document"]);
 export const adminRole = pgEnum("admin_role", ["super_admin", "admin", "user"]);
+export const managedContentKind = pgEnum("managed_content_kind", ["announcement", "course"]);
 
 export const adminAllowlist = pgTable("admin_allowlist", {
   subject: text("subject").primaryKey(),
@@ -51,6 +52,25 @@ export const researchResources = pgTable("research_resources", {
   index("research_resources_updated_at_idx").on(table.updatedAt),
 ]);
 
+export const managedContent = pgTable("managed_content", {
+  id: text("id").primaryKey(),
+  kind: managedContentKind("kind").notNull(),
+  slug: text("slug").notNull(),
+  title: text("title").notNull(),
+  workingPayload: jsonb("working_payload").notNull(),
+  publishedPayload: jsonb("published_payload"),
+  status: publicationStatus("status").notNull().default("draft"),
+  publishedOn: date("published_on"),
+  createdBy: text("created_by").notNull(),
+  updatedBy: text("updated_by").notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+}, (table) => [
+  uniqueIndex("managed_content_kind_slug_unique").on(table.kind, table.slug),
+  index("managed_content_kind_status_idx").on(table.kind, table.status),
+  index("managed_content_updated_at_idx").on(table.updatedAt),
+]);
+
 export const auditEvents = pgTable("audit_events", {
   id: bigint("id", { mode: "number" }).primaryKey().generatedAlwaysAsIdentity(),
   actorSubject: text("actor_subject").notNull(),
@@ -68,4 +88,6 @@ export const auditEvents = pgTable("audit_events", {
 export type AdminAllowlistRecord = typeof adminAllowlist.$inferSelect;
 export type AdminRole = AdminAllowlistRecord["role"];
 export type ResearchRecord = typeof researchResources.$inferSelect;
+export type ManagedContentRecord = typeof managedContent.$inferSelect;
+export type ManagedContentKind = ManagedContentRecord["kind"];
 export type AuditEventRecord = typeof auditEvents.$inferSelect;

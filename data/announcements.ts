@@ -1,3 +1,5 @@
+import snapshot from "@/data/generated/admin-content.json";
+
 export type Announcement = {
   title: string;
   date: string;
@@ -8,7 +10,7 @@ export type Announcement = {
   featured?: boolean;
 };
 
-export const announcements: Announcement[] = [
+const baselineAnnouncements: Announcement[] = [
   {
     title: "NEST learning community is open",
     date: "2026-08-23",
@@ -35,3 +37,7 @@ export const announcements: Announcement[] = [
     actionHref: "/news",
   },
 ];
+
+export const announcements: Announcement[] = snapshot.announcements.length > 0
+  ? snapshot.announcements as Announcement[]
+  : baselineAnnouncements;
