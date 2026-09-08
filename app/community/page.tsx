@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { ArrowRightIcon, CheckIcon, UsersIcon } from "@/components/icons";
+import { ArrowRightIcon, CheckIcon, PlayIcon, UsersIcon } from "@/components/icons";
 import { community } from "@/data/community";
 import whatsappQr from "@/public/images/community/nest-whatsapp-qr.webp";
 
@@ -25,6 +25,7 @@ export default function CommunityPage() {
               <p>{community.description}</p>
               <div className="hero-actions">
                 {community.whatsappInviteUrl ? <Link href={community.whatsappInviteUrl} className="button button--primary" target="_blank" rel="noreferrer">Open WhatsApp <ArrowRightIcon /></Link> : null}
+                <a href={community.youtubeChannelUrl} className="button button--primary" target="_blank" rel="noopener noreferrer"><PlayIcon /> Visit YouTube channel</a>
                 <Link href="/announcements" className="button button--secondary">View announcements</Link>
               </div>
             </div>
