@@ -34,6 +34,7 @@ export function SiteFooter() {
           <div className="footer-contact">
             <p><LocationIcon /> NSBM Green University, Sri Lanka</p>
             <p><MailIcon /> Connect through the official NEST Club channels</p>
+            <p><Link href="/about/#contact" className="text-link">Contact us</Link></p>
             <p><Link href="/community" className="text-link">Join the NEST community</Link></p>
             <p><a href={community.youtubeChannelUrl} target="_blank" rel="noopener noreferrer" className="text-link"><PlayIcon /> Official YouTube channel</a></p>
           </div>
