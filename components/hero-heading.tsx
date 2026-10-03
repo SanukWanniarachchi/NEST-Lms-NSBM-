@@ -1,6 +1,8 @@
 import type { CSSProperties } from "react";
 
 const phrases = ["Learn together.", "Build what's next."];
+const totalLetters = phrases.join("").replaceAll(" ", "").length;
+const sweepDelay = 120 + (totalLetters - 1) * 36 + 950 + 350;
 
 export function HeroHeading() {
   return (
@@ -14,13 +16,13 @@ export function HeroHeading() {
                 {[...word].map((letter, index) => {
                   const offset = words.slice(0, wordIndex).join(" ").length + (wordIndex ? 1 : 0) + index;
                   const letterIndex = offset - wordIndex;
-                  const letterCount = phrase.replaceAll(" ", "").length;
-                  const distance = Math.abs(letterIndex - (letterCount - 1) / 2);
+                  const entranceIndex = phrases.slice(0, phraseIndex).join("").replaceAll(" ", "").length + letterIndex;
                   const style = {
-                    "--letter-delay": `${180 + phraseIndex * 320 + distance * 65}ms`,
+                    "--letter-delay": `${120 + entranceIndex * 36}ms`,
                     ...(phraseIndex === 1 ? {
-                      backgroundSize: `${phrase.length * 100}% 100%`,
-                      backgroundPosition: `${offset / (phrase.length - 1) * 100}% 0`,
+                      "--sweep-delay": `${sweepDelay}ms`,
+                      "--sweep-start": `${letterIndex * 4}% 50%`,
+                      "--sweep-end": `${letterIndex * 4 + 1000 / 9}% 50%`,
                     } : {}),
                   } as CSSProperties;
                   return <span className={`hero-heading__letter${phraseIndex === 1 ? " hero-heading__letter--accent" : ""}`} style={style} key={index}>{letter}</span>;

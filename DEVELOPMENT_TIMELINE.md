@@ -79,3 +79,5 @@
 - Confirmed lint, type checking, production build, and 20 focused interaction and responsive layout checks pass.
 - Identified eight outdated About/Contact visual snapshots from before the combined page; their baseline reconciliation remains release verification work.
 - Deferred Google Drive video migration, leadership profiles, domain registration, and external hosting until the required inputs and later phases.
+- Applied the selected Ripple spring homepage entrance and an eight-second colour sweep loop on the second sentence, starting after all letters settle; reduced motion disables both effects.
+- Verified the animation sequence, continuous loop, light/dark themes, mobile/desktop layout, and reduced-motion behaviour, and refreshed the four homepage visual baselines.
