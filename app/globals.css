@@ -700,6 +700,9 @@ h3 { font-size: 1.25rem; }
 .form-success > span { display: grid; width: 66px; height: 66px; place-items: center; border-radius: 50%; background: color-mix(in srgb, var(--green) 14%, transparent); color: var(--green); }
 .form-success h3 { margin: 20px 0 8px; }
 .form-success p { max-width: 390px; color: var(--muted); font-size: .84rem; }
+.form-success .form-message-preview { width: 100%; margin-top: 18px; text-align: left; }
+.form-success-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 16px; }
+.form-success .form-copy-status { margin: 16px 0 0; }
 
 .not-found { display: grid; min-height: 100vh; place-items: center; align-content: center; padding: 30px; background: radial-gradient(circle, color-mix(in srgb, var(--primary) 12%, var(--bg)), var(--bg) 55%); text-align: center; }
 .not-found img { margin-bottom: 24px; padding: 12px; border-radius: 25px; background: white; box-shadow: var(--shadow-lg); }

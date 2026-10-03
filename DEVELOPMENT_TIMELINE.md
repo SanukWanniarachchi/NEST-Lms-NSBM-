@@ -70,3 +70,12 @@
 - Added immediate answer explanations, authoritative source links, unlimited retries, and local best-score tracking.
 - Moved follow-up course recommendations to successful checkpoint results.
 - Kept lesson sequencing, chatbot, forum, and server-backed progress outside this public static release.
+
+## 2026-10-03
+
+- Completed launch preparation Phase 1: enquiry editing retains every field, and the prepared message can be copied or selected manually when clipboard access is unavailable.
+- Made the collapsed mobile navigation inactive and hidden from assistive technology; Escape closes the menu and returns focus to its button.
+- Added desktop and mobile regression checks for enquiry editing, copying, clipboard failure, and mobile navigation.
+- Confirmed lint, type checking, production build, and 20 focused interaction and responsive layout checks pass.
+- Identified eight outdated About/Contact visual snapshots from before the combined page; their baseline reconciliation remains release verification work.
+- Deferred Google Drive video migration, leadership profiles, domain registration, and external hosting until the required inputs and later phases.

@@ -25,6 +25,7 @@ let previousIndicator: (IndicatorPosition & { path: string; from: IndicatorPosit
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
   const navRef = useRef<HTMLElement>(null);
   const indicatorRef = useRef<HTMLSpanElement>(null);
 
@@ -86,7 +87,12 @@ export function SiteHeader() {
   }
 
   return (
-    <header className="site-header">
+    <header className="site-header" onKeyDown={(event) => {
+      if (event.key === "Escape" && open) {
+        setOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    }}>
       <span className="site-header-glass" aria-hidden="true"><span /></span>
       <div className="shell header-inner">
         <Link href="/" className="brand" aria-label="NEST LMS home">
@@ -114,13 +120,13 @@ export function SiteHeader() {
           <Link href="/community" className="button button--small button--secondary desktop-action desktop-community">
             Join community
           </Link>
-          <button type="button" className="menu-button" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? "Close navigation" : "Open navigation"}>
+          <button ref={menuButtonRef} type="button" className="menu-button" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? "Close navigation" : "Open navigation"}>
             {open ? <CloseIcon /> : <MenuIcon />}
           </button>
         </div>
       </div>
 
-      <div id="mobile-menu" className={`mobile-menu ${open ? "mobile-menu--open" : ""}`}>
+      <div id="mobile-menu" className={`mobile-menu ${open ? "mobile-menu--open" : ""}`} inert={!open} aria-hidden={!open}>
         <nav className="shell" aria-label="Mobile navigation">
           {mobileLinks.map((link) => {
             const active = isActive(link.href);
