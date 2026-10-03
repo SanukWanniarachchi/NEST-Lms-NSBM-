@@ -667,29 +667,29 @@
               "slug": "mac-address",
               "title": "MAC Address Basics",
               "duration": "2 min",
-              "description": "Learn how a network interface is identified for local data delivery.",
+              "description": "Learn how a link-layer address identifies a network interface for local data delivery.",
               "learningObjective": "Describe the key ideas behind “MAC Address Basics” and apply them to a familiar technology scenario.",
               "keyPoints": [
-                "Hardware address",
+                "Link-layer address",
                 "Local delivery",
                 "Network interface"
               ],
               "activity": "Follow how a switch uses MAC addresses inside a LAN.",
-              "recap": "Learn how a network interface is identified for local data delivery."
+              "recap": "Learn how a link-layer address identifies a network interface for local data delivery."
             },
             {
               "slug": "dns-explained",
               "title": "DNS Explained",
               "duration": "2 min",
-              "description": "See how the Domain Name System translates human-friendly names into IP addresses.",
+              "description": "See how the Domain Name System resolves human-friendly names to records such as IP addresses.",
               "learningObjective": "Describe the key ideas behind “DNS Explained” and apply them to a familiar technology scenario.",
               "keyPoints": [
                 "Domain names",
                 "DNS lookup",
-                "IP result"
+                "Resource records"
               ],
               "activity": "Trace what happens after entering a website name in a browser.",
-              "recap": "See how the Domain Name System translates human-friendly names into IP addresses."
+              "recap": "See how the Domain Name System resolves human-friendly names to records such as IP addresses."
             },
             {
               "slug": "network-protocols",
@@ -1229,15 +1229,15 @@
               "slug": "pwm-basics",
               "title": "PWM Basics",
               "duration": "2 min",
-              "description": "Control average output power through rapid on-off pulses and duty cycle.",
+              "description": "Control how long a digital output stays on during each rapid pulse cycle by changing its duty cycle.",
               "learningObjective": "Describe the key ideas behind “PWM Basics” and apply them to a familiar technology scenario.",
               "keyPoints": [
                 "Pulse width",
                 "Duty cycle",
-                "Average output"
+                "Load response"
               ],
               "activity": "Compare LED brightness at 25%, 50%, and 90% duty cycles.",
-              "recap": "Control average output power through rapid on-off pulses and duty cycle."
+              "recap": "Control how long a digital output stays on during each rapid pulse cycle by changing its duty cycle."
             },
             {
               "slug": "servo-basics",

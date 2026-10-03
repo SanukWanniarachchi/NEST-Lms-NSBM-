@@ -402,9 +402,9 @@ test.describe("module checkpoints and recommendations", () => {
       await page.getByRole("button", { name: "Start checkpoint" }).click();
 
       const answers: Record<string, string> = {
-        "Which NIST CSF 2.0 function was added to place organizational decision-making around the other five functions?": "Govern",
-        "Which security objective protects information from unauthorized disclosure?": "Confidentiality",
-        "Which security objective is affected when records are changed without authorization?": "Integrity",
+        "Which security objective is affected when authorised users cannot access a university system when needed?": "Availability",
+        "Which security objective protects information from unauthorised disclosure?": "Confidentiality",
+        "Which security objective is affected when records are changed without authorisation?": "Integrity",
       };
       for (let index = 0; index < 3; index += 1) {
         const prompt = (await page.locator(".quiz-question h1").textContent()) ?? "";

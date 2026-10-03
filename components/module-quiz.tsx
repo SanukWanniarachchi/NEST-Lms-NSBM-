@@ -7,6 +7,11 @@ import type { FollowUpCourse } from "@/data/follow-up-courses";
 import type { ModuleQuiz, QuizQuestion } from "@/types/quiz";
 
 type PreparedQuestion = QuizQuestion & { shuffledChoices: string[] };
+
+function formatReviewDate(value?: string) {
+  if (!value) return "Review date unavailable";
+  return new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }).format(new Date(`${value}T00:00:00Z`));
+}
 type AnswerRecord = { question: PreparedQuestion; selected: string };
 type StoredResult = { bestScore: number; attempts: number; passed: boolean; completedAt?: string };
 
@@ -112,11 +117,11 @@ export function ModuleQuizRunner({ quiz, recommendations, moduleTitle, lessonHre
 
   if (phase === "intro") {
     return <section className="quiz-panel quiz-intro" aria-labelledby="quiz-title">
+      <div className="quiz-verification-seal" role="note"><CheckIcon /><span><strong>Sources checked</strong><small>Reviewed {formatReviewDate(quiz.questions[0]?.source.reviewedOn)}</small></span></div>
       <p className="eyebrow">Module checkpoint</p>
       <h1 id="quiz-title">{quiz.title}</h1>
       <p>{quiz.introduction}</p>
       <div className="quiz-facts"><span><strong>{quiz.questions.length}</strong> questions</span><span><strong>{quiz.passingScore}</strong> correct to pass</span><span><strong>Unlimited</strong> retries</span></div>
-      <div className="quiz-accountability"><CheckIcon /><div><strong>Source-backed answers</strong><p>Every explanation links to the authoritative technical reference used to verify it. Sources were reviewed on {quiz.questions[0]?.source.reviewedOn}.</p></div></div>
       {previousResult ? <p className="quiz-previous">Previous best: <strong>{previousResult.bestScore}/{quiz.questions.length}</strong> across {previousResult.attempts} {previousResult.attempts === 1 ? "attempt" : "attempts"}.</p> : null}
       <div className="quiz-actions"><button type="button" className="button button--primary" onClick={startQuiz}>{previousResult ? "Try checkpoint again" : "Start checkpoint"}<ArrowRightIcon /></button><Link href={lessonHref} className="button button--secondary"><ArrowLeftIcon />Return to lesson</Link></div>
     </section>;

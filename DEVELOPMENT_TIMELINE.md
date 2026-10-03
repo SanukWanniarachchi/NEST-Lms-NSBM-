@@ -92,3 +92,23 @@
 - Added an NSBM-ready OpenID Connect adapter with PKCE, state, nonce, allowlist enforcement, and production-only HTTPS requirements.
 - Added liveness and readiness endpoints plus an infrastructure deployment and recovery runbook.
 - Expanded desktop and mobile admin coverage for content editing, publishing, health checks, and role-protected access.
+
+## 2026-10-03
+
+- Completed launch preparation Phase 1: enquiry editing retains every field, and the prepared message can be copied or selected manually when clipboard access is unavailable.
+- Made the collapsed mobile navigation inactive and hidden from assistive technology; Escape closes the menu and returns focus to its button.
+- Added desktop and mobile regression checks for enquiry editing, copying, clipboard failure, and mobile navigation.
+- Confirmed lint, type checking, production build, and 20 focused interaction and responsive layout checks pass.
+- Identified eight outdated About/Contact visual snapshots from before the combined page; their baseline reconciliation remains release verification work.
+- Deferred Google Drive video migration, leadership profiles, domain registration, and external hosting until the required inputs and later phases.
+- Applied the selected Ripple spring homepage entrance and an eight-second colour sweep loop on the second sentence, starting after all letters settle; reduced motion disables both effects.
+- Verified the animation sequence, continuous loop, light/dark themes, mobile/desktop layout, and reduced-motion behaviour, and refreshed the four homepage visual baselines.
+- Completed the available Phase 2 public-site cleanup: preserved local visual experiments in the ignored `app/_demos/` private folder and excluded them from exported routes.
+- Added static-export validation to local release checks and GitHub Pages deployment, covering local links, anchors, assets, deployment prefixes, and exclusion of demo/admin/login/dashboard routes.
+- Confirmed the production export contains 117 HTML files and 148 valid local targets; checked the release gate against missing assets, broken anchors, incorrect prefixes, and accidental demo routes.
+- Reconciled the eight About/Contact visual baselines with the combined page and confirmed all 67 selected animation, interaction, checkpoint, screenshot, and responsive layout checks pass.
+- The verified direct WhatsApp invite URL remains pending; the QR-based community page is retained until the club supplies that URL.
+- Completed launch preparation Phase 3 by merging the latest six public-site commits into `admin-platform`, retaining the managed course loader and all protected admin application code.
+- Resolved validation-script and timeline conflicts, and carried the approved MAC address, DNS, and PWM text corrections into both managed course seed data and the published snapshot.
+- Confirmed the public and admin production builds, static export validation, four admin data tests, all 28 admin browser checks, and 67 selected public browser checks pass.
+- Kept public `main` unchanged during this phase; the static publishing bridge and external admin deployment remain later phases.

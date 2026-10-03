@@ -23,6 +23,8 @@
 
 # standalone experiments and retired source files
 /prototypes/
+/app/demos/
+/app/_demos/
 /components/progress-bar.tsx
 
 # next.js

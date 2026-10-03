@@ -39,6 +39,9 @@ jobs:
         env:
           PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
 
+      - name: Check public routes, links, and assets
+        run: npm run check:export
+
       - name: Upload static export
         uses: actions/upload-pages-artifact@v4
         with:

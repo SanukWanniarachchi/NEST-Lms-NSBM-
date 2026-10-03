@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import heroImage from "@/public/images/illustrations/campus-hero.webp";
 import { SiteHeader } from "@/components/site-header";
+import { HeroHeading } from "@/components/hero-heading";
 import { SiteFooter } from "@/components/site-footer";
 import { CourseCard } from "@/components/course-card";
 import { SectionHeading } from "@/components/section-heading";
@@ -36,7 +37,7 @@ export default function Home() {
           <div className="shell hero-grid">
             <div className="hero-copy">
               <p className="eyebrow hero-eyebrow">Student-led technology learning</p>
-              <h1>Learn together.<br /><span>Build what&apos;s next.</span></h1>
+              <HeroHeading />
               <p className="hero-lead">Focused, visual courses created for curious university students ready to explore cybersecurity, networking, and robotics.</p>
               <div className="hero-actions">
                 <Link href="/courses" className="button button--primary">Explore courses <ArrowRightIcon /></Link>
