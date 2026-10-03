@@ -30,8 +30,12 @@ npm run dev
 npm run lint
 npm run typecheck
 npm run build
-# or run all three release gates
+# or run all release gates, including route generation and export validation
 npm run check
 ```
 
 The production build is exported to `out/` for static hosting. GitHub Pages deployment is defined in `.github/workflows/deploy-pages.yml`.
+
+`check:export` checks exported local links, anchor targets, images, scripts, and stylesheet assets, and rejects demo or retired admin/login/dashboard routes. It also checks the configured deployment base path. External video playback and third-party URLs are checked separately.
+
+Local visual experiments are preserved in the ignored `app/_demos/` private folder, which Next.js excludes from routing. To revisit a playground, temporarily rename that folder to `app/demos/` and run the development server; return it to `app/_demos/` before a production build.

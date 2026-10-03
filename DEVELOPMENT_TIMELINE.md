@@ -81,3 +81,8 @@
 - Deferred Google Drive video migration, leadership profiles, domain registration, and external hosting until the required inputs and later phases.
 - Applied the selected Ripple spring homepage entrance and an eight-second colour sweep loop on the second sentence, starting after all letters settle; reduced motion disables both effects.
 - Verified the animation sequence, continuous loop, light/dark themes, mobile/desktop layout, and reduced-motion behaviour, and refreshed the four homepage visual baselines.
+- Completed the available Phase 2 public-site cleanup: preserved local visual experiments in the ignored `app/_demos/` private folder and excluded them from exported routes.
+- Added static-export validation to local release checks and GitHub Pages deployment, covering local links, anchors, assets, deployment prefixes, and exclusion of demo/admin/login/dashboard routes.
+- Confirmed the production export contains 117 HTML files and 148 valid local targets; checked the release gate against missing assets, broken anchors, incorrect prefixes, and accidental demo routes.
+- Reconciled the eight About/Contact visual baselines with the combined page and confirmed all 67 selected animation, interaction, checkpoint, screenshot, and responsive layout checks pass.
+- The verified direct WhatsApp invite URL remains pending; the QR-based community page is retained until the club supplies that URL.
