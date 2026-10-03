@@ -1,0 +1,1444 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-06T13:48:16.586Z",
+  "announcements": [
+    {
+      "title": "NEST News is now available",
+      "date": "2026-09-03",
+      "category": "Notice",
+      "summary": "Course releases, community stories, achievements, partnerships, and research updates now have a shared home in NEST News.",
+      "actionLabel": "Read NEST News",
+      "actionHref": "/news",
+      "featured": false
+    },
+    {
+      "title": "NEST learning community is open",
+      "date": "2026-08-23",
+      "category": "Community",
+      "summary": "Students can join the NEST Community WhatsApp group to follow club updates, learning activities, and peer-led opportunities.",
+      "actionLabel": "Join community",
+      "actionHref": "/community",
+      "featured": true
+    },
+    {
+      "title": "Technology micro-lessons published",
+      "date": "2026-08-12",
+      "category": "Notice",
+      "summary": "The first public LMS release includes cybersecurity, networking, and robotics learning paths with structured micro-lessons.",
+      "actionLabel": "Explore courses",
+      "actionHref": "/courses",
+      "featured": false
+    }
+  ],
+  "courses": [
+    {
+      "slug": "cybersecurity-foundations",
+      "title": "Cybersecurity Foundations: Protect the Digital World",
+      "shortTitle": "Cybersecurity Foundations",
+      "category": "Cybersecurity",
+      "eyebrow": "Think like a defender",
+      "description": "Recognise common attacks, protect accounts and devices, and build safer digital habits from the ground up.",
+      "longDescription": "A beginner-friendly micro-course that explains cyber risk through short visual lessons, familiar examples, and practical safety checks for everyday university life.",
+      "level": "Beginner",
+      "duration": "Approx. 58 min",
+      "lessonCount": 29,
+      "imageKey": "cybersecurity",
+      "imageAlt": "A bright blue shield and keyhole connected to an abstract circuit network",
+      "accent": "violet",
+      "instructor": {
+        "name": "NEST Learning Team",
+        "role": "Cybersecurity learning path",
+        "initials": "NT",
+        "bio": "Developed as a collaborative NEST micro-course for students beginning their journey into digital safety and ethical cyber awareness."
+      },
+      "outcomes": [
+        "Explain why cybersecurity matters to individuals and organisations",
+        "Recognise malware, phishing, social engineering, and password attacks",
+        "Apply stronger authentication, browsing, Wi-Fi, update, and backup practices",
+        "Describe core network-security controls including firewalls, encryption, HTTPS, and VPNs"
+      ],
+      "modules": [
+        {
+          "id": "introduction-to-cybersecurity",
+          "title": "Introduction to Cybersecurity",
+          "description": "Build the vocabulary needed to discuss threats, protection, and digital trust.",
+          "lessons": [
+            {
+              "slug": "what-is-cybersecurity",
+              "title": "What is Cybersecurity?",
+              "duration": "2 min",
+              "description": "Understand how people, processes, and technology protect systems and information.",
+              "learningObjective": "Explain the role and meaning of “Cybersecurity” and connect it to a familiar technology scenario.",
+              "keyPoints": [
+                "Digital assets",
+                "Threats and safeguards",
+                "Real-world incidents"
+              ],
+              "activity": "List three digital assets you use at university and one protection for each.",
+              "recap": "Understand how people, processes, and technology protect systems and information.",
+              "youtubeUrl": "https://www.youtube.com/watch?v=4j9becKu17g",
+              "videoDuration": "1:56",
+              "videoOrientation": "portrait"
+            },
+            {
+              "slug": "why-cybersecurity-matters",
+              "title": "Why Cybersecurity Matters",
+              "duration": "2 min",
+              "description": "Connect security incidents to privacy, finances, learning, reputation, and organisational continuity.",
+              "learningObjective": "Describe the key ideas behind “Why Cybersecurity Matters” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Personal impact",
+                "Organisational impact",
+                "Shared responsibility"
+              ],
+              "activity": "Trace the possible impact of a compromised university account.",
+              "recap": "Connect security incidents to privacy, finances, learning, reputation, and organisational continuity.",
+              "youtubeUrl": "https://www.youtube.com/watch?v=AEE9xxLteqA",
+              "videoDuration": "1:12",
+              "videoOrientation": "portrait"
+            },
+            {
+              "slug": "types-of-hackers",
+              "title": "Types of Hackers",
+              "duration": "2 min",
+              "description": "Compare white-hat, black-hat, and grey-hat activity through permission and intent.",
+              "learningObjective": "Describe the key ideas behind “Types of Hackers” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "White-hat",
+                "Black-hat",
+                "Grey-hat"
+              ],
+              "activity": "Classify three short scenarios by intent and authorisation.",
+              "recap": "Compare white-hat, black-hat, and grey-hat activity through permission and intent.",
+              "youtubeUrl": "https://www.youtube.com/watch?v=0iaHiwzGpjQ",
+              "videoDuration": "1:02",
+              "videoOrientation": "portrait"
+            },
+            {
+              "slug": "common-cyber-threats",
+              "title": "Common Cyber Threats Overview",
+              "duration": "2 min",
+              "description": "Survey the attacks beginners are most likely to encounter online.",
+              "learningObjective": "Describe the key ideas behind “Common Cyber Threats Overview” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Malware",
+                "Phishing",
+                "Account compromise"
+              ],
+              "activity": "Match each threat to the warning sign that best reveals it.",
+              "recap": "Survey the attacks beginners are most likely to encounter online.",
+              "youtubeUrl": "https://www.youtube.com/watch?v=56CoPa25U9s",
+              "videoDuration": "1:02",
+              "videoOrientation": "portrait"
+            },
+            {
+              "slug": "cia-triad",
+              "title": "The CIA Triad",
+              "duration": "2 min",
+              "description": "Use confidentiality, integrity, and availability to describe what security protects.",
+              "learningObjective": "Describe the key ideas behind “The CIA Triad” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Confidentiality",
+                "Integrity",
+                "Availability"
+              ],
+              "activity": "Apply the CIA triad to a student records system.",
+              "recap": "Use confidentiality, integrity, and availability to describe what security protects.",
+              "youtubeUrl": "https://www.youtube.com/watch?v=2AkZoOVsAh8",
+              "videoDuration": "1:07",
+              "videoOrientation": "portrait"
+            }
+          ]
+        },
+        {
+          "id": "common-attacks",
+          "title": "Common Attacks",
+          "description": "Recognise how common attacks work and the signals that help expose them.",
+          "lessons": [
+            {
+              "slug": "what-is-malware",
+              "title": "What is Malware?",
+              "duration": "2 min",
+              "description": "Learn how malicious software disrupts, spies on, damages, or controls devices.",
+              "learningObjective": "Explain the role and meaning of “Malware” and connect it to a familiar technology scenario.",
+              "keyPoints": [
+                "Malicious software",
+                "Delivery methods",
+                "Warning signs"
+              ],
+              "activity": "Identify safe first actions after noticing suspicious device behaviour.",
+              "recap": "Learn how malicious software disrupts, spies on, damages, or controls devices.",
+              "youtubeUrl": "https://www.youtube.com/watch?v=tzHGuYhDGKk",
+              "videoDuration": "1:07",
+              "videoOrientation": "portrait"
+            },
+            {
+              "slug": "virus-worm-trojan",
+              "title": "Virus vs Worm vs Trojan",
+              "duration": "2 min",
+              "description": "Separate three common malware types by how they spread and disguise themselves.",
+              "learningObjective": "Describe the key ideas behind “Virus vs Worm vs Trojan” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Virus",
+                "Worm",
+                "Trojan"
+              ],
+              "activity": "Sort example behaviours into virus, worm, or Trojan categories.",
+              "recap": "Separate three common malware types by how they spread and disguise themselves."
+            },
+            {
+              "slug": "what-is-phishing",
+              "title": "What is Phishing?",
+              "duration": "2 min",
+              "description": "Spot messages designed to steal information or pressure you into an unsafe action.",
+              "learningObjective": "Explain the role and meaning of “Phishing” and connect it to a familiar technology scenario.",
+              "keyPoints": [
+                "Sender clues",
+                "Suspicious links",
+                "Urgency and impersonation"
+              ],
+              "activity": "Inspect a sample email and mark every phishing indicator.",
+              "recap": "Spot messages designed to steal information or pressure you into an unsafe action.",
+              "youtubeUrl": "https://www.youtube.com/watch?v=-qbco0aZ6uI",
+              "videoDuration": "1:07",
+              "videoOrientation": "portrait"
+            },
+            {
+              "slug": "password-attacks",
+              "title": "Password Attacks",
+              "duration": "2 min",
+              "description": "Understand brute-force and dictionary attacks and why predictable passwords fail.",
+              "learningObjective": "Describe the key ideas behind “Password Attacks” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Brute force",
+                "Dictionary attacks",
+                "Credential reuse"
+              ],
+              "activity": "Compare weak and strong passphrases without revealing a real password.",
+              "recap": "Understand brute-force and dictionary attacks and why predictable passwords fail."
+            },
+            {
+              "slug": "man-in-the-middle",
+              "title": "Man-in-the-Middle Attacks",
+              "duration": "2 min",
+              "description": "See how an attacker can intercept communication between two trusted endpoints.",
+              "learningObjective": "Describe the key ideas behind “Man-in-the-Middle Attacks” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Interception",
+                "Untrusted networks",
+                "Encrypted connections"
+              ],
+              "activity": "Draw the normal path and intercepted path of a web request.",
+              "recap": "See how an attacker can intercept communication between two trusted endpoints."
+            },
+            {
+              "slug": "social-engineering",
+              "title": "Social Engineering Basics",
+              "duration": "2 min",
+              "description": "Recognise manipulation that targets human trust rather than technical weaknesses.",
+              "learningObjective": "Describe the key ideas behind “Social Engineering Basics” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Pretexting",
+                "Authority",
+                "Urgency"
+              ],
+              "activity": "Rewrite a pressured response into a calm verification step.",
+              "recap": "Recognise manipulation that targets human trust rather than technical weaknesses.",
+              "youtubeUrl": "https://www.youtube.com/watch?v=7V9lRQVQLbk",
+              "videoDuration": "0:58",
+              "videoOrientation": "portrait"
+            },
+            {
+              "slug": "ransomware",
+              "title": "Ransomware Explained",
+              "duration": "2 min",
+              "description": "Understand how ransomware blocks access to data and why recovery planning matters.",
+              "learningObjective": "Describe the key ideas behind “Ransomware Explained” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Encryption for extortion",
+                "Backups",
+                "Incident reporting"
+              ],
+              "activity": "Choose the safest first responses to a ransomware warning.",
+              "recap": "Understand how ransomware blocks access to data and why recovery planning matters."
+            },
+            {
+              "slug": "zero-day-attacks",
+              "title": "Zero-Day Attacks",
+              "duration": "2 min",
+              "description": "Learn why previously unknown vulnerabilities can be difficult to defend against.",
+              "learningObjective": "Describe the key ideas behind “Zero-Day Attacks” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Unknown vulnerability",
+                "Exploit window",
+                "Layered defence"
+              ],
+              "activity": "Explain why updates and multiple safeguards still matter when no patch exists.",
+              "recap": "Learn why previously unknown vulnerabilities can be difficult to defend against."
+            }
+          ]
+        },
+        {
+          "id": "authentication-password-security",
+          "title": "Authentication & Password Security",
+          "description": "Build safer account habits and understand how systems verify identity.",
+          "lessons": [
+            {
+              "slug": "strong-passwords",
+              "title": "What Makes a Strong Password?",
+              "duration": "2 min",
+              "description": "Create memorable passphrases that resist guessing and automated attacks.",
+              "learningObjective": "Describe the key ideas behind “What Makes a Strong Password” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Length",
+                "Uniqueness",
+                "Passphrases"
+              ],
+              "activity": "Evaluate sample passwords using length, uniqueness, and predictability.",
+              "recap": "Create memorable passphrases that resist guessing and automated attacks."
+            },
+            {
+              "slug": "multi-factor-authentication",
+              "title": "Multi-Factor Authentication",
+              "duration": "2 min",
+              "description": "Add a second verification factor so one stolen password is not enough.",
+              "learningObjective": "Describe the key ideas behind “Multi-Factor Authentication” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Knowledge factors",
+                "Possession factors",
+                "Biometric factors"
+              ],
+              "activity": "Choose suitable factors for email, banking, and campus accounts.",
+              "recap": "Add a second verification factor so one stolen password is not enough."
+            },
+            {
+              "slug": "password-hashing",
+              "title": "Password Hashing",
+              "duration": "2 min",
+              "description": "Understand how one-way hashing helps services avoid storing readable passwords.",
+              "learningObjective": "Describe the key ideas behind “Password Hashing” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "One-way transformation",
+                "Salt",
+                "Verification"
+              ],
+              "activity": "Use a lock-and-fingerprint analogy to explain password hashing.",
+              "recap": "Understand how one-way hashing helps services avoid storing readable passwords."
+            },
+            {
+              "slug": "password-mistakes",
+              "title": "Common Password Mistakes",
+              "duration": "2 min",
+              "description": "Recognise reuse, sharing, predictable patterns, and unsafe storage.",
+              "learningObjective": "Describe the key ideas behind “Common Password Mistakes” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Password reuse",
+                "Personal details",
+                "Unsafe sharing"
+              ],
+              "activity": "Create a safer alternative for each common password mistake.",
+              "recap": "Recognise reuse, sharing, predictable patterns, and unsafe storage."
+            },
+            {
+              "slug": "password-managers",
+              "title": "Password Managers",
+              "duration": "2 min",
+              "description": "Use an encrypted vault to create and store unique credentials.",
+              "learningObjective": "Describe the key ideas behind “Password Managers” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Encrypted vault",
+                "Password generation",
+                "Recovery planning"
+              ],
+              "activity": "Draft a checklist for choosing and setting up a password manager.",
+              "recap": "Use an encrypted vault to create and store unique credentials."
+            }
+          ]
+        },
+        {
+          "id": "network-security-basics",
+          "title": "Network Security Basics",
+          "description": "Meet the network concepts and controls that protect data in transit.",
+          "lessons": [
+            {
+              "slug": "what-is-a-network",
+              "title": "What is a Network?",
+              "duration": "2 min",
+              "description": "See how connected devices exchange data and share services.",
+              "learningObjective": "Explain the role and meaning of “a Network” and connect it to a familiar technology scenario.",
+              "keyPoints": [
+                "Connected devices",
+                "Data exchange",
+                "Shared services"
+              ],
+              "activity": "Sketch the devices connected to a typical home or study network.",
+              "recap": "See how connected devices exchange data and share services."
+            },
+            {
+              "slug": "what-is-an-ip-address",
+              "title": "What is an IP Address?",
+              "duration": "2 min",
+              "description": "Understand the logical address used to identify a device interface on a network.",
+              "learningObjective": "Explain the role and meaning of “an IP Address” and connect it to a familiar technology scenario.",
+              "keyPoints": [
+                "Network identity",
+                "IPv4 example",
+                "Public and private context"
+              ],
+              "activity": "Label the source and destination addresses in a simple packet journey.",
+              "recap": "Understand the logical address used to identify a device interface on a network."
+            },
+            {
+              "slug": "what-is-a-firewall",
+              "title": "What is a Firewall?",
+              "duration": "2 min",
+              "description": "Learn how traffic rules allow trusted communication and block unwanted connections.",
+              "learningObjective": "Explain the role and meaning of “a Firewall” and connect it to a familiar technology scenario.",
+              "keyPoints": [
+                "Traffic filtering",
+                "Rules",
+                "Inbound and outbound traffic"
+              ],
+              "activity": "Decide which sample connections a basic firewall should allow.",
+              "recap": "Learn how traffic rules allow trusted communication and block unwanted connections."
+            },
+            {
+              "slug": "what-is-encryption",
+              "title": "What is Encryption?",
+              "duration": "2 min",
+              "description": "Turn readable information into protected ciphertext that requires a key.",
+              "learningObjective": "Explain the role and meaning of “Encryption” and connect it to a familiar technology scenario.",
+              "keyPoints": [
+                "Plaintext",
+                "Ciphertext",
+                "Keys"
+              ],
+              "activity": "Use a sealed-message analogy to explain encryption to a classmate.",
+              "recap": "Turn readable information into protected ciphertext that requires a key."
+            },
+            {
+              "slug": "https-vs-http",
+              "title": "HTTPS vs HTTP",
+              "duration": "2 min",
+              "description": "Recognise how HTTPS protects web traffic with encryption and identity checks.",
+              "learningObjective": "Describe the key ideas behind “HTTPS vs HTTP” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "TLS",
+                "Browser indicators",
+                "Data in transit"
+              ],
+              "activity": "Compare the security signals of HTTP and HTTPS page addresses.",
+              "recap": "Recognise how HTTPS protects web traffic with encryption and identity checks."
+            },
+            {
+              "slug": "vpn-basics",
+              "title": "VPN Basics",
+              "duration": "2 min",
+              "description": "Understand how a VPN creates an encrypted tunnel to a trusted service.",
+              "learningObjective": "Describe the key ideas behind “VPN Basics” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Encrypted tunnel",
+                "VPN endpoint",
+                "Limits of a VPN"
+              ],
+              "activity": "Map what a VPN protects and what safe browsing habits still remain necessary.",
+              "recap": "Understand how a VPN creates an encrypted tunnel to a trusted service."
+            }
+          ]
+        },
+        {
+          "id": "safe-practices",
+          "title": "Safe Practices",
+          "description": "Turn cybersecurity knowledge into a repeatable personal protection routine.",
+          "lessons": [
+            {
+              "slug": "safe-browsing",
+              "title": "Safe Browsing Tips",
+              "duration": "2 min",
+              "description": "Use browser signals, careful downloads, and deliberate link checking to reduce risk.",
+              "learningObjective": "Describe the key ideas behind “Safe Browsing Tips” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Trusted sources",
+                "Link checking",
+                "Download caution"
+              ],
+              "activity": "Create a five-point safe-browsing checklist.",
+              "recap": "Use browser signals, careful downloads, and deliberate link checking to reduce risk."
+            },
+            {
+              "slug": "fake-websites",
+              "title": "Recognising Fake Websites",
+              "duration": "2 min",
+              "description": "Inspect addresses, design inconsistencies, requests, and trust signals before entering data.",
+              "learningObjective": "Describe the key ideas behind “Recognising Fake Websites” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Domain spelling",
+                "Page behaviour",
+                "Unexpected requests"
+              ],
+              "activity": "Compare a legitimate address with three deceptive lookalikes.",
+              "recap": "Inspect addresses, design inconsistencies, requests, and trust signals before entering data."
+            },
+            {
+              "slug": "secure-wifi",
+              "title": "Secure Wi-Fi Usage",
+              "duration": "2 min",
+              "description": "Protect devices and accounts when connecting through home, campus, or public wireless networks.",
+              "learningObjective": "Describe the key ideas behind “Secure Wi-Fi Usage” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Trusted networks",
+                "Router security",
+                "Public Wi-Fi caution"
+              ],
+              "activity": "Choose safer actions for three public Wi-Fi scenarios.",
+              "recap": "Protect devices and accounts when connecting through home, campus, or public wireless networks."
+            },
+            {
+              "slug": "updates-patching",
+              "title": "Software Updates & Patching",
+              "duration": "2 min",
+              "description": "Understand how timely updates close known weaknesses and improve resilience.",
+              "learningObjective": "Describe the key ideas behind “Software Updates & Patching” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Security patches",
+                "Automatic updates",
+                "Supported software"
+              ],
+              "activity": "Audit the update settings on a non-sensitive practice device.",
+              "recap": "Understand how timely updates close known weaknesses and improve resilience."
+            },
+            {
+              "slug": "backup-strategies",
+              "title": "Backup Strategies",
+              "duration": "2 min",
+              "description": "Use reliable copies to recover from loss, damage, or ransomware.",
+              "learningObjective": "Describe the key ideas behind “Backup Strategies” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "3-2-1 approach",
+                "Recovery copies",
+                "Restore testing"
+              ],
+              "activity": "Design a backup plan for important coursework.",
+              "recap": "Use reliable copies to recover from loss, damage, or ransomware."
+            }
+          ]
+        }
+      ],
+      "progress": 0
+    },
+    {
+      "slug": "networking-essentials",
+      "title": "Networking Essentials: How Digital Connections Work",
+      "shortTitle": "Networking Essentials",
+      "category": "Networking",
+      "eyebrow": "Connect the pieces",
+      "description": "Follow data across devices, addresses, protocols, and services, then apply the ideas to a practical small network.",
+      "longDescription": "A visual beginner micro-course that turns networking terminology into one connected story—from the first local link to internet services and practical troubleshooting.",
+      "level": "Beginner",
+      "duration": "Approx. 50 min",
+      "lessonCount": 25,
+      "imageKey": "networking",
+      "imageAlt": "A bright orange wireless router linking a balanced network of connected nodes",
+      "accent": "amber",
+      "instructor": {
+        "name": "NEST Learning Team",
+        "role": "Networking learning path",
+        "initials": "NT",
+        "bio": "Developed as a collaborative NEST micro-course to make the systems behind everyday connectivity visible and approachable."
+      },
+      "outcomes": [
+        "Identify common network types, devices, addresses, and protocols",
+        "Explain how packets travel across local networks and the internet",
+        "Describe core safety controls including firewalls, VPNs, and encryption",
+        "Set up, inspect, test, and troubleshoot a small network"
+      ],
+      "modules": [
+        {
+          "id": "introduction-to-networking",
+          "title": "Introduction to Networking",
+          "description": "Discover why networks exist and the devices and links that make them possible.",
+          "lessons": [
+            {
+              "slug": "what-is-networking",
+              "title": "What is Networking?",
+              "duration": "2 min",
+              "description": "See how connected devices communicate, share resources, and reach internet services.",
+              "learningObjective": "Explain the role and meaning of “Networking” and connect it to a familiar technology scenario.",
+              "keyPoints": [
+                "Connected devices",
+                "Communication",
+                "Internet basics"
+              ],
+              "activity": "Draw a network containing two devices and one shared service.",
+              "recap": "See how connected devices communicate, share resources, and reach internet services."
+            },
+            {
+              "slug": "types-of-networks",
+              "title": "Types of Networks",
+              "duration": "2 min",
+              "description": "Compare LAN, WAN, and MAN networks by coverage, ownership, and purpose.",
+              "learningObjective": "Describe the key ideas behind “Types of Networks” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "LAN",
+                "WAN",
+                "MAN"
+              ],
+              "activity": "Classify home, campus, city, and global network examples.",
+              "recap": "Compare LAN, WAN, and MAN networks by coverage, ownership, and purpose."
+            },
+            {
+              "slug": "networking-devices",
+              "title": "Networking Devices",
+              "duration": "2 min",
+              "description": "Understand the basic roles of routers, switches, modems, and hubs.",
+              "learningObjective": "Describe the key ideas behind “Networking Devices” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Router",
+                "Switch",
+                "Modem and hub"
+              ],
+              "activity": "Match each device to the traffic-handling job it performs.",
+              "recap": "Understand the basic roles of routers, switches, modems, and hubs."
+            },
+            {
+              "slug": "wired-vs-wireless",
+              "title": "Wired vs Wireless Networks",
+              "duration": "2 min",
+              "description": "Compare Ethernet and Wi-Fi for speed, mobility, interference, and deployment.",
+              "learningObjective": "Describe the key ideas behind “Wired vs Wireless Networks” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Ethernet",
+                "Wi-Fi",
+                "Performance trade-offs"
+              ],
+              "activity": "Recommend wired or wireless connectivity for three campus situations.",
+              "recap": "Compare Ethernet and Wi-Fi for speed, mobility, interference, and deployment."
+            },
+            {
+              "slug": "benefits-of-networking",
+              "title": "Benefits of Networking",
+              "duration": "2 min",
+              "description": "Connect networks to file sharing, communication, internet access, and collaboration.",
+              "learningObjective": "Describe the key ideas behind “Benefits of Networking” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Resource sharing",
+                "Communication",
+                "Internet access"
+              ],
+              "activity": "List the network services used during one study session.",
+              "recap": "Connect networks to file sharing, communication, internet access, and collaboration."
+            }
+          ]
+        },
+        {
+          "id": "network-fundamentals",
+          "title": "Network Fundamentals",
+          "description": "Learn the addresses, naming systems, protocols, and packets behind communication.",
+          "lessons": [
+            {
+              "slug": "ip-address",
+              "title": "What is an IP Address?",
+              "duration": "2 min",
+              "description": "Understand how logical addresses identify interfaces and guide packets to destinations.",
+              "learningObjective": "Explain the role and meaning of “an IP Address” and connect it to a familiar technology scenario.",
+              "keyPoints": [
+                "Logical addressing",
+                "Network and host context",
+                "Packet destination"
+              ],
+              "activity": "Label source and destination IP addresses in a simple message flow.",
+              "recap": "Understand how logical addresses identify interfaces and guide packets to destinations."
+            },
+            {
+              "slug": "ipv4-vs-ipv6",
+              "title": "IPv4 vs IPv6",
+              "duration": "2 min",
+              "description": "Compare the familiar 32-bit IPv4 format with the larger 128-bit IPv6 address space.",
+              "learningObjective": "Describe the key ideas behind “IPv4 vs IPv6” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "32-bit IPv4",
+                "128-bit IPv6",
+                "Address capacity"
+              ],
+              "activity": "Identify whether sample addresses use IPv4 or IPv6.",
+              "recap": "Compare the familiar 32-bit IPv4 format with the larger 128-bit IPv6 address space."
+            },
+            {
+              "slug": "mac-address",
+              "title": "MAC Address Basics",
+              "duration": "2 min",
+              "description": "Learn how a link-layer address identifies a network interface for local data delivery.",
+              "learningObjective": "Describe the key ideas behind “MAC Address Basics” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Link-layer address",
+                "Local delivery",
+                "Network interface"
+              ],
+              "activity": "Follow how a switch uses MAC addresses inside a LAN.",
+              "recap": "Learn how a link-layer address identifies a network interface for local data delivery."
+            },
+            {
+              "slug": "dns-explained",
+              "title": "DNS Explained",
+              "duration": "2 min",
+              "description": "See how the Domain Name System resolves human-friendly names to records such as IP addresses.",
+              "learningObjective": "Describe the key ideas behind “DNS Explained” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Domain names",
+                "DNS lookup",
+                "Resource records"
+              ],
+              "activity": "Trace what happens after entering a website name in a browser.",
+              "recap": "See how the Domain Name System resolves human-friendly names to records such as IP addresses."
+            },
+            {
+              "slug": "network-protocols",
+              "title": "Network Protocols",
+              "duration": "2 min",
+              "description": "Recognise HTTP, HTTPS, and FTP as agreed rules for different communication tasks.",
+              "learningObjective": "Describe the key ideas behind “Network Protocols” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "HTTP",
+                "HTTPS",
+                "FTP"
+              ],
+              "activity": "Match each protocol to a suitable file or web scenario.",
+              "recap": "Recognise HTTP, HTTPS, and FTP as agreed rules for different communication tasks."
+            },
+            {
+              "slug": "data-packets",
+              "title": "Data Packets & Transmission",
+              "duration": "2 min",
+              "description": "Understand how information is divided, addressed, transmitted, and reassembled.",
+              "learningObjective": "Describe the key ideas behind “Data Packets & Transmission” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Packet structure",
+                "Transmission path",
+                "Reassembly"
+              ],
+              "activity": "Split a short message into numbered packets and reorder it.",
+              "recap": "Understand how information is divided, addressed, transmitted, and reassembled."
+            }
+          ]
+        },
+        {
+          "id": "network-security-basics",
+          "title": "Network Security Basics",
+          "description": "Protect network communication with safer practices and layered controls.",
+          "lessons": [
+            {
+              "slug": "firewall",
+              "title": "What is a Firewall?",
+              "duration": "2 min",
+              "description": "Use traffic rules to control which connections may enter or leave a network.",
+              "learningObjective": "Explain the role and meaning of “a Firewall” and connect it to a familiar technology scenario.",
+              "keyPoints": [
+                "Filtering",
+                "Rules",
+                "Allowed and blocked traffic"
+              ],
+              "activity": "Create allow-or-block decisions for four sample connections.",
+              "recap": "Use traffic rules to control which connections may enter or leave a network."
+            },
+            {
+              "slug": "safe-wifi",
+              "title": "Safe Wi-Fi Practices",
+              "duration": "2 min",
+              "description": "Reduce wireless risk with strong settings, trusted networks, and careful public access.",
+              "learningObjective": "Describe the key ideas behind “Safe Wi-Fi Practices” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Strong encryption",
+                "Trusted access points",
+                "Public Wi-Fi caution"
+              ],
+              "activity": "Review a sample router checklist and identify weak settings.",
+              "recap": "Reduce wireless risk with strong settings, trusted networks, and careful public access."
+            },
+            {
+              "slug": "vpn",
+              "title": "VPN Basics",
+              "duration": "2 min",
+              "description": "Understand encrypted tunnels, VPN endpoints, and the boundaries of VPN protection.",
+              "learningObjective": "Describe the key ideas behind “VPN Basics” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Tunnel",
+                "Encryption",
+                "VPN limitations"
+              ],
+              "activity": "Diagram a device-to-VPN-to-service connection path.",
+              "recap": "Understand encrypted tunnels, VPN endpoints, and the boundaries of VPN protection."
+            },
+            {
+              "slug": "encryption",
+              "title": "Encryption Basics",
+              "duration": "2 min",
+              "description": "Protect network data by transforming plaintext into ciphertext with a key.",
+              "learningObjective": "Describe the key ideas behind “Encryption Basics” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Plaintext",
+                "Ciphertext",
+                "Encryption key"
+              ],
+              "activity": "Explain encrypted transmission using a sealed-envelope analogy.",
+              "recap": "Protect network data by transforming plaintext into ciphertext with a key."
+            },
+            {
+              "slug": "network-threats",
+              "title": "Common Network Threats",
+              "duration": "2 min",
+              "description": "Recognise interception, unauthorised access, malicious traffic, and service disruption.",
+              "learningObjective": "Describe the key ideas behind “Common Network Threats” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Eavesdropping",
+                "Unauthorised access",
+                "Denial of service"
+              ],
+              "activity": "Pair each network threat with a sensible defensive control.",
+              "recap": "Recognise interception, unauthorised access, malicious traffic, and service disruption."
+            }
+          ]
+        },
+        {
+          "id": "internet-communication",
+          "title": "Internet & Communication",
+          "description": "Connect local networking ideas to global services, cloud systems, and digital communication.",
+          "lessons": [
+            {
+              "slug": "how-internet-works",
+              "title": "How the Internet Works",
+              "duration": "2 min",
+              "description": "Follow a request across local equipment, service providers, routers, and destination servers.",
+              "learningObjective": "Describe the key ideas behind “How the Internet Works” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Networks of networks",
+                "Routing",
+                "Internet service providers"
+              ],
+              "activity": "Sketch the major stops between a laptop and a website.",
+              "recap": "Follow a request across local equipment, service providers, routers, and destination servers."
+            },
+            {
+              "slug": "client-server",
+              "title": "Client-Server Model",
+              "duration": "2 min",
+              "description": "Understand how clients request resources and servers respond with services or data.",
+              "learningObjective": "Describe the key ideas behind “Client-Server Model” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Client request",
+                "Server response",
+                "Shared service"
+              ],
+              "activity": "Label the client and server in three familiar applications.",
+              "recap": "Understand how clients request resources and servers respond with services or data."
+            },
+            {
+              "slug": "cloud-computing",
+              "title": "Cloud Computing Basics",
+              "duration": "2 min",
+              "description": "See how remote computing resources provide storage, software, and processing on demand.",
+              "learningObjective": "Describe the key ideas behind “Cloud Computing Basics” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Remote resources",
+                "Scalability",
+                "Cloud services"
+              ],
+              "activity": "Classify examples as local computing or cloud-supported computing.",
+              "recap": "See how remote computing resources provide storage, software, and processing on demand."
+            },
+            {
+              "slug": "email-process",
+              "title": "Email Communication Process",
+              "duration": "2 min",
+              "description": "Trace a message from the sender's client through mail servers to the recipient.",
+              "learningObjective": "Describe the key ideas behind “Email Communication Process” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Mail client",
+                "Sending server",
+                "Recipient server"
+              ],
+              "activity": "Sequence the stages of sending and receiving an email.",
+              "recap": "Trace a message from the sender's client through mail servers to the recipient."
+            },
+            {
+              "slug": "troubleshooting-basics",
+              "title": "Network Troubleshooting Basics",
+              "duration": "2 min",
+              "description": "Use a calm, layered process to isolate physical, configuration, and service problems.",
+              "learningObjective": "Describe the key ideas behind “Network Troubleshooting Basics” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Check the physical layer",
+                "Verify configuration",
+                "Test one step at a time"
+              ],
+              "activity": "Order a troubleshooting checklist for a device with no internet access.",
+              "recap": "Use a calm, layered process to isolate physical, configuration, and service problems."
+            }
+          ]
+        },
+        {
+          "id": "practical-networking",
+          "title": "Practical Networking Skills",
+          "description": "Apply the course through setup, inspection, testing, and simulation tasks.",
+          "lessons": [
+            {
+              "slug": "home-network",
+              "title": "Setting Up a Home Network",
+              "duration": "2 min",
+              "description": "Plan connections, place equipment, secure wireless access, and connect devices.",
+              "learningObjective": "Describe the key ideas behind “Setting Up a Home Network” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Router placement",
+                "Secure Wi-Fi",
+                "Device connection"
+              ],
+              "activity": "Design a simple home network diagram and setup checklist.",
+              "recap": "Plan connections, place equipment, secure wireless access, and connect devices."
+            },
+            {
+              "slug": "ip-configuration",
+              "title": "Checking IP Configuration",
+              "duration": "2 min",
+              "description": "Inspect address, gateway, and DNS information to understand a device's network settings.",
+              "learningObjective": "Describe the key ideas behind “Checking IP Configuration” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "IP address",
+                "Default gateway",
+                "DNS server"
+              ],
+              "activity": "Annotate a sample IP configuration output.",
+              "recap": "Inspect address, gateway, and DNS information to understand a device's network settings."
+            },
+            {
+              "slug": "connectivity-testing",
+              "title": "Speed & Connectivity Testing",
+              "duration": "2 min",
+              "description": "Use basic tests to distinguish reachability, latency, and throughput issues.",
+              "learningObjective": "Describe the key ideas behind “Speed & Connectivity Testing” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Reachability",
+                "Latency",
+                "Throughput"
+              ],
+              "activity": "Choose the right test for slow, intermittent, and disconnected scenarios.",
+              "recap": "Use basic tests to distinguish reachability, latency, and throughput issues."
+            },
+            {
+              "slug": "packet-tracer",
+              "title": "Introduction to Cisco Packet Tracer",
+              "duration": "2 min",
+              "description": "Use a visual simulator to place devices, create links, and observe packet movement.",
+              "learningObjective": "Describe the key ideas behind “Introduction to Cisco Packet Tracer” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Workspace",
+                "Devices and links",
+                "Simulation mode"
+              ],
+              "activity": "Plan a two-PC, one-switch Packet Tracer exercise.",
+              "recap": "Use a visual simulator to place devices, create links, and observe packet movement."
+            }
+          ]
+        }
+      ],
+      "progress": 0
+    },
+    {
+      "slug": "robotics-fundamentals",
+      "title": "Robotics Fundamentals: Sense, Think, Act",
+      "shortTitle": "Robotics Fundamentals",
+      "category": "Robotics",
+      "eyebrow": "Turn ideas into motion",
+      "description": "Explore robot systems through electronics, Arduino-based control, motion, feedback, sensors, and connected applications.",
+      "longDescription": "A visual beginner micro-course that follows the complete robot workflow—from basic circuits and microcontrollers to movement, feedback, wireless communication, and future applications.",
+      "level": "Beginner to intermediate",
+      "duration": "Approx. 62 min",
+      "lessonCount": 31,
+      "imageKey": "robotics",
+      "imageAlt": "A bright teal educational rover connected to gears and a controller board",
+      "accent": "cyan",
+      "instructor": {
+        "name": "NEST Learning Team",
+        "role": "Robotics learning path",
+        "initials": "NT",
+        "bio": "Developed as a collaborative NEST micro-course that combines approachable electronics, control, and creative systems thinking."
+      },
+      "outcomes": [
+        "Explain the components and sense-think-act workflow of a robot",
+        "Recognise basic circuits, sensors, actuators, and signal types",
+        "Describe Arduino inputs, outputs, PWM, servos, and sensor interfaces",
+        "Compare motor control, feedback, IoT connectivity, and smart robotics applications"
+      ],
+      "modules": [
+        {
+          "id": "introduction-to-robotics",
+          "title": "Introduction to Robotics",
+          "description": "Understand what robots are, where they work, and how their systems cooperate.",
+          "lessons": [
+            {
+              "slug": "what-is-a-robot",
+              "title": "What is a Robot?",
+              "duration": "2 min",
+              "description": "Distinguish robots from ordinary machines through sensing, decision-making, and action.",
+              "learningObjective": "Explain the role and meaning of “a Robot” and connect it to a familiar technology scenario.",
+              "keyPoints": [
+                "Automation",
+                "Programmable behaviour",
+                "Environment interaction"
+              ],
+              "activity": "Classify familiar machines as robots or non-robots and explain why.",
+              "recap": "Distinguish robots from ordinary machines through sensing, decision-making, and action."
+            },
+            {
+              "slug": "types-of-robots",
+              "title": "Types of Robots",
+              "duration": "2 min",
+              "description": "Compare industrial, mobile, and humanoid robots by structure and purpose.",
+              "learningObjective": "Describe the key ideas behind “Types of Robots” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Industrial robots",
+                "Mobile robots",
+                "Humanoid robots"
+              ],
+              "activity": "Match robot types to manufacturing, exploration, and assistance tasks.",
+              "recap": "Compare industrial, mobile, and humanoid robots by structure and purpose."
+            },
+            {
+              "slug": "robot-components",
+              "title": "Components of a Robot",
+              "duration": "2 min",
+              "description": "Meet the mechanical frame, controller, sensors, actuators, and power system.",
+              "learningObjective": "Describe the key ideas behind “Components of a Robot” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Structure",
+                "Controller and sensors",
+                "Actuators and power"
+              ],
+              "activity": "Label the major components on a simple mobile robot diagram.",
+              "recap": "Meet the mechanical frame, controller, sensors, actuators, and power system."
+            },
+            {
+              "slug": "robot-applications",
+              "title": "Real-Life Applications",
+              "duration": "2 min",
+              "description": "Explore how robots support manufacturing, medicine, agriculture, logistics, and research.",
+              "learningObjective": "Describe the key ideas behind “Real-Life Applications” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Industry",
+                "Healthcare",
+                "Service and exploration"
+              ],
+              "activity": "Choose a useful robot application for a campus challenge.",
+              "recap": "Explore how robots support manufacturing, medicine, agriculture, logistics, and research."
+            },
+            {
+              "slug": "sense-think-act",
+              "title": "Sense → Think → Act",
+              "duration": "2 min",
+              "description": "Use the core loop to explain how a robot observes, decides, and responds.",
+              "learningObjective": "Describe the key ideas behind “Sense → Think → Act” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Sense",
+                "Think",
+                "Act"
+              ],
+              "activity": "Map the loop for a robot that avoids an obstacle.",
+              "recap": "Use the core loop to explain how a robot observes, decides, and responds."
+            }
+          ]
+        },
+        {
+          "id": "electronics-basics",
+          "title": "Electronics Basics",
+          "description": "Build the electrical vocabulary needed to understand robot hardware.",
+          "lessons": [
+            {
+              "slug": "voltage-current-resistance",
+              "title": "Voltage, Current & Resistance",
+              "duration": "2 min",
+              "description": "Use a simple flow analogy to relate electrical pressure, movement, and opposition.",
+              "learningObjective": "Describe the key ideas behind “Voltage, Current & Resistance” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Voltage",
+                "Current",
+                "Resistance"
+              ],
+              "activity": "Predict how changing resistance affects a basic LED circuit.",
+              "recap": "Use a simple flow analogy to relate electrical pressure, movement, and opposition."
+            },
+            {
+              "slug": "what-is-a-circuit",
+              "title": "What is a Circuit?",
+              "duration": "2 min",
+              "description": "Understand closed paths, sources, loads, and connections in an electrical system.",
+              "learningObjective": "Explain the role and meaning of “a Circuit” and connect it to a familiar technology scenario.",
+              "keyPoints": [
+                "Closed path",
+                "Power source",
+                "Load"
+              ],
+              "activity": "Trace current around a simple battery-and-LED circuit.",
+              "recap": "Understand closed paths, sources, loads, and connections in an electrical system."
+            },
+            {
+              "slug": "digital-vs-analog",
+              "title": "Digital vs Analog Signals",
+              "duration": "2 min",
+              "description": "Compare discrete digital states with continuously varying analog measurements.",
+              "learningObjective": "Describe the key ideas behind “Digital vs Analog Signals” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "HIGH and LOW",
+                "Analog range",
+                "Signal conversion"
+              ],
+              "activity": "Classify button, temperature, and light sensor signals.",
+              "recap": "Compare discrete digital states with continuously varying analog measurements."
+            },
+            {
+              "slug": "what-is-a-sensor",
+              "title": "What is a Sensor?",
+              "duration": "2 min",
+              "description": "See how sensors convert physical conditions into usable electrical information.",
+              "learningObjective": "Explain the role and meaning of “a Sensor” and connect it to a familiar technology scenario.",
+              "keyPoints": [
+                "Physical quantity",
+                "Electrical signal",
+                "Measurement"
+              ],
+              "activity": "Select a sensor for distance, light, and temperature tasks.",
+              "recap": "See how sensors convert physical conditions into usable electrical information."
+            },
+            {
+              "slug": "what-is-an-actuator",
+              "title": "What is an Actuator?",
+              "duration": "2 min",
+              "description": "Learn how actuators turn electrical commands into movement, light, sound, or force.",
+              "learningObjective": "Explain the role and meaning of “an Actuator” and connect it to a familiar technology scenario.",
+              "keyPoints": [
+                "Input command",
+                "Physical output",
+                "Motor and servo examples"
+              ],
+              "activity": "Match actuators to the actions a robot must perform.",
+              "recap": "Learn how actuators turn electrical commands into movement, light, sound, or force."
+            },
+            {
+              "slug": "leds-resistors",
+              "title": "LEDs and Resistors",
+              "duration": "2 min",
+              "description": "Protect and control an LED by adding resistance and observing polarity.",
+              "learningObjective": "Describe the key ideas behind “LEDs and Resistors” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "LED polarity",
+                "Current limiting",
+                "Safe connection"
+              ],
+              "activity": "Draw a safe series circuit for an LED and resistor.",
+              "recap": "Protect and control an LED by adding resistance and observing polarity."
+            },
+            {
+              "slug": "breadboard-basics",
+              "title": "Breadboard Basics",
+              "duration": "2 min",
+              "description": "Prototype circuits without solder by understanding connected rows and power rails.",
+              "learningObjective": "Describe the key ideas behind “Breadboard Basics” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Terminal strips",
+                "Power rails",
+                "Temporary prototyping"
+              ],
+              "activity": "Mark connected holes on a breadboard diagram.",
+              "recap": "Prototype circuits without solder by understanding connected rows and power rails."
+            }
+          ]
+        },
+        {
+          "id": "microcontrollers",
+          "title": "Microcontrollers: ATmega328P & Arduino",
+          "description": "Learn how a small controller reads inputs, runs instructions, and drives outputs.",
+          "lessons": [
+            {
+              "slug": "microcontroller",
+              "title": "What is a Microcontroller?",
+              "duration": "2 min",
+              "description": "Understand the compact computer that coordinates inputs, processing, memory, and outputs.",
+              "learningObjective": "Explain the role and meaning of “a Microcontroller” and connect it to a familiar technology scenario.",
+              "keyPoints": [
+                "CPU",
+                "Memory",
+                "Input/output pins"
+              ],
+              "activity": "Identify where a microcontroller fits in the sense-think-act loop.",
+              "recap": "Understand the compact computer that coordinates inputs, processing, memory, and outputs."
+            },
+            {
+              "slug": "arduino-overview",
+              "title": "Arduino Overview",
+              "duration": "2 min",
+              "description": "Meet the Arduino board, programming workflow, and ATmega328P-based control system.",
+              "learningObjective": "Describe the key ideas behind “Arduino Overview” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Arduino board",
+                "USB and power",
+                "Sketch workflow"
+              ],
+              "activity": "Label the main sections of an Arduino Uno-style board.",
+              "recap": "Meet the Arduino board, programming workflow, and ATmega328P-based control system."
+            },
+            {
+              "slug": "digital-io",
+              "title": "Digital Input & Output",
+              "duration": "2 min",
+              "description": "Read two-state inputs and control two-state outputs with digital pins.",
+              "learningObjective": "Describe the key ideas behind “Digital Input & Output” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "INPUT",
+                "OUTPUT",
+                "HIGH and LOW"
+              ],
+              "activity": "Plan the logic for a button controlling an LED.",
+              "recap": "Read two-state inputs and control two-state outputs with digital pins."
+            },
+            {
+              "slug": "blink-led",
+              "title": "Blink LED Concept",
+              "duration": "2 min",
+              "description": "Follow the sequence of switching an output on, waiting, and switching it off.",
+              "learningObjective": "Describe the key ideas behind “Blink LED Concept” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Output state",
+                "Timing",
+                "Repeated loop"
+              ],
+              "activity": "Arrange the steps of a blink sequence in the correct order.",
+              "recap": "Follow the sequence of switching an output on, waiting, and switching it off."
+            },
+            {
+              "slug": "push-button",
+              "title": "Push Button Input",
+              "duration": "2 min",
+              "description": "Use a button as a digital input and understand stable pull-up or pull-down states.",
+              "learningObjective": "Describe the key ideas behind “Push Button Input” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Button state",
+                "Pull-up or pull-down",
+                "Input reading"
+              ],
+              "activity": "Predict input readings when a wired button is pressed and released.",
+              "recap": "Use a button as a digital input and understand stable pull-up or pull-down states."
+            },
+            {
+              "slug": "pwm-basics",
+              "title": "PWM Basics",
+              "duration": "2 min",
+              "description": "Control how long a digital output stays on during each rapid pulse cycle by changing its duty cycle.",
+              "learningObjective": "Describe the key ideas behind “PWM Basics” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Pulse width",
+                "Duty cycle",
+                "Load response"
+              ],
+              "activity": "Compare LED brightness at 25%, 50%, and 90% duty cycles.",
+              "recap": "Control how long a digital output stays on during each rapid pulse cycle by changing its duty cycle."
+            },
+            {
+              "slug": "servo-basics",
+              "title": "Servo Motor Basics",
+              "duration": "2 min",
+              "description": "Command a servo to move toward a controlled angular position.",
+              "learningObjective": "Describe the key ideas behind “Servo Motor Basics” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Position control",
+                "Control pulse",
+                "Mechanical range"
+              ],
+              "activity": "Choose suitable servo positions for a small robot arm.",
+              "recap": "Command a servo to move toward a controlled angular position."
+            },
+            {
+              "slug": "interfacing-sensors",
+              "title": "Interfacing Sensors",
+              "duration": "2 min",
+              "description": "Connect power, ground, and signal lines, then interpret a sensor's output.",
+              "learningObjective": "Describe the key ideas behind “Interfacing Sensors” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Power",
+                "Ground",
+                "Signal"
+              ],
+              "activity": "Create a connection checklist for a three-pin sensor.",
+              "recap": "Connect power, ground, and signal lines, then interpret a sensor's output."
+            }
+          ]
+        },
+        {
+          "id": "motion-control",
+          "title": "Motion & Control",
+          "description": "Turn controller decisions into reliable movement and improve behaviour with feedback.",
+          "lessons": [
+            {
+              "slug": "motor-types",
+              "title": "Types of Motors",
+              "duration": "2 min",
+              "description": "Compare DC, servo, and stepper motors by speed, position, and control needs.",
+              "learningObjective": "Describe the key ideas behind “Types of Motors” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "DC motor",
+                "Servo motor",
+                "Stepper motor"
+              ],
+              "activity": "Select a motor for wheels, steering, and precise rotation.",
+              "recap": "Compare DC, servo, and stepper motors by speed, position, and control needs."
+            },
+            {
+              "slug": "how-motors-work",
+              "title": "How Motors Work",
+              "duration": "2 min",
+              "description": "See how electrical energy and magnetic forces produce rotational movement.",
+              "learningObjective": "Describe the key ideas behind “How Motors Work” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Magnetic field",
+                "Rotor",
+                "Electrical to mechanical energy"
+              ],
+              "activity": "Explain motor rotation using a simple magnetic interaction diagram.",
+              "recap": "See how electrical energy and magnetic forces produce rotational movement."
+            },
+            {
+              "slug": "motor-driver",
+              "title": "Motor Driver Concept",
+              "duration": "2 min",
+              "description": "Use a driver circuit to provide motor current and direction safely beyond a controller pin.",
+              "learningObjective": "Describe the key ideas behind “Motor Driver Concept” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Current amplification",
+                "Direction control",
+                "Controller protection"
+              ],
+              "activity": "Place a motor driver correctly between a microcontroller and motors.",
+              "recap": "Use a driver circuit to provide motor current and direction safely beyond a controller pin."
+            },
+            {
+              "slug": "feedback",
+              "title": "What is Feedback?",
+              "duration": "2 min",
+              "description": "Measure results and use them to correct or stabilise a robot's behaviour.",
+              "learningObjective": "Explain the role and meaning of “Feedback” and connect it to a familiar technology scenario.",
+              "keyPoints": [
+                "Target",
+                "Measurement",
+                "Correction"
+              ],
+              "activity": "Describe feedback for maintaining a robot's speed.",
+              "recap": "Measure results and use them to correct or stabilise a robot's behaviour."
+            },
+            {
+              "slug": "open-vs-closed-loop",
+              "title": "Open Loop vs Closed Loop",
+              "duration": "2 min",
+              "description": "Compare commands without measurement to control that responds to measured output.",
+              "learningObjective": "Describe the key ideas behind “Open Loop vs Closed Loop” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Open loop",
+                "Closed loop",
+                "Error correction"
+              ],
+              "activity": "Classify a timer-based turn and sensor-corrected turn.",
+              "recap": "Compare commands without measurement to control that responds to measured output."
+            },
+            {
+              "slug": "line-following",
+              "title": "Line Following Robot Concept",
+              "duration": "2 min",
+              "description": "Combine reflectance sensors, decisions, and motor adjustments to follow a path.",
+              "learningObjective": "Describe the key ideas behind “Line Following Robot Concept” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Line sensing",
+                "Control decision",
+                "Motor correction"
+              ],
+              "activity": "Build a decision table for left, centre, and right sensor readings.",
+              "recap": "Combine reflectance sensors, decisions, and motor adjustments to follow a path."
+            }
+          ]
+        },
+        {
+          "id": "smart-robotics-iot",
+          "title": "Smart Robotics & IoT",
+          "description": "Connect robots to wireless services, cloud data, and emerging intelligent applications.",
+          "lessons": [
+            {
+              "slug": "iot-in-robotics",
+              "title": "What is IoT in Robotics?",
+              "duration": "2 min",
+              "description": "Understand how connected robots exchange data with applications, services, and other devices.",
+              "learningObjective": "Explain the role and meaning of “IoT in Robotics” and connect it to a familiar technology scenario.",
+              "keyPoints": [
+                "Connected device",
+                "Data exchange",
+                "Remote service"
+              ],
+              "activity": "Map the data flow for a remotely monitored robot.",
+              "recap": "Understand how connected robots exchange data with applications, services, and other devices."
+            },
+            {
+              "slug": "wireless-communication",
+              "title": "Wireless Communication Basics",
+              "duration": "2 min",
+              "description": "Compare common short- and medium-range ways for robots to communicate without cables.",
+              "learningObjective": "Describe the key ideas behind “Wireless Communication Basics” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Bluetooth",
+                "Wi-Fi",
+                "Range and reliability"
+              ],
+              "activity": "Choose a wireless option for control, telemetry, and cloud access.",
+              "recap": "Compare common short- and medium-range ways for robots to communicate without cables."
+            },
+            {
+              "slug": "sensors-cloud",
+              "title": "Robot + Sensors + Cloud",
+              "duration": "2 min",
+              "description": "Follow sensor readings from the robot to storage, analysis, and a user dashboard.",
+              "learningObjective": "Describe the key ideas behind “Robot + Sensors + Cloud” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Sensor data",
+                "Network connection",
+                "Cloud processing"
+              ],
+              "activity": "Diagram a temperature-monitoring robot and its cloud data path.",
+              "recap": "Follow sensor readings from the robot to storage, analysis, and a user dashboard."
+            },
+            {
+              "slug": "smart-home-robot",
+              "title": "Smart Home Robot Example",
+              "duration": "2 min",
+              "description": "Combine sensing, movement, connectivity, and user interaction in one household scenario.",
+              "learningObjective": "Describe the key ideas behind “Smart Home Robot Example” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Environmental sensing",
+                "Automation",
+                "User control"
+              ],
+              "activity": "Define the sense-think-act loop for a home assistance task.",
+              "recap": "Combine sensing, movement, connectivity, and user interaction in one household scenario."
+            },
+            {
+              "slug": "future-of-robotics",
+              "title": "Future of Robotics",
+              "duration": "2 min",
+              "description": "Explore collaborative robots, autonomy, responsible design, and new human-robot roles.",
+              "learningObjective": "Describe the key ideas behind “Future of Robotics” and apply them to a familiar technology scenario.",
+              "keyPoints": [
+                "Collaboration",
+                "Autonomy",
+                "Responsible innovation"
+              ],
+              "activity": "Propose one beneficial future robot and one design responsibility.",
+              "recap": "Explore collaborative robots, autonomy, responsible design, and new human-robot roles."
+            }
+          ]
+        }
+      ],
+      "progress": 0
+    }
+  ]
+}

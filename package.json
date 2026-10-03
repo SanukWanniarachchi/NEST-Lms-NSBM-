@@ -4,8 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "check": "npm run lint && next typegen && npm run typecheck && npm run build && npm run check:export",
+    "build": "npm run check:content && next build",
+    "check:content": "node scripts/check-published-content.mjs",
+    "test:content": "node --test tests/published-content.test.mjs",
+    "content:import": "node scripts/import-published-content.mjs",
+    "check": "npm run lint && next typegen && npm run typecheck && npm run test:content && npm run build && npm run check:export",
     "check:export": "node scripts/check-static-export.mjs",
     "start": "next start",
     "lint": "eslint",

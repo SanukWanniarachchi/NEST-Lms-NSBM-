@@ -50,3 +50,7 @@ export interface Course {
   modules: CourseModule[];
   progress: number;
 }
+
+export type CourseContent = Omit<Course, "image"> & {
+  imageKey: "cybersecurity" | "networking" | "robotics";
+};

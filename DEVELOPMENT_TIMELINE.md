@@ -86,3 +86,8 @@
 - Confirmed the production export contains 117 HTML files and 148 valid local targets; checked the release gate against missing assets, broken anchors, incorrect prefixes, and accidental demo routes.
 - Reconciled the eight About/Contact visual baselines with the combined page and confirmed all 67 selected animation, interaction, checkpoint, screenshot, and responsive layout checks pass.
 - The verified direct WhatsApp invite URL remains pending; the QR-based community page is retained until the club supplies that URL.
+- Completed launch preparation Phase 4: public courses and announcements now read the reviewed admin snapshot, with manual export, import, release, and rollback instructions.
+- Added public-field validation before import and every production build; invalid content leaves the existing snapshot untouched, and empty announcement exports display an empty board.
+- Verified the real admin exporter against an isolated database: published revisions were retained while drafts, archived notices, private fields, and accounts were excluded.
+- Confirmed lint, type checking, five content tests, the 117-page production export with 149 valid local targets, and all 74 selected public browser checks pass; refreshed four announcement baselines to match export order.
+- External admin hosting and production configuration remain the next phase; Google Drive migration and leadership profiles remain deferred.
