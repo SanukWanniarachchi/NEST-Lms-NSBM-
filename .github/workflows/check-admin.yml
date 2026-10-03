@@ -1,0 +1,68 @@
+name: Check admin release
+
+on:
+  push:
+    branches: [admin-platform]
+  pull_request:
+    branches: [admin-platform]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: nest_fixture
+          POSTGRES_PASSWORD: fixture_only
+          POSTGRES_DB: nest_fixture
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --include=dev
+      - name: Check public publishing bridge
+        run: npm run check:public
+      - name: Check admin types
+        run: npm run admin:typecheck
+      - name: Test data and production safeguards
+        run: npm run admin:test:data
+      - name: Build admin server
+        run: npm run admin:build
+      - name: Verify production startup with an isolated PostgreSQL database
+        env:
+          NODE_ENV: production
+          NEST_AUTH_MODE: oidc
+          NEST_DATABASE_DRIVER: postgres
+          DATABASE_URL: postgres://nest_fixture:fixture_only@127.0.0.1:5432/nest_fixture
+          AUTH_SECRET: fixture-only-production-smoke-secret-over-32-characters
+          OIDC_ISSUER: https://identity.example.invalid
+          OIDC_CLIENT_ID: fixture-client
+          OIDC_CLIENT_SECRET: fixture-only-client-secret
+          OIDC_REDIRECT_URI: https://admin.example.invalid/auth/callback
+          NEXT_PUBLIC_SITE_URL: https://public.example.invalid
+          NEST_BOOTSTRAP_SUBJECT: fixture:verified-subject
+          NEST_BOOTSTRAP_NAME: Fixture Administrator
+          NEST_BOOTSTRAP_EMAIL: fixture@example.invalid
+          PORT: '4317'
+        run: |
+          npm run admin:check:production
+          npm run admin:db:migrate
+          npm run admin:bootstrap:production
+          npm run admin:import:production -- data/generated/admin-content.json
+          npm run admin:publish:snapshot
+          npm run check:content
+          npm run admin:test:production

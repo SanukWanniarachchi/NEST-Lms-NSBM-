@@ -1,5 +1,5 @@
 import { randomUUID } from "node:crypto";
-import { and, count, desc, eq, inArray, isNotNull, ne } from "drizzle-orm";
+import { and, count, desc, eq, inArray, isNotNull, ne, sql } from "drizzle-orm";
 import type { AdminDatabase } from "../../db/connection";
 import {
   adminAllowlist,
@@ -127,6 +127,20 @@ export function createAdminRepository(db: AdminDatabase) {
       return saveAdminIdentity(db, "system:local-bootstrap", input);
     },
 
+    async bootstrapProduction(input: Pick<AdminIdentityInput, "subject" | "displayName" | "email">) {
+      return db.transaction(async (transaction) => {
+        await transaction.execute(sql`LOCK TABLE admin_allowlist IN EXCLUSIVE MODE`);
+        const existing = await transaction.select({ subject: adminAllowlist.subject }).from(adminAllowlist).limit(1);
+        if (existing.length) throw new AdminAccountStateError("Production bootstrap requires an empty account directory.");
+        const [account] = await transaction.insert(adminAllowlist).values({ ...input, role: "super_admin", active: true }).returning();
+        await transaction.insert(auditEvents).values({
+          actorSubject: "system:production-bootstrap", action: "account.created",
+          entityType: "admin_allowlist", entityId: input.subject, nextState: auditState(account),
+        });
+        return account;
+      });
+    },
+
     async save(actorSubject: string, input: AdminIdentityInput) {
       return db.transaction(async (transaction) => {
         const [actor] = await transaction.select().from(adminAllowlist)
@@ -223,7 +237,7 @@ export function createManagedContentRepository(db: AdminDatabase) {
       return record ?? null;
     },
 
-    async seedPublished(input: ManagedContentInput) {
+    async seedPublished(input: ManagedContentInput, actorSubject = "system:local-bootstrap") {
       const [existing] = await db.select().from(managedContent)
         .where(and(eq(managedContent.kind, input.kind), eq(managedContent.slug, input.slug)))
         .limit(1);
@@ -240,11 +254,11 @@ export function createManagedContentRepository(db: AdminDatabase) {
           publishedPayload: input.payload,
           status: "published",
           publishedOn: today,
-          createdBy: "system:local-bootstrap",
-          updatedBy: "system:local-bootstrap",
+          createdBy: actorSubject,
+          updatedBy: actorSubject,
         }).returning();
         await transaction.insert(auditEvents).values({
-          actorSubject: "system:local-bootstrap",
+          actorSubject,
           action: `${input.kind}.seeded`,
           entityType: "managed_content",
           entityId: record.id,

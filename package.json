@@ -13,13 +13,13 @@
     "check:export": "node scripts/check-static-export.mjs",
     "check:admin": "npm run admin:typecheck && npm run admin:build && npm run admin:test:data && npm run admin:test",
     "admin:dev": "next dev admin -p 3001",
-    "admin:start": "next start admin -p 3001",
+    "admin:start": "tsx admin/scripts/start-production.ts",
     "admin:build": "next build admin",
     "admin:typecheck": "next typegen admin && tsc --noEmit -p admin/tsconfig.json",
     "admin:db:migrate": "tsx admin/scripts/db-migrate.ts",
     "admin:db:seed-local": "tsx admin/scripts/db-seed-local.ts",
     "admin:publish:snapshot": "tsx admin/scripts/publish-content-snapshot.ts",
-    "admin:test:data": "tsx --test admin/tests/repositories.test.ts admin/tests/content-validation.test.ts",
+    "admin:test:data": "tsx --test admin/tests/repositories.test.ts admin/tests/content-validation.test.ts admin/tests/production.test.ts",
     "admin:test:reset": "tsx admin/scripts/db-reset-e2e.ts",
     "admin:test:serve": "npm run admin:test:reset && npm run admin:db:migrate && npm run admin:db:seed-local && npm run admin:dev",
     "admin:test": "playwright test -c playwright.admin.config.ts",
@@ -30,7 +30,11 @@
     "test:visual:update": "playwright test --update-snapshots",
     "check:content": "node scripts/check-published-content.mjs",
     "test:content": "node --test tests/published-content.test.mjs",
-    "content:import": "node scripts/import-published-content.mjs"
+    "content:import": "node scripts/import-published-content.mjs",
+    "admin:check:production": "tsx admin/scripts/check-production.ts",
+    "admin:bootstrap:production": "tsx admin/scripts/bootstrap-production.ts",
+    "admin:test:production": "node admin/scripts/smoke-production.mjs",
+    "admin:import:production": "tsx admin/scripts/import-production-content.ts"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.5.8",

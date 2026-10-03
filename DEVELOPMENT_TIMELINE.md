@@ -117,3 +117,8 @@
 - Verified the real admin exporter against an isolated database: published revisions were retained while drafts, archived notices, private fields, and accounts were excluded.
 - Confirmed lint, type checking, five content tests, the 117-page production export with 149 valid local targets, and all 74 selected public browser checks pass; refreshed four announcement baselines to match export order.
 - External admin hosting and production configuration remain the next phase; Google Drive migration and leadership profiles remain deferred.
+- Completed launch preparation Phase 5 application preparations on `admin-platform`, including the Phase 4 public publishing bridge.
+- Added production configuration checks, platform-port startup, database-table readiness, an audited first-administrator bootstrap, and a transaction-protected initial curriculum import that refuses to overwrite existing content.
+- Updated the external Node hosting runbook and added GitHub release checks with disposable PostgreSQL migrations, bootstrap, curriculum import, export validation, and production startup verification.
+- Confirmed lint, both production builds, five public content tests, nine admin data and configuration tests, and all 28 admin browser checks pass locally; verified the production server uses an assigned port and reports HTTP 503 when its database is unavailable.
+- Actual external deployment, real OIDC login, production database credentials and backups, domain configuration, Google Drive videos, and leadership data still require the chosen services and club inputs.
