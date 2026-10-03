@@ -1,7 +1,6 @@
 import cybersecurityImage from "@/public/images/courses/cybersecurity-foundations.webp";
 import networkingImage from "@/public/images/courses/networking-essentials.webp";
 import roboticsImage from "@/public/images/courses/robotics-fundamentals.webp";
-import { courseContent } from "@/data/course-content";
 import snapshot from "@/data/generated/admin-content.json";
 import type { Course, CourseContent } from "@/types/lms";
 
@@ -11,9 +10,7 @@ const images = {
   robotics: roboticsImage,
 };
 
-const publishedContent = snapshot.courses.length > 0
-  ? snapshot.courses as CourseContent[]
-  : courseContent;
+const publishedContent = snapshot.courses as CourseContent[];
 
 export const courses: Course[] = publishedContent.map(({ imageKey, ...course }) => ({
   ...course,

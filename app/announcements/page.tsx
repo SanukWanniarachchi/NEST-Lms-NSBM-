@@ -28,6 +28,7 @@ export default function AnnouncementsPage() {
           <div className="shell">
             <SectionHeading eyebrow="Latest updates" title="Announcements" copy="Updates are listed by date so students can quickly scan what changed and what needs attention." />
             <div className="announcement-list">
+              {announcements.length === 0 && <p>No announcements have been published yet. Check back for club updates.</p>}
               {announcements.map((announcement) => (
                 <article key={`${announcement.date}-${announcement.title}`} className={announcement.featured ? "announcement-card announcement-card--featured" : "announcement-card"}>
                   <div className="announcement-date">

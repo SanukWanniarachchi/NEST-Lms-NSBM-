@@ -112,3 +112,8 @@
 - Resolved validation-script and timeline conflicts, and carried the approved MAC address, DNS, and PWM text corrections into both managed course seed data and the published snapshot.
 - Confirmed the public and admin production builds, static export validation, four admin data tests, all 28 admin browser checks, and 67 selected public browser checks pass.
 - Kept public `main` unchanged during this phase; the static publishing bridge and external admin deployment remain later phases.
+- Completed launch preparation Phase 4: public courses and announcements now read the reviewed admin snapshot, with manual export, import, release, and rollback instructions.
+- Added public-field validation before import and every production build; invalid content leaves the existing snapshot untouched, and empty announcement exports display an empty board.
+- Verified the real admin exporter against an isolated database: published revisions were retained while drafts, archived notices, private fields, and accounts were excluded.
+- Confirmed lint, type checking, five content tests, the 117-page production export with 149 valid local targets, and all 74 selected public browser checks pass; refreshed four announcement baselines to match export order.
+- External admin hosting and production configuration remain the next phase; Google Drive migration and leadership profiles remain deferred.

@@ -7,9 +7,9 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run check:content && next build",
     "check": "npm run check:public && npm run check:admin",
-    "check:public": "npm run lint && npm run typecheck && npm run build && npm run check:export",
+    "check:public": "npm run lint && npm run typecheck && npm run test:content && npm run build && npm run check:export",
     "check:export": "node scripts/check-static-export.mjs",
     "check:admin": "npm run admin:typecheck && npm run admin:build && npm run admin:test:data && npm run admin:test",
     "admin:dev": "next dev admin -p 3001",
@@ -27,7 +27,10 @@
     "lint": "eslint",
     "typecheck": "next typegen && tsc --noEmit",
     "test:visual": "playwright test",
-    "test:visual:update": "playwright test --update-snapshots"
+    "test:visual:update": "playwright test --update-snapshots",
+    "check:content": "node scripts/check-published-content.mjs",
+    "test:content": "node --test tests/published-content.test.mjs",
+    "content:import": "node scripts/import-published-content.mjs"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.5.8",

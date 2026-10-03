@@ -17,6 +17,8 @@ This GitHub Pages release does not include authentication, persistent learner pr
 
 The protected platform architecture and NSBM handover boundary are documented in [`docs/ADMIN_PLATFORM_ARCHITECTURE.md`](docs/ADMIN_PLATFORM_ARCHITECTURE.md). GitHub Pages is a public preview target and will not host authentication or admin APIs.
 
+Courses and announcements now load from a reviewed admin export. The manual export, import, release, and rollback steps are documented in [`docs/CONTENT_PUBLISHING.md`](docs/CONTENT_PUBLISHING.md). Drafts and account data remain in the protected admin platform.
+
 ## Local development
 
 ```bash
