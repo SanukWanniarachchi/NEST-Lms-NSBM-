@@ -255,8 +255,11 @@ test.describe("about leadership", () => {
     await loadPageImages(page);
 
     const cards = page.locator(".board-profile");
-    await expect(cards).toHaveCount(6);
-    const boxes = await Promise.all(Array.from({ length: 6 }, (_, index) => cards.nth(index).boundingBox()));
+    await expect(cards).toHaveCount(9);
+    await expect(cards.locator("img")).toHaveCount(9);
+    // Measure every card in one frame; smooth scrolling can move the viewport
+    // between separate boundingBox calls even when the rows are aligned.
+    const boxes = await cards.evaluateAll((elements) => elements.map((element) => element.getBoundingClientRect().toJSON()));
     const firstRowTop = boxes[0]?.y ?? 0;
 
     for (const box of boxes.slice(0, 4)) expect(Math.abs((box?.y ?? 0) - firstRowTop)).toBeLessThanOrEqual(2);
@@ -272,6 +275,30 @@ test.describe("about leadership", () => {
     )).toBeLessThanOrEqual(2);
     expect(await collectLayoutProblems(page)).toEqual([]);
   });
+});
+
+test.describe("event photo galleries", () => {
+  for (const viewport of screenshotViewports) {
+    test(`opens the school and Open Day galleries on ${viewport.name}`, async ({ page }) => {
+      const runtimeProblems = watchRuntimeProblems(page);
+      await openPage(page, "/announcements/", "light", viewport);
+      const school = page.locator("#bsc-college-iot-workshop");
+      const openDay = page.locator("#nsbm-open-day");
+      await expect(school).toContainText("Grade 6");
+      await expect(school.locator("time")).toHaveCount(0);
+      await expect(openDay.locator("time")).toHaveCount(0);
+      for (const event of [school, openDay]) {
+        await event.locator("summary").focus();
+        await page.keyboard.press("Enter");
+        await expect(event.locator("details")).toHaveAttribute("open", "");
+      }
+      await expect(school.locator(".event-gallery__grid img")).toHaveCount(6);
+      await expect(openDay.locator(".event-gallery__grid img")).toHaveCount(8);
+      await loadPageImages(page);
+      expect(await collectLayoutProblems(page)).toEqual([]);
+      expect(runtimeProblems).toEqual([]);
+    });
+  }
 });
 
 test.describe("lesson videos", () => {

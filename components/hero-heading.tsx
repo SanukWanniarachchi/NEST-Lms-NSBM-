@@ -1,8 +1,8 @@
 import type { CSSProperties } from "react";
 
 const phrases = ["Learn together.", "Build what's next."];
-const totalLetters = phrases.join("").replaceAll(" ", "").length;
-const sweepDelay = 120 + (totalLetters - 1) * 36 + 950 + 350;
+const totalWords = phrases.flatMap(phrase => phrase.split(" ")).length;
+const sweepDelay = 100 + (totalWords - 1) * 85 + 1800 + 350;
 
 export function HeroHeading() {
   return (
@@ -12,13 +12,13 @@ export function HeroHeading() {
           {phraseIndex > 0 && <br />}
           {phrase.split(" ").map((word, wordIndex, words) => (
             <span key={word}>
-              <span className="hero-heading__word">
+              <span className="hero-heading__word" style={{
+                "--word-delay": `${100 + (phrases.slice(0, phraseIndex).flatMap(previous => previous.split(" ")).length + wordIndex) * 85}ms`,
+              } as CSSProperties}>
                 {[...word].map((letter, index) => {
                   const offset = words.slice(0, wordIndex).join(" ").length + (wordIndex ? 1 : 0) + index;
                   const letterIndex = offset - wordIndex;
-                  const entranceIndex = phrases.slice(0, phraseIndex).join("").replaceAll(" ", "").length + letterIndex;
                   const style = {
-                    "--letter-delay": `${120 + entranceIndex * 36}ms`,
                     ...(phraseIndex === 1 ? {
                       "--sweep-delay": `${sweepDelay}ms`,
                       "--sweep-start": `${letterIndex * 4}% 50%`,
