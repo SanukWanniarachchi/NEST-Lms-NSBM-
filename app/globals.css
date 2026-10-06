@@ -357,7 +357,7 @@ h3 { font-size: 1.25rem; }
 .board-heading > span { color: var(--muted); font-size: .72rem; }
 .board-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
 .board-profile { flex: 0 1 calc(25% - 11px); overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); box-shadow: var(--shadow-sm); }
-.board-profile > div:last-child { display: grid; gap: 4px; padding: 14px 15px 16px; }
+.board-profile > div:last-child:not(.profile-photo) { display: grid; gap: 4px; padding: 14px 15px 16px; }
 .board-profile strong { font-family: var(--font-sora); font-size: .78rem; }
 .board-profile span { color: var(--muted); font-size: .65rem; }
 .leadership-section { scroll-margin-top: 95px; }
