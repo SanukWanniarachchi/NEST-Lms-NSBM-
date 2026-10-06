@@ -76,8 +76,8 @@
               ],
               "activity": "List three digital assets you use at university and one protection for each.",
               "recap": "Understand how people, processes, and technology protect systems and information.",
-              "youtubeUrl": "https://www.youtube.com/watch?v=4j9becKu17g",
-              "videoDuration": "1:56",
+              "youtubeUrl": "https://www.youtube.com/watch?v=9KznFRU5B5g",
+              "videoDuration": "1:55",
               "videoOrientation": "portrait"
             },
             {
@@ -93,7 +93,7 @@
               ],
               "activity": "Trace the possible impact of a compromised university account.",
               "recap": "Connect security incidents to privacy, finances, learning, reputation, and organisational continuity.",
-              "youtubeUrl": "https://www.youtube.com/watch?v=AEE9xxLteqA",
+              "youtubeUrl": "https://www.youtube.com/watch?v=uH0limvvjTc",
               "videoDuration": "1:12",
               "videoOrientation": "portrait"
             },
@@ -110,7 +110,7 @@
               ],
               "activity": "Classify three short scenarios by intent and authorisation.",
               "recap": "Compare white-hat, black-hat, and grey-hat activity through permission and intent.",
-              "youtubeUrl": "https://www.youtube.com/watch?v=0iaHiwzGpjQ",
+              "youtubeUrl": "https://www.youtube.com/watch?v=AOSx27uWuAU",
               "videoDuration": "1:02",
               "videoOrientation": "portrait"
             },
@@ -127,7 +127,7 @@
               ],
               "activity": "Match each threat to the warning sign that best reveals it.",
               "recap": "Survey the attacks beginners are most likely to encounter online.",
-              "youtubeUrl": "https://www.youtube.com/watch?v=56CoPa25U9s",
+              "youtubeUrl": "https://www.youtube.com/watch?v=Lqt_kM_-s2k",
               "videoDuration": "1:02",
               "videoOrientation": "portrait"
             },
@@ -144,7 +144,7 @@
               ],
               "activity": "Apply the CIA triad to a student records system.",
               "recap": "Use confidentiality, integrity, and availability to describe what security protects.",
-              "youtubeUrl": "https://www.youtube.com/watch?v=2AkZoOVsAh8",
+              "youtubeUrl": "https://www.youtube.com/watch?v=1ZdyWjCxjZM",
               "videoDuration": "1:07",
               "videoOrientation": "portrait"
             }
@@ -168,7 +168,7 @@
               ],
               "activity": "Identify safe first actions after noticing suspicious device behaviour.",
               "recap": "Learn how malicious software disrupts, spies on, damages, or controls devices.",
-              "youtubeUrl": "https://www.youtube.com/watch?v=tzHGuYhDGKk",
+              "youtubeUrl": "https://www.youtube.com/watch?v=1bT0hs1tBaE",
               "videoDuration": "1:07",
               "videoOrientation": "portrait"
             },
@@ -199,7 +199,7 @@
               ],
               "activity": "Inspect a sample email and mark every phishing indicator.",
               "recap": "Spot messages designed to steal information or pressure you into an unsafe action.",
-              "youtubeUrl": "https://www.youtube.com/watch?v=-qbco0aZ6uI",
+              "youtubeUrl": "https://www.youtube.com/watch?v=mgnJUJq5Hkw",
               "videoDuration": "1:07",
               "videoOrientation": "portrait"
             },
@@ -215,7 +215,10 @@
                 "Credential reuse"
               ],
               "activity": "Compare weak and strong passphrases without revealing a real password.",
-              "recap": "Understand brute-force and dictionary attacks and why predictable passwords fail."
+              "recap": "Understand brute-force and dictionary attacks and why predictable passwords fail.",
+              "youtubeUrl": "https://www.youtube.com/watch?v=ZCgnDYWSn9o",
+              "videoDuration": "1:03",
+              "videoOrientation": "portrait"
             },
             {
               "slug": "man-in-the-middle",
@@ -229,7 +232,10 @@
                 "Encrypted connections"
               ],
               "activity": "Draw the normal path and intercepted path of a web request.",
-              "recap": "See how an attacker can intercept communication between two trusted endpoints."
+              "recap": "See how an attacker can intercept communication between two trusted endpoints.",
+              "youtubeUrl": "https://www.youtube.com/watch?v=WF25kx-DyHo",
+              "videoDuration": "0:53",
+              "videoOrientation": "portrait"
             },
             {
               "slug": "social-engineering",

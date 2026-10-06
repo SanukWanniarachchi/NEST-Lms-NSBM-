@@ -338,34 +338,41 @@ test.describe("lesson videos", () => {
       expect(await collectLayoutProblems(page)).toEqual([]);
 
       const iframe = shell.locator("iframe");
-      await expect(iframe).toHaveAttribute("src", /youtube-nocookie\.com\/embed\/4j9becKu17g/);
+      await expect(iframe).toHaveAttribute("src", /youtube-nocookie\.com\/embed\/9KznFRU5B5g/);
       await expect(iframe).toHaveCount(1);
-      await expect(page.getByRole("link", { name: "Open on YouTube" })).toHaveAttribute("href", "https://www.youtube.com/watch?v=4j9becKu17g");
+      await expect(page.getByRole("link", { name: "Open on YouTube" })).toHaveAttribute("href", "https://www.youtube.com/watch?v=9KznFRU5B5g");
     });
   }
 
-  test("lesson page defers the iframe until the learner requests it", async ({ page }) => {
-    await page.route("https://www.youtube-nocookie.com/**", (route) => route.fulfill({
-      contentType: "text/html",
-      body: "<!doctype html><title>YouTube test player</title>",
-    }));
-    await page.emulateMedia({ reducedMotion: "reduce", colorScheme: "dark" });
-    await openPage(
-      page,
-      "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
-      "dark",
-      { name: "desktop", width: 1440, height: 900 },
-    );
+  for (const lesson of [
+    { slug: "what-is-cybersecurity", title: "What is Cybersecurity?", videoId: "9KznFRU5B5g" },
+    { slug: "password-attacks", title: "Password Attacks", videoId: "ZCgnDYWSn9o" },
+    { slug: "man-in-the-middle", title: "Man-in-the-Middle Attacks", videoId: "WF25kx-DyHo" },
+  ]) {
+    test(`${lesson.slug} defers and loads its matching video`, async ({ page }) => {
+      await page.route("https://www.youtube-nocookie.com/**", (route) => route.fulfill({
+        contentType: "text/html",
+        body: "<!doctype html><title>YouTube test player</title>",
+      }));
+      await page.emulateMedia({ reducedMotion: "reduce", colorScheme: "dark" });
+      await openPage(
+        page,
+        `/courses/cybersecurity-foundations/lessons/${lesson.slug}/`,
+        "dark",
+        { name: "desktop", width: 1440, height: 900 },
+      );
 
-    const frame = page.locator(".video-frame");
-    await expect(frame.locator("iframe")).toHaveCount(0);
-    const box = await frame.boundingBox();
-    expect(box).not.toBeNull();
-    expect((box?.width ?? 0) / (box?.height ?? 1)).toBeCloseTo(9 / 16, 1);
-    await page.getByRole("button", { name: "Load video player for What is Cybersecurity?" }).click();
-    await expect(frame.locator("iframe")).toHaveCount(1);
-    expect(await collectLayoutProblems(page)).toEqual([]);
-  });
+      const frame = page.locator(".video-frame");
+      await expect(frame.locator("iframe")).toHaveCount(0);
+      const box = await frame.boundingBox();
+      expect(box).not.toBeNull();
+      expect((box?.width ?? 0) / (box?.height ?? 1)).toBeCloseTo(9 / 16, 1);
+      await page.getByRole("button", { name: `Load video player for ${lesson.title}` }).click();
+      await expect(frame.locator("iframe")).toHaveCount(1);
+      await expect(frame.locator("iframe")).toHaveAttribute("src", `https://www.youtube-nocookie.com/embed/${lesson.videoId}?rel=0`);
+      expect(await collectLayoutProblems(page)).toEqual([]);
+    });
+  }
 });
 
 test.describe("module checkpoints and recommendations", () => {

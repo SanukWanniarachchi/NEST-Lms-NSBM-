@@ -1,0 +1,3547 @@
+{
+  "accessibility": [
+    {
+      "route": "/",
+      "theme": "light",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                ".section-heading--left > div:nth-child(1) > .eyebrow"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.1pt (12.16px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".text-link[href$=\"courses/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".learning-copy > .eyebrow"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.1pt (12.16px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".section-heading--center > div > .eyebrow"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.1pt (12.16px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "a[href$=\"about/#contact\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.8pt (13.12px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".text-link[href$=\"community/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.8pt (13.12px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "a[target=\"_blank\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.8pt (13.12px), font weight: bold). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "target-size",
+          "impact": "serious",
+          "description": "Ensure touch targets have sufficient size and space",
+          "nodes": [
+            {
+              "target": [
+                "a[href$=\"about/#contact\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (70.6px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                ".text-link[href$=\"community/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (167.3px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                "a[target=\"_blank\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (185.6px by 23px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 23px instead of at least 24px."
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 93
+        }
+      ]
+    },
+    {
+      "route": "/courses/",
+      "theme": "light",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                "a[href$=\"about/#contact\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.8pt (13.12px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".text-link[href$=\"community/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.8pt (13.12px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "a[target=\"_blank\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.8pt (13.12px), font weight: bold). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "target-size",
+          "impact": "serious",
+          "description": "Ensure touch targets have sufficient size and space",
+          "nodes": [
+            {
+              "target": [
+                "a[href$=\"about/#contact\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (70.6px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                ".text-link[href$=\"community/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (167.3px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                "a[target=\"_blank\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (185.6px by 23px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 23px instead of at least 24px."
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 41
+        }
+      ]
+    },
+    {
+      "route": "/news/",
+      "theme": "light",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                ".section-heading > div > .eyebrow"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.1pt (12.16px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".news-featured > div > .text-link"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.18 (foreground color: #4d8ef7, background color: #fdfeff, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".news-card:nth-child(1) > div > .text-link"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.18 (foreground color: #4d8ef7, background color: #fdfeff, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".news-card:nth-child(2) > div > .text-link"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.18 (foreground color: #4d8ef7, background color: #fdfeff, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "a[href$=\"about/#contact\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.8pt (13.12px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".text-link[href$=\"community/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.8pt (13.12px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "a[target=\"_blank\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.8pt (13.12px), font weight: bold). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "target-size",
+          "impact": "serious",
+          "description": "Ensure touch targets have sufficient size and space",
+          "nodes": [
+            {
+              "target": [
+                "a[href$=\"about/#contact\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (70.6px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                ".text-link[href$=\"community/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (167.3px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                "a[target=\"_blank\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (185.6px by 23px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 23px instead of at least 24px."
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 3
+        }
+      ]
+    },
+    {
+      "route": "/announcements/",
+      "theme": "light",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                ".event-highlights-section > .shell > .section-heading.section-heading--left > div > .eyebrow"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.1pt (12.16px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "#bsc-college-iot-workshop > .event-highlight__body > details > summary"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.18 (foreground color: #4d8ef7, background color: #fdfeff, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "#nsbm-open-day > .event-highlight__body > details > summary"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.18 (foreground color: #4d8ef7, background color: #fdfeff, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".announcements-section > .shell > .section-heading.section-heading--left > div > .eyebrow"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.1pt (12.16px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "a[href$=\"about/#contact\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.8pt (13.12px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "p:nth-child(4) > .text-link[href$=\"community/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.8pt (13.12px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "a[target=\"_blank\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.8pt (13.12px), font weight: bold). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "target-size",
+          "impact": "serious",
+          "description": "Ensure touch targets have sufficient size and space",
+          "nodes": [
+            {
+              "target": [
+                "a[href$=\"about/#contact\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (70.6px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                "p:nth-child(4) > .text-link[href$=\"community/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (167.3px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                "a[target=\"_blank\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (185.6px by 23px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 23px instead of at least 24px."
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 18
+        }
+      ]
+    },
+    {
+      "route": "/community/",
+      "theme": "light",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                "a[href$=\"about/#contact\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.8pt (13.12px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".text-link[href$=\"community/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.8pt (13.12px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".text-link[target=\"_blank\"][rel=\"noopener noreferrer\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.8pt (13.12px), font weight: bold). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "target-size",
+          "impact": "serious",
+          "description": "Ensure touch targets have sufficient size and space",
+          "nodes": [
+            {
+              "target": [
+                "a[href$=\"about/#contact\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (70.6px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                ".text-link[href$=\"community/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (167.3px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                ".text-link[target=\"_blank\"][rel=\"noopener noreferrer\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (185.6px by 23px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 23px instead of at least 24px."
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 13
+        }
+      ]
+    },
+    {
+      "route": "/about/",
+      "theme": "light",
+      "violations": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "description": "Ensure ARIA attributes are not prohibited for an element's role",
+          "nodes": [
+            {
+              "target": [
+                ".profile-photo--mentor"
+              ],
+              "summary": "Fix all of the following:\n  aria-label attribute cannot be used on a div with no valid role attribute."
+            }
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                ".objectives-section > .shell > .section-heading.section-heading--left > div > .eyebrow"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.1pt (12.16px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "#team > .shell > .section-heading.section-heading--left > div > .eyebrow"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.04 (foreground color: #4d8ef7, background color: #f5f9ff, font size: 9.1pt (12.16px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".mentor-profile__details > small"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.18 (foreground color: #4d8ef7, background color: #fdfeff, font size: 7.4pt (9.92px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".board-heading > div > .eyebrow"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.04 (foreground color: #4d8ef7, background color: #f5f9ff, font size: 9.1pt (12.16px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "div:nth-child(2) > .eyebrow"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.1pt (12.16px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".contact-details > .eyebrow"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.1pt (12.16px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "a[href$=\"about/#contact\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.8pt (13.12px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".text-link[href$=\"community/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.8pt (13.12px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".text-link[target=\"_blank\"][rel=\"noopener noreferrer\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.8pt (13.12px), font weight: bold). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "target-size",
+          "impact": "serious",
+          "description": "Ensure touch targets have sufficient size and space",
+          "nodes": [
+            {
+              "target": [
+                "a[href$=\"about/#contact\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (70.6px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                ".text-link[href$=\"community/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (167.3px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                ".text-link[target=\"_blank\"][rel=\"noopener noreferrer\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (185.6px by 23px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 23px instead of at least 24px."
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 60
+        }
+      ]
+    },
+    {
+      "route": "/research/",
+      "theme": "light",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                "a[href$=\"about/#contact\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.8pt (13.12px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".text-link[href$=\"community/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.8pt (13.12px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "a[target=\"_blank\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.8pt (13.12px), font weight: bold). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "target-size",
+          "impact": "serious",
+          "description": "Ensure touch targets have sufficient size and space",
+          "nodes": [
+            {
+              "target": [
+                "a[href$=\"about/#contact\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (70.6px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                ".text-link[href$=\"community/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (167.3px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                "a[target=\"_blank\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (185.6px by 23px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 23px instead of at least 24px."
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 4
+        }
+      ]
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "light",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                ".course-overview-grid > div > .eyebrow"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.1pt (12.16px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".curriculum-heading > div > .eyebrow"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.1pt (12.16px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "a[href$=\"about/#contact\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.8pt (13.12px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".text-link[href$=\"community/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.8pt (13.12px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                "a[target=\"_blank\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.8pt (13.12px), font weight: bold). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "target-size",
+          "impact": "serious",
+          "description": "Ensure touch targets have sufficient size and space",
+          "nodes": [
+            {
+              "target": [
+                "a[href$=\"about/#contact\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (70.6px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                ".text-link[href$=\"community/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (167.3px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                "a[target=\"_blank\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (185.6px by 23px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 23px instead of at least 24px."
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 63
+        }
+      ]
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "light",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                ".lesson-heading > .eyebrow"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 9.1pt (12.16px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": [
+                ".lesson-video-external"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.09 (foreground color: #4d8ef7, background color: #f7fbff, font size: 8.4pt (11.2px), font weight: bold). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 23
+        }
+      ]
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "light",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                ".eyebrow"
+              ],
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.18 (foreground color: #4d8ef7, background color: #fdfeff, font size: 9.1pt (12.16px), font weight: bold). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 4
+        }
+      ]
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "violations": [
+        {
+          "id": "target-size",
+          "impact": "serious",
+          "description": "Ensure touch targets have sufficient size and space",
+          "nodes": [
+            {
+              "target": [
+                "a[href$=\"about/#contact\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (70.6px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                ".text-link[href$=\"community/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (167.3px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                "a[target=\"_blank\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (185.6px by 23px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 23px instead of at least 24px."
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 111
+        }
+      ]
+    },
+    {
+      "route": "/courses/",
+      "theme": "dark",
+      "violations": [
+        {
+          "id": "target-size",
+          "impact": "serious",
+          "description": "Ensure touch targets have sufficient size and space",
+          "nodes": [
+            {
+              "target": [
+                "a[href$=\"about/#contact\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (70.6px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                ".text-link[href$=\"community/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (167.3px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                "a[target=\"_blank\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (185.6px by 23px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 23px instead of at least 24px."
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 59
+        }
+      ]
+    },
+    {
+      "route": "/news/",
+      "theme": "dark",
+      "violations": [
+        {
+          "id": "target-size",
+          "impact": "serious",
+          "description": "Ensure touch targets have sufficient size and space",
+          "nodes": [
+            {
+              "target": [
+                "a[href$=\"about/#contact\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (70.6px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                ".text-link[href$=\"community/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (167.3px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                "a[target=\"_blank\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (185.6px by 23px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 23px instead of at least 24px."
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 21
+        }
+      ]
+    },
+    {
+      "route": "/announcements/",
+      "theme": "dark",
+      "violations": [
+        {
+          "id": "target-size",
+          "impact": "serious",
+          "description": "Ensure touch targets have sufficient size and space",
+          "nodes": [
+            {
+              "target": [
+                "a[href$=\"about/#contact\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (70.6px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                "p:nth-child(4) > .text-link[href$=\"community/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (167.3px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                "a[target=\"_blank\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (185.6px by 23px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 23px instead of at least 24px."
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 36
+        }
+      ]
+    },
+    {
+      "route": "/community/",
+      "theme": "dark",
+      "violations": [
+        {
+          "id": "target-size",
+          "impact": "serious",
+          "description": "Ensure touch targets have sufficient size and space",
+          "nodes": [
+            {
+              "target": [
+                "a[href$=\"about/#contact\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (70.6px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                ".text-link[href$=\"community/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (167.3px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                ".text-link[target=\"_blank\"][rel=\"noopener noreferrer\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (185.6px by 23px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 23px instead of at least 24px."
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 31
+        }
+      ]
+    },
+    {
+      "route": "/about/",
+      "theme": "dark",
+      "violations": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "description": "Ensure ARIA attributes are not prohibited for an element's role",
+          "nodes": [
+            {
+              "target": [
+                ".profile-photo--mentor"
+              ],
+              "summary": "Fix all of the following:\n  aria-label attribute cannot be used on a div with no valid role attribute."
+            }
+          ]
+        },
+        {
+          "id": "target-size",
+          "impact": "serious",
+          "description": "Ensure touch targets have sufficient size and space",
+          "nodes": [
+            {
+              "target": [
+                "a[href$=\"about/#contact\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (70.6px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                ".text-link[href$=\"community/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (167.3px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                ".text-link[target=\"_blank\"][rel=\"noopener noreferrer\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (185.6px by 23px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 23px instead of at least 24px."
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 78
+        }
+      ]
+    },
+    {
+      "route": "/research/",
+      "theme": "dark",
+      "violations": [
+        {
+          "id": "target-size",
+          "impact": "serious",
+          "description": "Ensure touch targets have sufficient size and space",
+          "nodes": [
+            {
+              "target": [
+                "a[href$=\"about/#contact\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (70.6px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                ".text-link[href$=\"community/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (167.3px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                "a[target=\"_blank\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (185.6px by 23px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 23px instead of at least 24px."
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 22
+        }
+      ]
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "dark",
+      "violations": [
+        {
+          "id": "target-size",
+          "impact": "serious",
+          "description": "Ensure touch targets have sufficient size and space",
+          "nodes": [
+            {
+              "target": [
+                "a[href$=\"about/#contact\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (70.6px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                ".text-link[href$=\"community/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (167.3px by 21px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 21px instead of at least 24px."
+            },
+            {
+              "target": [
+                "a[target=\"_blank\"]"
+              ],
+              "summary": "Fix any of the following:\n  Target has insufficient size (185.6px by 23px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 23px instead of at least 24px."
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 81
+        }
+      ]
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "dark",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 23
+        }
+      ]
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "dark",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 4
+        }
+      ]
+    }
+  ],
+  "responsive": [
+    {
+      "route": "/",
+      "theme": "light",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/courses/",
+      "theme": "light",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/courses/",
+      "theme": "light",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/courses/",
+      "theme": "light",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/courses/",
+      "theme": "light",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/courses/",
+      "theme": "light",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/courses/",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/courses/",
+      "theme": "light",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/news/",
+      "theme": "light",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/news/",
+      "theme": "light",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/news/",
+      "theme": "light",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/news/",
+      "theme": "light",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/news/",
+      "theme": "light",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/news/",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/news/",
+      "theme": "light",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/announcements/",
+      "theme": "light",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/announcements/",
+      "theme": "light",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/announcements/",
+      "theme": "light",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/announcements/",
+      "theme": "light",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/announcements/",
+      "theme": "light",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/announcements/",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/announcements/",
+      "theme": "light",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/community/",
+      "theme": "light",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/community/",
+      "theme": "light",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/community/",
+      "theme": "light",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/community/",
+      "theme": "light",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/community/",
+      "theme": "light",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/community/",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/community/",
+      "theme": "light",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/about/",
+      "theme": "light",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/about/",
+      "theme": "light",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/about/",
+      "theme": "light",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/about/",
+      "theme": "light",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/about/",
+      "theme": "light",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/about/",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/about/",
+      "theme": "light",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/research/",
+      "theme": "light",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/research/",
+      "theme": "light",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/research/",
+      "theme": "light",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/research/",
+      "theme": "light",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/research/",
+      "theme": "light",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/research/",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/research/",
+      "theme": "light",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "light",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "light",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "light",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "light",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "light",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "light",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "light",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "light",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "light",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "light",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "light",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "light",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "light",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "light",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "light",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "light",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "light",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "light",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/courses/",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/courses/",
+      "theme": "dark",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/courses/",
+      "theme": "dark",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/courses/",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/courses/",
+      "theme": "dark",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/courses/",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/courses/",
+      "theme": "dark",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/news/",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/news/",
+      "theme": "dark",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/news/",
+      "theme": "dark",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/news/",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/news/",
+      "theme": "dark",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/news/",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/news/",
+      "theme": "dark",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/announcements/",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/announcements/",
+      "theme": "dark",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/announcements/",
+      "theme": "dark",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/announcements/",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/announcements/",
+      "theme": "dark",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/announcements/",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/announcements/",
+      "theme": "dark",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/community/",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/community/",
+      "theme": "dark",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/community/",
+      "theme": "dark",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/community/",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/community/",
+      "theme": "dark",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/community/",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/community/",
+      "theme": "dark",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/about/",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/about/",
+      "theme": "dark",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/about/",
+      "theme": "dark",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/about/",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/about/",
+      "theme": "dark",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/about/",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/about/",
+      "theme": "dark",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/research/",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/research/",
+      "theme": "dark",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/research/",
+      "theme": "dark",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/research/",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/research/",
+      "theme": "dark",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/research/",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/research/",
+      "theme": "dark",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "dark",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "dark",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "dark",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "dark",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "dark",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "dark",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "dark",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "dark",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "dark",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "dark",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "dark",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "dark",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    }
+  ],
+  "performance": [
+    {
+      "route": "/",
+      "run": 1,
+      "lcp": 2484,
+      "cls": 0,
+      "resources": [
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "transfer": 48732,
+          "bytes": 48432,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/c41ca59f1c34ba31-s.p.2y2uoi4t910qy.woff2",
+          "transfer": 33972,
+          "bytes": 33672,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-mark-160.30edn2f1pp-ve.webp",
+          "transfer": 10826,
+          "bytes": 10526,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/campus-hero.0lx_bbliy895y.webp",
+          "transfer": 100150,
+          "bytes": 99850,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/1ulic93opz64p.css",
+          "transfer": 3364,
+          "bytes": 3064,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/0rpcct1yr_34_.css",
+          "transfer": 102415,
+          "bytes": 102115,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "transfer": 5898,
+          "bytes": 5598,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/19mx3mg6lkumu.js",
+          "transfer": 29207,
+          "bytes": 28907,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/4561u0v7ysn3r.js",
+          "transfer": 229144,
+          "bytes": 228844,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/09e598trbafx8.js",
+          "transfer": 164134,
+          "bytes": 163834,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/turbopack-24y_d5gutj-j7.js",
+          "transfer": 9952,
+          "bytes": 9652,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3fntmmi971322.js",
+          "transfer": 14677,
+          "bytes": 14377,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/2_1sf8f16dp_3.js",
+          "transfer": 32595,
+          "bytes": 32295,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/cybersecurity-foundations.3d4n1wziuo5dz.webp",
+          "transfer": 62434,
+          "bytes": 62134,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/networking-essentials.0edry79zbm1z6.webp",
+          "transfer": 69786,
+          "bytes": 69486,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/robotics-fundamentals.0g6bc5phq7tu_.webp",
+          "transfer": 82914,
+          "bytes": 82614,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next._tree.txt?_rsc=5CB68i4pnAekjehf",
+          "transfer": 831,
+          "bytes": 531,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/__next._tree.txt?_rsc=5CB68i4pnAekjehf",
+          "transfer": 905,
+          "bytes": 605,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next.__PAGE__.txt?_rsc=8nTjltbQWvg6NcbE",
+          "transfer": 46416,
+          "bytes": 46116,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/__next.courses.__PAGE__.txt?_rsc=xypVPeQXZ46q-X8F",
+          "transfer": 12017,
+          "bytes": 11717,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3eu0xftbzuzyd.js",
+          "transfer": 655,
+          "bytes": 355,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/13zpexbebc7z2.js",
+          "transfer": 59382,
+          "bytes": 59082,
+          "type": "script"
+        }
+      ],
+      "dom": 614
+    },
+    {
+      "route": "/",
+      "run": 2,
+      "lcp": 2444,
+      "cls": 0,
+      "resources": [
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "transfer": 48732,
+          "bytes": 48432,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/c41ca59f1c34ba31-s.p.2y2uoi4t910qy.woff2",
+          "transfer": 33972,
+          "bytes": 33672,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-mark-160.30edn2f1pp-ve.webp",
+          "transfer": 10826,
+          "bytes": 10526,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/campus-hero.0lx_bbliy895y.webp",
+          "transfer": 100150,
+          "bytes": 99850,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/1ulic93opz64p.css",
+          "transfer": 3364,
+          "bytes": 3064,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/0rpcct1yr_34_.css",
+          "transfer": 102415,
+          "bytes": 102115,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "transfer": 5898,
+          "bytes": 5598,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/19mx3mg6lkumu.js",
+          "transfer": 29207,
+          "bytes": 28907,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/4561u0v7ysn3r.js",
+          "transfer": 229144,
+          "bytes": 228844,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/09e598trbafx8.js",
+          "transfer": 164134,
+          "bytes": 163834,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/turbopack-24y_d5gutj-j7.js",
+          "transfer": 9952,
+          "bytes": 9652,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3fntmmi971322.js",
+          "transfer": 14677,
+          "bytes": 14377,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/2_1sf8f16dp_3.js",
+          "transfer": 32595,
+          "bytes": 32295,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/cybersecurity-foundations.3d4n1wziuo5dz.webp",
+          "transfer": 62434,
+          "bytes": 62134,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/networking-essentials.0edry79zbm1z6.webp",
+          "transfer": 69786,
+          "bytes": 69486,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/robotics-fundamentals.0g6bc5phq7tu_.webp",
+          "transfer": 82914,
+          "bytes": 82614,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next._tree.txt?_rsc=5CB68i4pnAekjehf",
+          "transfer": 831,
+          "bytes": 531,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/__next._tree.txt?_rsc=5CB68i4pnAekjehf",
+          "transfer": 905,
+          "bytes": 605,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next.__PAGE__.txt?_rsc=8nTjltbQWvg6NcbE",
+          "transfer": 46416,
+          "bytes": 46116,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/__next.courses.__PAGE__.txt?_rsc=xypVPeQXZ46q-X8F",
+          "transfer": 12017,
+          "bytes": 11717,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3eu0xftbzuzyd.js",
+          "transfer": 655,
+          "bytes": 355,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/13zpexbebc7z2.js",
+          "transfer": 59382,
+          "bytes": 59082,
+          "type": "script"
+        }
+      ],
+      "dom": 614
+    },
+    {
+      "route": "/",
+      "run": 3,
+      "lcp": 2448,
+      "cls": 0,
+      "resources": [
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "transfer": 48732,
+          "bytes": 48432,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/c41ca59f1c34ba31-s.p.2y2uoi4t910qy.woff2",
+          "transfer": 33972,
+          "bytes": 33672,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-mark-160.30edn2f1pp-ve.webp",
+          "transfer": 10826,
+          "bytes": 10526,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/campus-hero.0lx_bbliy895y.webp",
+          "transfer": 100150,
+          "bytes": 99850,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/1ulic93opz64p.css",
+          "transfer": 3364,
+          "bytes": 3064,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/0rpcct1yr_34_.css",
+          "transfer": 102415,
+          "bytes": 102115,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "transfer": 5898,
+          "bytes": 5598,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/19mx3mg6lkumu.js",
+          "transfer": 29207,
+          "bytes": 28907,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/4561u0v7ysn3r.js",
+          "transfer": 229144,
+          "bytes": 228844,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/09e598trbafx8.js",
+          "transfer": 164134,
+          "bytes": 163834,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/turbopack-24y_d5gutj-j7.js",
+          "transfer": 9952,
+          "bytes": 9652,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3fntmmi971322.js",
+          "transfer": 14677,
+          "bytes": 14377,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/2_1sf8f16dp_3.js",
+          "transfer": 32595,
+          "bytes": 32295,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/cybersecurity-foundations.3d4n1wziuo5dz.webp",
+          "transfer": 62434,
+          "bytes": 62134,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/networking-essentials.0edry79zbm1z6.webp",
+          "transfer": 69786,
+          "bytes": 69486,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/robotics-fundamentals.0g6bc5phq7tu_.webp",
+          "transfer": 82914,
+          "bytes": 82614,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/__next._tree.txt?_rsc=5CB68i4pnAekjehf",
+          "transfer": 905,
+          "bytes": 605,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next._tree.txt?_rsc=5CB68i4pnAekjehf",
+          "transfer": 831,
+          "bytes": 531,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next.__PAGE__.txt?_rsc=8nTjltbQWvg6NcbE",
+          "transfer": 46416,
+          "bytes": 46116,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/__next.courses.__PAGE__.txt?_rsc=xypVPeQXZ46q-X8F",
+          "transfer": 12017,
+          "bytes": 11717,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3eu0xftbzuzyd.js",
+          "transfer": 655,
+          "bytes": 355,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/13zpexbebc7z2.js",
+          "transfer": 59382,
+          "bytes": 59082,
+          "type": "script"
+        }
+      ],
+      "dom": 614
+    },
+    {
+      "route": "/courses/",
+      "run": 1,
+      "lcp": 1948,
+      "cls": 0,
+      "resources": [
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "transfer": 48732,
+          "bytes": 48432,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/c41ca59f1c34ba31-s.p.2y2uoi4t910qy.woff2",
+          "transfer": 33972,
+          "bytes": 33672,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-mark-160.30edn2f1pp-ve.webp",
+          "transfer": 10826,
+          "bytes": 10526,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/1ulic93opz64p.css",
+          "transfer": 3364,
+          "bytes": 3064,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/0rpcct1yr_34_.css",
+          "transfer": 102415,
+          "bytes": 102115,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "transfer": 5898,
+          "bytes": 5598,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/19mx3mg6lkumu.js",
+          "transfer": 29207,
+          "bytes": 28907,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/4561u0v7ysn3r.js",
+          "transfer": 229144,
+          "bytes": 228844,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/09e598trbafx8.js",
+          "transfer": 164134,
+          "bytes": 163834,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/turbopack-24y_d5gutj-j7.js",
+          "transfer": 9952,
+          "bytes": 9652,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3fntmmi971322.js",
+          "transfer": 14677,
+          "bytes": 14377,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3eu0xftbzuzyd.js",
+          "transfer": 655,
+          "bytes": 355,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/2_1sf8f16dp_3.js",
+          "transfer": 32595,
+          "bytes": 32295,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/13zpexbebc7z2.js",
+          "transfer": 59382,
+          "bytes": 59082,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/cybersecurity-foundations.3d4n1wziuo5dz.webp",
+          "transfer": 62434,
+          "bytes": 62134,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/networking-essentials.0edry79zbm1z6.webp",
+          "transfer": 69786,
+          "bytes": 69486,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/robotics-fundamentals.0g6bc5phq7tu_.webp",
+          "transfer": 82914,
+          "bytes": 82614,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-logo-footer.0c1o4gtoqcl-f.webp",
+          "transfer": 26192,
+          "bytes": 25892,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/cybersecurity-foundations/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next._tree.txt?_rsc=Z-IaLvD_JPa6i9JC",
+          "transfer": 831,
+          "bytes": 531,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/cybersecurity-foundations/__next._tree.txt?_rsc=Z-IaLvD_JPa6i9JC",
+          "transfer": 1032,
+          "bytes": 732,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next.__PAGE__.txt?_rsc=WMqHX2yvGQ_f2N7w",
+          "transfer": 46416,
+          "bytes": 46116,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/cybersecurity-foundations/__next.courses.$d$slug.__PAGE__.txt?_rsc=KLVSQo5LwgFNCMY6",
+          "transfer": 36583,
+          "bytes": 36283,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/2fc7dn4qqp77n.js",
+          "transfer": 4981,
+          "bytes": 4681,
+          "type": "script"
+        }
+      ],
+      "dom": 251
+    },
+    {
+      "route": "/courses/",
+      "run": 2,
+      "lcp": 2524,
+      "cls": 0,
+      "resources": [
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "transfer": 48732,
+          "bytes": 48432,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/c41ca59f1c34ba31-s.p.2y2uoi4t910qy.woff2",
+          "transfer": 33972,
+          "bytes": 33672,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-mark-160.30edn2f1pp-ve.webp",
+          "transfer": 10826,
+          "bytes": 10526,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/1ulic93opz64p.css",
+          "transfer": 3364,
+          "bytes": 3064,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/0rpcct1yr_34_.css",
+          "transfer": 102415,
+          "bytes": 102115,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "transfer": 5898,
+          "bytes": 5598,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/19mx3mg6lkumu.js",
+          "transfer": 29207,
+          "bytes": 28907,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/4561u0v7ysn3r.js",
+          "transfer": 229144,
+          "bytes": 228844,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/09e598trbafx8.js",
+          "transfer": 164134,
+          "bytes": 163834,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/turbopack-24y_d5gutj-j7.js",
+          "transfer": 9952,
+          "bytes": 9652,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3fntmmi971322.js",
+          "transfer": 14677,
+          "bytes": 14377,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3eu0xftbzuzyd.js",
+          "transfer": 655,
+          "bytes": 355,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/2_1sf8f16dp_3.js",
+          "transfer": 32595,
+          "bytes": 32295,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/13zpexbebc7z2.js",
+          "transfer": 59382,
+          "bytes": 59082,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/cybersecurity-foundations.3d4n1wziuo5dz.webp",
+          "transfer": 62434,
+          "bytes": 62134,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/networking-essentials.0edry79zbm1z6.webp",
+          "transfer": 69786,
+          "bytes": 69486,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/robotics-fundamentals.0g6bc5phq7tu_.webp",
+          "transfer": 82914,
+          "bytes": 82614,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-logo-footer.0c1o4gtoqcl-f.webp",
+          "transfer": 26192,
+          "bytes": 25892,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/cybersecurity-foundations/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next._tree.txt?_rsc=Z-IaLvD_JPa6i9JC",
+          "transfer": 831,
+          "bytes": 531,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/cybersecurity-foundations/__next._tree.txt?_rsc=Z-IaLvD_JPa6i9JC",
+          "transfer": 1032,
+          "bytes": 732,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next.__PAGE__.txt?_rsc=WMqHX2yvGQ_f2N7w",
+          "transfer": 46416,
+          "bytes": 46116,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/cybersecurity-foundations/__next.courses.$d$slug.__PAGE__.txt?_rsc=KLVSQo5LwgFNCMY6",
+          "transfer": 36583,
+          "bytes": 36283,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/2fc7dn4qqp77n.js",
+          "transfer": 4981,
+          "bytes": 4681,
+          "type": "script"
+        }
+      ],
+      "dom": 251
+    },
+    {
+      "route": "/courses/",
+      "run": 3,
+      "lcp": 2408,
+      "cls": 0,
+      "resources": [
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "transfer": 48732,
+          "bytes": 48432,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/c41ca59f1c34ba31-s.p.2y2uoi4t910qy.woff2",
+          "transfer": 33972,
+          "bytes": 33672,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-mark-160.30edn2f1pp-ve.webp",
+          "transfer": 10826,
+          "bytes": 10526,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/1ulic93opz64p.css",
+          "transfer": 3364,
+          "bytes": 3064,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/0rpcct1yr_34_.css",
+          "transfer": 102415,
+          "bytes": 102115,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "transfer": 5898,
+          "bytes": 5598,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/19mx3mg6lkumu.js",
+          "transfer": 29207,
+          "bytes": 28907,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/4561u0v7ysn3r.js",
+          "transfer": 229144,
+          "bytes": 228844,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/09e598trbafx8.js",
+          "transfer": 164134,
+          "bytes": 163834,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/turbopack-24y_d5gutj-j7.js",
+          "transfer": 9952,
+          "bytes": 9652,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3fntmmi971322.js",
+          "transfer": 14677,
+          "bytes": 14377,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3eu0xftbzuzyd.js",
+          "transfer": 655,
+          "bytes": 355,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/2_1sf8f16dp_3.js",
+          "transfer": 32595,
+          "bytes": 32295,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/13zpexbebc7z2.js",
+          "transfer": 59382,
+          "bytes": 59082,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/cybersecurity-foundations.3d4n1wziuo5dz.webp",
+          "transfer": 62434,
+          "bytes": 62134,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/networking-essentials.0edry79zbm1z6.webp",
+          "transfer": 69786,
+          "bytes": 69486,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/robotics-fundamentals.0g6bc5phq7tu_.webp",
+          "transfer": 82914,
+          "bytes": 82614,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-logo-footer.0c1o4gtoqcl-f.webp",
+          "transfer": 26192,
+          "bytes": 25892,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/cybersecurity-foundations/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next._tree.txt?_rsc=Z-IaLvD_JPa6i9JC",
+          "transfer": 831,
+          "bytes": 531,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/cybersecurity-foundations/__next._tree.txt?_rsc=Z-IaLvD_JPa6i9JC",
+          "transfer": 1032,
+          "bytes": 732,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next.__PAGE__.txt?_rsc=WMqHX2yvGQ_f2N7w",
+          "transfer": 46416,
+          "bytes": 46116,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/cybersecurity-foundations/__next.courses.$d$slug.__PAGE__.txt?_rsc=KLVSQo5LwgFNCMY6",
+          "transfer": 36583,
+          "bytes": 36283,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/2fc7dn4qqp77n.js",
+          "transfer": 4981,
+          "bytes": 4681,
+          "type": "script"
+        }
+      ],
+      "dom": 251
+    },
+    {
+      "route": "/about/",
+      "run": 1,
+      "lcp": 2424,
+      "cls": 0,
+      "resources": [
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "transfer": 48732,
+          "bytes": 48432,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/c41ca59f1c34ba31-s.p.2y2uoi4t910qy.woff2",
+          "transfer": 33972,
+          "bytes": 33672,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-mark-160.30edn2f1pp-ve.webp",
+          "transfer": 10826,
+          "bytes": 10526,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-logo-transparent.1tur5mabof5-q.webp",
+          "transfer": 230226,
+          "bytes": 229926,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/1ulic93opz64p.css",
+          "transfer": 3364,
+          "bytes": 3064,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/0rpcct1yr_34_.css",
+          "transfer": 102415,
+          "bytes": 102115,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "transfer": 5898,
+          "bytes": 5598,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/19mx3mg6lkumu.js",
+          "transfer": 29207,
+          "bytes": 28907,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/4561u0v7ysn3r.js",
+          "transfer": 229144,
+          "bytes": 228844,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/09e598trbafx8.js",
+          "transfer": 164134,
+          "bytes": 163834,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/turbopack-24y_d5gutj-j7.js",
+          "transfer": 9952,
+          "bytes": 9652,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3fntmmi971322.js",
+          "transfer": 14677,
+          "bytes": 14377,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/1jxror4tuduqp.js",
+          "transfer": 3484,
+          "bytes": 3184,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/2_1sf8f16dp_3.js",
+          "transfer": 32595,
+          "bytes": 32295,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next._tree.txt?_rsc=Sdev7PUlRw12F58X",
+          "transfer": 831,
+          "bytes": 531,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next.__PAGE__.txt?_rsc=IbqYazZHyjXYH_Ld",
+          "transfer": 46416,
+          "bytes": 46116,
+          "type": "fetch"
+        }
+      ],
+      "dom": 342
+    },
+    {
+      "route": "/about/",
+      "run": 2,
+      "lcp": 2360,
+      "cls": 0,
+      "resources": [
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "transfer": 48732,
+          "bytes": 48432,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/c41ca59f1c34ba31-s.p.2y2uoi4t910qy.woff2",
+          "transfer": 33972,
+          "bytes": 33672,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-mark-160.30edn2f1pp-ve.webp",
+          "transfer": 10826,
+          "bytes": 10526,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-logo-transparent.1tur5mabof5-q.webp",
+          "transfer": 230226,
+          "bytes": 229926,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/1ulic93opz64p.css",
+          "transfer": 3364,
+          "bytes": 3064,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/0rpcct1yr_34_.css",
+          "transfer": 102415,
+          "bytes": 102115,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "transfer": 5898,
+          "bytes": 5598,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/19mx3mg6lkumu.js",
+          "transfer": 29207,
+          "bytes": 28907,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/4561u0v7ysn3r.js",
+          "transfer": 229144,
+          "bytes": 228844,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/09e598trbafx8.js",
+          "transfer": 164134,
+          "bytes": 163834,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/turbopack-24y_d5gutj-j7.js",
+          "transfer": 9952,
+          "bytes": 9652,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3fntmmi971322.js",
+          "transfer": 14677,
+          "bytes": 14377,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/1jxror4tuduqp.js",
+          "transfer": 3484,
+          "bytes": 3184,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/2_1sf8f16dp_3.js",
+          "transfer": 32595,
+          "bytes": 32295,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next._tree.txt?_rsc=Sdev7PUlRw12F58X",
+          "transfer": 831,
+          "bytes": 531,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next.__PAGE__.txt?_rsc=IbqYazZHyjXYH_Ld",
+          "transfer": 46416,
+          "bytes": 46116,
+          "type": "fetch"
+        }
+      ],
+      "dom": 342
+    },
+    {
+      "route": "/about/",
+      "run": 3,
+      "lcp": 2356,
+      "cls": 0,
+      "resources": [
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "transfer": 48732,
+          "bytes": 48432,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/c41ca59f1c34ba31-s.p.2y2uoi4t910qy.woff2",
+          "transfer": 33972,
+          "bytes": 33672,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-mark-160.30edn2f1pp-ve.webp",
+          "transfer": 10826,
+          "bytes": 10526,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-logo-transparent.1tur5mabof5-q.webp",
+          "transfer": 230226,
+          "bytes": 229926,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/1ulic93opz64p.css",
+          "transfer": 3364,
+          "bytes": 3064,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/0rpcct1yr_34_.css",
+          "transfer": 102415,
+          "bytes": 102115,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "transfer": 5898,
+          "bytes": 5598,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/19mx3mg6lkumu.js",
+          "transfer": 29207,
+          "bytes": 28907,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/4561u0v7ysn3r.js",
+          "transfer": 229144,
+          "bytes": 228844,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/09e598trbafx8.js",
+          "transfer": 164134,
+          "bytes": 163834,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/turbopack-24y_d5gutj-j7.js",
+          "transfer": 9952,
+          "bytes": 9652,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3fntmmi971322.js",
+          "transfer": 14677,
+          "bytes": 14377,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/1jxror4tuduqp.js",
+          "transfer": 3484,
+          "bytes": 3184,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/2_1sf8f16dp_3.js",
+          "transfer": 32595,
+          "bytes": 32295,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next._tree.txt?_rsc=Sdev7PUlRw12F58X",
+          "transfer": 831,
+          "bytes": 531,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next.__PAGE__.txt?_rsc=IbqYazZHyjXYH_Ld",
+          "transfer": 46416,
+          "bytes": 46116,
+          "type": "fetch"
+        }
+      ],
+      "dom": 342
+    }
+  ],
+  "exceptions": [
+    {
+      "theme": "light",
+      "message": "Storage blocked"
+    },
+    {
+      "theme": "light",
+      "case": "blocked storage",
+      "resultsVisible": 0,
+      "questionVisible": 1
+    },
+    {
+      "theme": "dark",
+      "message": "Storage blocked"
+    },
+    {
+      "theme": "dark",
+      "case": "blocked storage",
+      "resultsVisible": 0,
+      "questionVisible": 1
+    }
+  ],
+  "metadata": [
+    {
+      "route": "/",
+      "title": "NEST LMS | Learn, Create, Share",
+      "description": "A student-led learning experience from NEST Club, exploring cybersecurity, networking, and robotics through focused digital lessons.",
+      "ogImage": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/images/social/nest-lms-social.webp",
+      "h1": 1
+    },
+    {
+      "route": "/courses/",
+      "title": "Course Catalogue | NEST LMS",
+      "description": "Explore NEST learning paths in cybersecurity, networking, and robotics.",
+      "ogImage": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/images/social/nest-lms-social.webp",
+      "h1": 1
+    },
+    {
+      "route": "/news/",
+      "title": "News | NEST LMS",
+      "description": "Read NEST Club stories, learning releases, community updates, and technology news.",
+      "ogImage": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/images/social/nest-lms-social.webp",
+      "h1": 1
+    },
+    {
+      "route": "/announcements/",
+      "title": "Announcements | NEST LMS",
+      "description": "Read the latest NEST Club announcements, updates, research notices, and community news.",
+      "ogImage": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/images/social/nest-lms-social.webp",
+      "h1": 1
+    },
+    {
+      "route": "/community/",
+      "title": "Join Community | NEST LMS",
+      "description": "Join the NEST Community WhatsApp group and follow official NEST Club learning updates.",
+      "ogImage": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/images/social/nest-lms-social.webp",
+      "h1": 1
+    },
+    {
+      "route": "/about/",
+      "title": "About NEST Club | NEST LMS",
+      "description": "Meet NEST Club, its mission, vision, objectives, and student-led learning philosophy.",
+      "ogImage": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/images/social/nest-lms-social.webp",
+      "h1": 1
+    },
+    {
+      "route": "/research/",
+      "title": "Research has moved to News | NEST LMS",
+      "description": "Research updates and other NEST Club stories are now published in News.",
+      "ogImage": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/images/social/nest-lms-social.webp",
+      "h1": 1
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "title": "Cybersecurity Foundations | NEST LMS",
+      "description": "Recognise common attacks, protect accounts and devices, and build safer digital habits from the ground up.",
+      "ogImage": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/images/social/nest-lms-social.webp",
+      "h1": 1
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "title": "What is Cybersecurity? · Cybersecurity Foundations | NEST LMS",
+      "description": "Understand how people, processes, and technology protect systems and information.",
+      "ogImage": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/images/social/nest-lms-social.webp",
+      "h1": 1
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "title": "Introduction to Cybersecurity checkpoint · Cybersecurity Foundations | NEST LMS",
+      "description": "Complete the source-backed checkpoint for Introduction to Cybersecurity.",
+      "ogImage": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/images/social/nest-lms-social.webp",
+      "h1": 1
+    }
+  ],
+  "network": [
+    {
+      "theme": "light",
+      "externalOrigins": [
+        "https://i.ytimg.com"
+      ]
+    },
+    {
+      "theme": "dark",
+      "externalOrigins": [
+        "https://i.ytimg.com"
+      ]
+    }
+  ],
+  "assets": {
+    "totalBytes": 18284077,
+    "js": [
+      {
+        "path": "out\\_next\\static\\-Lqw1Hm3N2Jwo8GBcYf85\\_buildManifest.js",
+        "bytes": 219,
+        "gzip": 154
+      },
+      {
+        "path": "out\\_next\\static\\-Lqw1Hm3N2Jwo8GBcYf85\\_clientMiddlewareManifest.js",
+        "bytes": 96,
+        "gzip": 66
+      },
+      {
+        "path": "out\\_next\\static\\-Lqw1Hm3N2Jwo8GBcYf85\\_ssgManifest.js",
+        "bytes": 246,
+        "gzip": 128
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\0-zikom21i2n-.js",
+        "bytes": 14384,
+        "gzip": 5461
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\05ferp-lnk9bc.js",
+        "bytes": 21124,
+        "gzip": 7195
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\09e598trbafx8.js",
+        "bytes": 163834,
+        "gzip": 44676
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\0cz1d0mv5g_q7.js",
+        "bytes": 112594,
+        "gzip": 39627
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\13zpexbebc7z2.js",
+        "bytes": 59082,
+        "gzip": 14111
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\19mx3mg6lkumu.js",
+        "bytes": 28907,
+        "gzip": 7614
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\1aikc68qqcg6x.js",
+        "bytes": 23544,
+        "gzip": 8558
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\1jxror4tuduqp.js",
+        "bytes": 3184,
+        "gzip": 1307
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\2fc7dn4qqp77n.js",
+        "bytes": 4681,
+        "gzip": 1725
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\2snu834begfq3.js",
+        "bytes": 9090,
+        "gzip": 3712
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\2_1sf8f16dp_3.js",
+        "bytes": 32295,
+        "gzip": 11542
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\3eu0xftbzuzyd.js",
+        "bytes": 355,
+        "gzip": 253
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\3fntmmi971322.js",
+        "bytes": 14377,
+        "gzip": 3661
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\3s6nzrbk-8mnv.js",
+        "bytes": 5598,
+        "gzip": 2029
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\4561u0v7ysn3r.js",
+        "bytes": 228844,
+        "gzip": 71554
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\turbopack-24y_d5gutj-j7.js",
+        "bytes": 9652,
+        "gzip": 3832
+      }
+    ],
+    "largestImages": [
+      {
+        "path": "out\\images\\events\\bsc-iot-workshop\\group.webp",
+        "bytes": 276338
+      },
+      {
+        "path": "out\\_next\\static\\media\\group.1tnpdvn3z2y3x.webp",
+        "bytes": 276338
+      },
+      {
+        "path": "out\\images\\events\\open-day\\portrait-01.webp",
+        "bytes": 234882
+      },
+      {
+        "path": "out\\_next\\static\\media\\portrait-01.2m7w2vucrd7v7.webp",
+        "bytes": 234882
+      },
+      {
+        "path": "out\\images\\brand\\nest-logo-transparent.webp",
+        "bytes": 229926
+      },
+      {
+        "path": "out\\_next\\static\\media\\nest-logo-transparent.1tur5mabof5-q.webp",
+        "bytes": 229926
+      },
+      {
+        "path": "out\\images\\events\\open-day\\presentation-01.webp",
+        "bytes": 229628
+      },
+      {
+        "path": "out\\_next\\static\\media\\presentation-01.3dmgzgm-u1ffe.webp",
+        "bytes": 229628
+      },
+      {
+        "path": "out\\images\\events\\open-day\\portrait-04.webp",
+        "bytes": 217592
+      },
+      {
+        "path": "out\\_next\\static\\media\\portrait-04.3gbk-bpg0py2f.webp",
+        "bytes": 217592
+      },
+      {
+        "path": "out\\images\\events\\open-day\\team.webp",
+        "bytes": 209234
+      },
+      {
+        "path": "out\\_next\\static\\media\\team.0siqoou9b22ym.webp",
+        "bytes": 209234
+      }
+    ]
+  }
+}
