@@ -24,7 +24,7 @@ export default function AboutPage() {
       <div className="mentor-profile"><div className="profile-photo profile-photo--mentor" aria-label="Master-in-Charge photo placeholder"><UsersIcon /></div><div className="mentor-profile__details"><small>Master-in-Charge</small><h3>Lecturer name</h3><p>Lecturer overseeing NEST Club</p></div></div>
       <div className="board-heading"><div><p className="eyebrow">Learning together</p><h3>Club members</h3></div><span>Member names and roles to be confirmed</span></div>
       <div className="board-grid">{teamMembers.map((member, index) => <article className="board-profile" key={member.id}>
-        <div className="profile-photo profile-photo--portrait"><Image src={member.image} alt={member.name ? `${member.name}, NEST club member` : `NEST club member portrait ${index + 1}`} sizes="(max-width: 560px) 100vw, (max-width: 1000px) 50vw, 25vw" /></div>
+        <div className="profile-photo profile-photo--portrait" style={{ position: "relative", height: "auto", aspectRatio: "240 / 270" }}><Image src={member.image} style={{ position: "absolute", left: "50%", transform: "translateX(-50%)", width: member.framing.width, top: member.framing.top, height: "auto", maxWidth: "none" }} alt={member.name ? `${member.name}, NEST club member` : `NEST club member portrait ${index + 1}`} sizes="(max-width: 560px) 100vw, (max-width: 1000px) 50vw, 25vw" /></div>
         <div><strong>{member.name ?? "Member name"}</strong><span>Club member</span></div>
       </article>)}</div>
     </div></section>

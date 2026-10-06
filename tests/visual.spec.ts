@@ -255,8 +255,8 @@ test.describe("about leadership", () => {
     await loadPageImages(page);
 
     const cards = page.locator(".board-profile");
-    await expect(cards).toHaveCount(9);
-    await expect(cards.locator("img")).toHaveCount(9);
+    await expect(cards).toHaveCount(11);
+    await expect(cards.locator("img")).toHaveCount(11);
     // Measure every card in one frame; smooth scrolling can move the viewport
     // between separate boundingBox calls even when the rows are aligned.
     const boxes = await cards.evaluateAll((elements) => elements.map((element) => element.getBoundingClientRect().toJSON()));
