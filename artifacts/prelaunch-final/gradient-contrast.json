@@ -1,0 +1,77 @@
+{
+  "method": "Rendered gradient endpoint colors plus source maximum white overlay alpha; limited control-background measurement, not full conformance.",
+  "rows": [
+    {
+      "theme": "light",
+      "color": "#2456a6",
+      "whiteOverlay": 0,
+      "whiteTextContrast": 7.102359787983156
+    },
+    {
+      "theme": "light",
+      "color": "#2456a6",
+      "whiteOverlay": 0.06,
+      "whiteTextContrast": 6.176098115686878
+    },
+    {
+      "theme": "light",
+      "color": "#2456a6",
+      "whiteOverlay": 0.08,
+      "whiteTextContrast": 5.8937893615539565
+    },
+    {
+      "theme": "light",
+      "color": "#6844c5",
+      "whiteOverlay": 0,
+      "whiteTextContrast": 6.518290462461165
+    },
+    {
+      "theme": "light",
+      "color": "#6844c5",
+      "whiteOverlay": 0.06,
+      "whiteTextContrast": 5.727983009951127
+    },
+    {
+      "theme": "light",
+      "color": "#6844c5",
+      "whiteOverlay": 0.08,
+      "whiteTextContrast": 5.484141182718134
+    },
+    {
+      "theme": "dark",
+      "color": "#2456a6",
+      "whiteOverlay": 0,
+      "whiteTextContrast": 7.102359787983156
+    },
+    {
+      "theme": "dark",
+      "color": "#2456a6",
+      "whiteOverlay": 0.06,
+      "whiteTextContrast": 6.176098115686878
+    },
+    {
+      "theme": "dark",
+      "color": "#2456a6",
+      "whiteOverlay": 0.08,
+      "whiteTextContrast": 5.8937893615539565
+    },
+    {
+      "theme": "dark",
+      "color": "#6844c5",
+      "whiteOverlay": 0,
+      "whiteTextContrast": 6.518290462461165
+    },
+    {
+      "theme": "dark",
+      "color": "#6844c5",
+      "whiteOverlay": 0.06,
+      "whiteTextContrast": 5.727983009951127
+    },
+    {
+      "theme": "dark",
+      "color": "#6844c5",
+      "whiteOverlay": 0.08,
+      "whiteTextContrast": 5.484141182718134
+    }
+  ]
+}

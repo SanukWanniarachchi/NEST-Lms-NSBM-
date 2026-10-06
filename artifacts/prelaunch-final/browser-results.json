@@ -1,0 +1,2930 @@
+{
+  "accessibility": [
+    {
+      "route": "/",
+      "theme": "light",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 93
+        }
+      ]
+    },
+    {
+      "route": "/courses/",
+      "theme": "light",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 41
+        }
+      ]
+    },
+    {
+      "route": "/news/",
+      "theme": "light",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 3
+        }
+      ]
+    },
+    {
+      "route": "/announcements/",
+      "theme": "light",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 18
+        }
+      ]
+    },
+    {
+      "route": "/community/",
+      "theme": "light",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 13
+        }
+      ]
+    },
+    {
+      "route": "/about/",
+      "theme": "light",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 60
+        }
+      ]
+    },
+    {
+      "route": "/research/",
+      "theme": "light",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 4
+        }
+      ]
+    },
+    {
+      "route": "/privacy/",
+      "theme": "light",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 1
+        }
+      ]
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "light",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 63
+        }
+      ]
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "light",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 23
+        }
+      ]
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "light",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 4
+        }
+      ]
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 112
+        }
+      ]
+    },
+    {
+      "route": "/courses/",
+      "theme": "dark",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 60
+        }
+      ]
+    },
+    {
+      "route": "/news/",
+      "theme": "dark",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 22
+        }
+      ]
+    },
+    {
+      "route": "/announcements/",
+      "theme": "dark",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 37
+        }
+      ]
+    },
+    {
+      "route": "/community/",
+      "theme": "dark",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 32
+        }
+      ]
+    },
+    {
+      "route": "/about/",
+      "theme": "dark",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 79
+        }
+      ]
+    },
+    {
+      "route": "/research/",
+      "theme": "dark",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 23
+        }
+      ]
+    },
+    {
+      "route": "/privacy/",
+      "theme": "dark",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 20
+        }
+      ]
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "dark",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 82
+        }
+      ]
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "dark",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 23
+        }
+      ]
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "dark",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 4
+        }
+      ]
+    }
+  ],
+  "responsive": [
+    {
+      "route": "/",
+      "theme": "light",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/courses/",
+      "theme": "light",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/courses/",
+      "theme": "light",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/courses/",
+      "theme": "light",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/courses/",
+      "theme": "light",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/courses/",
+      "theme": "light",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/courses/",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/courses/",
+      "theme": "light",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/news/",
+      "theme": "light",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/news/",
+      "theme": "light",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/news/",
+      "theme": "light",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/news/",
+      "theme": "light",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/news/",
+      "theme": "light",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/news/",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/news/",
+      "theme": "light",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/announcements/",
+      "theme": "light",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/announcements/",
+      "theme": "light",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/announcements/",
+      "theme": "light",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/announcements/",
+      "theme": "light",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/announcements/",
+      "theme": "light",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/announcements/",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/announcements/",
+      "theme": "light",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/community/",
+      "theme": "light",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/community/",
+      "theme": "light",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/community/",
+      "theme": "light",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/community/",
+      "theme": "light",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/community/",
+      "theme": "light",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/community/",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/community/",
+      "theme": "light",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/about/",
+      "theme": "light",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/about/",
+      "theme": "light",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/about/",
+      "theme": "light",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/about/",
+      "theme": "light",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/about/",
+      "theme": "light",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/about/",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/about/",
+      "theme": "light",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/research/",
+      "theme": "light",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/research/",
+      "theme": "light",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/research/",
+      "theme": "light",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/research/",
+      "theme": "light",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/research/",
+      "theme": "light",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/research/",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/research/",
+      "theme": "light",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/privacy/",
+      "theme": "light",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/privacy/",
+      "theme": "light",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/privacy/",
+      "theme": "light",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/privacy/",
+      "theme": "light",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/privacy/",
+      "theme": "light",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/privacy/",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/privacy/",
+      "theme": "light",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "light",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "light",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "light",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "light",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "light",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "light",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "light",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "light",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "light",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "light",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "light",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "light",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "light",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "light",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "light",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "light",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "light",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "light",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "light",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/courses/",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/courses/",
+      "theme": "dark",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/courses/",
+      "theme": "dark",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/courses/",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/courses/",
+      "theme": "dark",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/courses/",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/courses/",
+      "theme": "dark",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/news/",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/news/",
+      "theme": "dark",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/news/",
+      "theme": "dark",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/news/",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/news/",
+      "theme": "dark",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/news/",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/news/",
+      "theme": "dark",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/announcements/",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/announcements/",
+      "theme": "dark",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/announcements/",
+      "theme": "dark",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/announcements/",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/announcements/",
+      "theme": "dark",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/announcements/",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/announcements/",
+      "theme": "dark",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/community/",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/community/",
+      "theme": "dark",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/community/",
+      "theme": "dark",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/community/",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/community/",
+      "theme": "dark",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/community/",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/community/",
+      "theme": "dark",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/about/",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/about/",
+      "theme": "dark",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/about/",
+      "theme": "dark",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/about/",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/about/",
+      "theme": "dark",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/about/",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/about/",
+      "theme": "dark",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/research/",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/research/",
+      "theme": "dark",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/research/",
+      "theme": "dark",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/research/",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/research/",
+      "theme": "dark",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/research/",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/research/",
+      "theme": "dark",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/privacy/",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/privacy/",
+      "theme": "dark",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/privacy/",
+      "theme": "dark",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/privacy/",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/privacy/",
+      "theme": "dark",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/privacy/",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/privacy/",
+      "theme": "dark",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "dark",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "dark",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "dark",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "theme": "dark",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "dark",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "dark",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "dark",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "theme": "dark",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "dark",
+      "width": 320,
+      "overflow": false,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "dark",
+      "width": 375,
+      "overflow": false,
+      "scrollWidth": 375
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "dark",
+      "width": 430,
+      "overflow": false,
+      "scrollWidth": 430
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "dark",
+      "width": 768,
+      "overflow": false,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "dark",
+      "width": 1024,
+      "overflow": false,
+      "scrollWidth": 1024
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "dark",
+      "width": 1440,
+      "overflow": false,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "theme": "dark",
+      "width": 1920,
+      "overflow": false,
+      "scrollWidth": 1920
+    }
+  ],
+  "performance": [
+    {
+      "route": "/",
+      "run": 1,
+      "lcp": 2468,
+      "cls": 0,
+      "resources": [
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "transfer": 48732,
+          "bytes": 48432,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/c41ca59f1c34ba31-s.p.2y2uoi4t910qy.woff2",
+          "transfer": 33972,
+          "bytes": 33672,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-mark-160.30edn2f1pp-ve.webp",
+          "transfer": 10826,
+          "bytes": 10526,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/campus-hero.0lx_bbliy895y.webp",
+          "transfer": 100150,
+          "bytes": 99850,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/1ulic93opz64p.css",
+          "transfer": 3364,
+          "bytes": 3064,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/0bgnzehpkno5i.css",
+          "transfer": 104069,
+          "bytes": 103769,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "transfer": 5898,
+          "bytes": 5598,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/19mx3mg6lkumu.js",
+          "transfer": 29207,
+          "bytes": 28907,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3g4px251sg85e.js",
+          "transfer": 229222,
+          "bytes": 228922,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/40yi8mw8lanui.js",
+          "transfer": 165765,
+          "bytes": 165465,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/turbopack-1ofnrety3g0g9.js",
+          "transfer": 10021,
+          "bytes": 9721,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3fntmmi971322.js",
+          "transfer": 14677,
+          "bytes": 14377,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3yeobp7ra8qxh.js",
+          "transfer": 888,
+          "bytes": 588,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/2_1sf8f16dp_3.js",
+          "transfer": 32595,
+          "bytes": 32295,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/cybersecurity-foundations.3d4n1wziuo5dz.webp",
+          "transfer": 62434,
+          "bytes": 62134,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/networking-essentials.0edry79zbm1z6.webp",
+          "transfer": 69786,
+          "bytes": 69486,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/robotics-fundamentals.0g6bc5phq7tu_.webp",
+          "transfer": 82914,
+          "bytes": 82614,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next._tree.txt?_rsc=5CB68i4pnAekjehf",
+          "transfer": 831,
+          "bytes": 531,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/__next._tree.txt?_rsc=5CB68i4pnAekjehf",
+          "transfer": 905,
+          "bytes": 605,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next.__PAGE__.txt?_rsc=8nTjltbQWvg6NcbE",
+          "transfer": 46943,
+          "bytes": 46643,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/__next.courses.__PAGE__.txt?_rsc=xypVPeQXZ46q-X8F",
+          "transfer": 12361,
+          "bytes": 12061,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3eu0xftbzuzyd.js",
+          "transfer": 655,
+          "bytes": 355,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/0t8xl7h0sov86.js",
+          "transfer": 59395,
+          "bytes": 59095,
+          "type": "script"
+        }
+      ],
+      "dom": 621
+    },
+    {
+      "route": "/",
+      "run": 2,
+      "lcp": 2440,
+      "cls": 0,
+      "resources": [
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "transfer": 48732,
+          "bytes": 48432,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/c41ca59f1c34ba31-s.p.2y2uoi4t910qy.woff2",
+          "transfer": 33972,
+          "bytes": 33672,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-mark-160.30edn2f1pp-ve.webp",
+          "transfer": 10826,
+          "bytes": 10526,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/campus-hero.0lx_bbliy895y.webp",
+          "transfer": 100150,
+          "bytes": 99850,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/1ulic93opz64p.css",
+          "transfer": 3364,
+          "bytes": 3064,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/0bgnzehpkno5i.css",
+          "transfer": 104069,
+          "bytes": 103769,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "transfer": 5898,
+          "bytes": 5598,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/19mx3mg6lkumu.js",
+          "transfer": 29207,
+          "bytes": 28907,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3g4px251sg85e.js",
+          "transfer": 229222,
+          "bytes": 228922,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/40yi8mw8lanui.js",
+          "transfer": 165765,
+          "bytes": 165465,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/turbopack-1ofnrety3g0g9.js",
+          "transfer": 10021,
+          "bytes": 9721,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3fntmmi971322.js",
+          "transfer": 14677,
+          "bytes": 14377,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3yeobp7ra8qxh.js",
+          "transfer": 888,
+          "bytes": 588,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/2_1sf8f16dp_3.js",
+          "transfer": 32595,
+          "bytes": 32295,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/cybersecurity-foundations.3d4n1wziuo5dz.webp",
+          "transfer": 62434,
+          "bytes": 62134,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/networking-essentials.0edry79zbm1z6.webp",
+          "transfer": 69786,
+          "bytes": 69486,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/robotics-fundamentals.0g6bc5phq7tu_.webp",
+          "transfer": 82914,
+          "bytes": 82614,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next._tree.txt?_rsc=5CB68i4pnAekjehf",
+          "transfer": 831,
+          "bytes": 531,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/__next._tree.txt?_rsc=5CB68i4pnAekjehf",
+          "transfer": 905,
+          "bytes": 605,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next.__PAGE__.txt?_rsc=8nTjltbQWvg6NcbE",
+          "transfer": 46943,
+          "bytes": 46643,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/__next.courses.__PAGE__.txt?_rsc=xypVPeQXZ46q-X8F",
+          "transfer": 12361,
+          "bytes": 12061,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3eu0xftbzuzyd.js",
+          "transfer": 655,
+          "bytes": 355,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/0t8xl7h0sov86.js",
+          "transfer": 59395,
+          "bytes": 59095,
+          "type": "script"
+        }
+      ],
+      "dom": 621
+    },
+    {
+      "route": "/",
+      "run": 3,
+      "lcp": 2440,
+      "cls": 0,
+      "resources": [
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "transfer": 48732,
+          "bytes": 48432,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/c41ca59f1c34ba31-s.p.2y2uoi4t910qy.woff2",
+          "transfer": 33972,
+          "bytes": 33672,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-mark-160.30edn2f1pp-ve.webp",
+          "transfer": 10826,
+          "bytes": 10526,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/campus-hero.0lx_bbliy895y.webp",
+          "transfer": 100150,
+          "bytes": 99850,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/1ulic93opz64p.css",
+          "transfer": 3364,
+          "bytes": 3064,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/0bgnzehpkno5i.css",
+          "transfer": 104069,
+          "bytes": 103769,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "transfer": 5898,
+          "bytes": 5598,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/19mx3mg6lkumu.js",
+          "transfer": 29207,
+          "bytes": 28907,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3g4px251sg85e.js",
+          "transfer": 229222,
+          "bytes": 228922,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/40yi8mw8lanui.js",
+          "transfer": 165765,
+          "bytes": 165465,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/turbopack-1ofnrety3g0g9.js",
+          "transfer": 10021,
+          "bytes": 9721,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3yeobp7ra8qxh.js",
+          "transfer": 888,
+          "bytes": 588,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3fntmmi971322.js",
+          "transfer": 14677,
+          "bytes": 14377,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/2_1sf8f16dp_3.js",
+          "transfer": 32595,
+          "bytes": 32295,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/cybersecurity-foundations.3d4n1wziuo5dz.webp",
+          "transfer": 62434,
+          "bytes": 62134,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/networking-essentials.0edry79zbm1z6.webp",
+          "transfer": 69786,
+          "bytes": 69486,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/robotics-fundamentals.0g6bc5phq7tu_.webp",
+          "transfer": 82914,
+          "bytes": 82614,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next._tree.txt?_rsc=5CB68i4pnAekjehf",
+          "transfer": 831,
+          "bytes": 531,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/__next._tree.txt?_rsc=5CB68i4pnAekjehf",
+          "transfer": 905,
+          "bytes": 605,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next.__PAGE__.txt?_rsc=8nTjltbQWvg6NcbE",
+          "transfer": 46943,
+          "bytes": 46643,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/__next.courses.__PAGE__.txt?_rsc=xypVPeQXZ46q-X8F",
+          "transfer": 12361,
+          "bytes": 12061,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3eu0xftbzuzyd.js",
+          "transfer": 655,
+          "bytes": 355,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/0t8xl7h0sov86.js",
+          "transfer": 59395,
+          "bytes": 59095,
+          "type": "script"
+        }
+      ],
+      "dom": 621
+    },
+    {
+      "route": "/courses/",
+      "run": 1,
+      "lcp": 1680,
+      "cls": 0,
+      "resources": [
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "transfer": 48732,
+          "bytes": 48432,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/c41ca59f1c34ba31-s.p.2y2uoi4t910qy.woff2",
+          "transfer": 33972,
+          "bytes": 33672,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-mark-160.30edn2f1pp-ve.webp",
+          "transfer": 10826,
+          "bytes": 10526,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/1ulic93opz64p.css",
+          "transfer": 3364,
+          "bytes": 3064,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/0bgnzehpkno5i.css",
+          "transfer": 104069,
+          "bytes": 103769,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "transfer": 5898,
+          "bytes": 5598,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/19mx3mg6lkumu.js",
+          "transfer": 29207,
+          "bytes": 28907,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3g4px251sg85e.js",
+          "transfer": 229222,
+          "bytes": 228922,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/40yi8mw8lanui.js",
+          "transfer": 165765,
+          "bytes": 165465,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/turbopack-1ofnrety3g0g9.js",
+          "transfer": 10021,
+          "bytes": 9721,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3fntmmi971322.js",
+          "transfer": 14677,
+          "bytes": 14377,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3eu0xftbzuzyd.js",
+          "transfer": 655,
+          "bytes": 355,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/2_1sf8f16dp_3.js",
+          "transfer": 32595,
+          "bytes": 32295,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/0t8xl7h0sov86.js",
+          "transfer": 59395,
+          "bytes": 59095,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/cybersecurity-foundations.3d4n1wziuo5dz.webp",
+          "transfer": 62434,
+          "bytes": 62134,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/networking-essentials.0edry79zbm1z6.webp",
+          "transfer": 69786,
+          "bytes": 69486,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/robotics-fundamentals.0g6bc5phq7tu_.webp",
+          "transfer": 82914,
+          "bytes": 82614,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-logo-footer.0c1o4gtoqcl-f.webp",
+          "transfer": 26192,
+          "bytes": 25892,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/cybersecurity-foundations/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next._tree.txt?_rsc=Z-IaLvD_JPa6i9JC",
+          "transfer": 831,
+          "bytes": 531,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/cybersecurity-foundations/__next._tree.txt?_rsc=Z-IaLvD_JPa6i9JC",
+          "transfer": 1032,
+          "bytes": 732,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next.__PAGE__.txt?_rsc=WMqHX2yvGQ_f2N7w",
+          "transfer": 46943,
+          "bytes": 46643,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/cybersecurity-foundations/__next.courses.$d$slug.__PAGE__.txt?_rsc=KLVSQo5LwgFNCMY6",
+          "transfer": 36963,
+          "bytes": 36663,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/2fc7dn4qqp77n.js",
+          "transfer": 4981,
+          "bytes": 4681,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3yeobp7ra8qxh.js",
+          "transfer": 888,
+          "bytes": 588,
+          "type": "script"
+        }
+      ],
+      "dom": 255
+    },
+    {
+      "route": "/courses/",
+      "run": 2,
+      "lcp": 1664,
+      "cls": 0,
+      "resources": [
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "transfer": 48732,
+          "bytes": 48432,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/c41ca59f1c34ba31-s.p.2y2uoi4t910qy.woff2",
+          "transfer": 33972,
+          "bytes": 33672,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-mark-160.30edn2f1pp-ve.webp",
+          "transfer": 10826,
+          "bytes": 10526,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/1ulic93opz64p.css",
+          "transfer": 3364,
+          "bytes": 3064,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/0bgnzehpkno5i.css",
+          "transfer": 104069,
+          "bytes": 103769,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "transfer": 5898,
+          "bytes": 5598,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/19mx3mg6lkumu.js",
+          "transfer": 29207,
+          "bytes": 28907,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3g4px251sg85e.js",
+          "transfer": 229222,
+          "bytes": 228922,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/40yi8mw8lanui.js",
+          "transfer": 165765,
+          "bytes": 165465,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/turbopack-1ofnrety3g0g9.js",
+          "transfer": 10021,
+          "bytes": 9721,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3fntmmi971322.js",
+          "transfer": 14677,
+          "bytes": 14377,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3eu0xftbzuzyd.js",
+          "transfer": 655,
+          "bytes": 355,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/2_1sf8f16dp_3.js",
+          "transfer": 32595,
+          "bytes": 32295,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/0t8xl7h0sov86.js",
+          "transfer": 59395,
+          "bytes": 59095,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/cybersecurity-foundations.3d4n1wziuo5dz.webp",
+          "transfer": 62434,
+          "bytes": 62134,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/networking-essentials.0edry79zbm1z6.webp",
+          "transfer": 69786,
+          "bytes": 69486,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/robotics-fundamentals.0g6bc5phq7tu_.webp",
+          "transfer": 82914,
+          "bytes": 82614,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-logo-footer.0c1o4gtoqcl-f.webp",
+          "transfer": 26192,
+          "bytes": 25892,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/cybersecurity-foundations/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next._tree.txt?_rsc=Z-IaLvD_JPa6i9JC",
+          "transfer": 831,
+          "bytes": 531,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/cybersecurity-foundations/__next._tree.txt?_rsc=Z-IaLvD_JPa6i9JC",
+          "transfer": 1032,
+          "bytes": 732,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/cybersecurity-foundations/__next.courses.$d$slug.__PAGE__.txt?_rsc=KLVSQo5LwgFNCMY6",
+          "transfer": 36963,
+          "bytes": 36663,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next.__PAGE__.txt?_rsc=WMqHX2yvGQ_f2N7w",
+          "transfer": 46943,
+          "bytes": 46643,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/2fc7dn4qqp77n.js",
+          "transfer": 4981,
+          "bytes": 4681,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3yeobp7ra8qxh.js",
+          "transfer": 888,
+          "bytes": 588,
+          "type": "script"
+        }
+      ],
+      "dom": 255
+    },
+    {
+      "route": "/courses/",
+      "run": 3,
+      "lcp": 1676,
+      "cls": 0,
+      "resources": [
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "transfer": 48732,
+          "bytes": 48432,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/c41ca59f1c34ba31-s.p.2y2uoi4t910qy.woff2",
+          "transfer": 33972,
+          "bytes": 33672,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-mark-160.30edn2f1pp-ve.webp",
+          "transfer": 10826,
+          "bytes": 10526,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/1ulic93opz64p.css",
+          "transfer": 3364,
+          "bytes": 3064,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/0bgnzehpkno5i.css",
+          "transfer": 104069,
+          "bytes": 103769,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "transfer": 5898,
+          "bytes": 5598,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/19mx3mg6lkumu.js",
+          "transfer": 29207,
+          "bytes": 28907,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3g4px251sg85e.js",
+          "transfer": 229222,
+          "bytes": 228922,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/40yi8mw8lanui.js",
+          "transfer": 165765,
+          "bytes": 165465,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/turbopack-1ofnrety3g0g9.js",
+          "transfer": 10021,
+          "bytes": 9721,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3fntmmi971322.js",
+          "transfer": 14677,
+          "bytes": 14377,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3eu0xftbzuzyd.js",
+          "transfer": 655,
+          "bytes": 355,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/2_1sf8f16dp_3.js",
+          "transfer": 32595,
+          "bytes": 32295,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/0t8xl7h0sov86.js",
+          "transfer": 59395,
+          "bytes": 59095,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/cybersecurity-foundations.3d4n1wziuo5dz.webp",
+          "transfer": 62434,
+          "bytes": 62134,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/networking-essentials.0edry79zbm1z6.webp",
+          "transfer": 69786,
+          "bytes": 69486,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/robotics-fundamentals.0g6bc5phq7tu_.webp",
+          "transfer": 82914,
+          "bytes": 82614,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-logo-footer.0c1o4gtoqcl-f.webp",
+          "transfer": 26192,
+          "bytes": 25892,
+          "type": "img"
+        },
+        {
+          "name": "http://127.0.0.1:4173/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/cybersecurity-foundations/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next._tree.txt?_rsc=Z-IaLvD_JPa6i9JC",
+          "transfer": 831,
+          "bytes": 531,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/cybersecurity-foundations/__next._tree.txt?_rsc=Z-IaLvD_JPa6i9JC",
+          "transfer": 1032,
+          "bytes": 732,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next.__PAGE__.txt?_rsc=WMqHX2yvGQ_f2N7w",
+          "transfer": 46943,
+          "bytes": 46643,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/courses/cybersecurity-foundations/__next.courses.$d$slug.__PAGE__.txt?_rsc=KLVSQo5LwgFNCMY6",
+          "transfer": 36963,
+          "bytes": 36663,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/2fc7dn4qqp77n.js",
+          "transfer": 4981,
+          "bytes": 4681,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3yeobp7ra8qxh.js",
+          "transfer": 888,
+          "bytes": 588,
+          "type": "script"
+        }
+      ],
+      "dom": 255
+    },
+    {
+      "route": "/about/",
+      "run": 1,
+      "lcp": 2264,
+      "cls": 0,
+      "resources": [
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "transfer": 48732,
+          "bytes": 48432,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/c41ca59f1c34ba31-s.p.2y2uoi4t910qy.woff2",
+          "transfer": 33972,
+          "bytes": 33672,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-mark-160.30edn2f1pp-ve.webp",
+          "transfer": 10826,
+          "bytes": 10526,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-logo-transparent.1tur5mabof5-q.webp",
+          "transfer": 230226,
+          "bytes": 229926,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/1ulic93opz64p.css",
+          "transfer": 3364,
+          "bytes": 3064,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/0bgnzehpkno5i.css",
+          "transfer": 104069,
+          "bytes": 103769,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "transfer": 5898,
+          "bytes": 5598,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/19mx3mg6lkumu.js",
+          "transfer": 29207,
+          "bytes": 28907,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/40yi8mw8lanui.js",
+          "transfer": 165765,
+          "bytes": 165465,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3g4px251sg85e.js",
+          "transfer": 229222,
+          "bytes": 228922,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/turbopack-1ofnrety3g0g9.js",
+          "transfer": 10021,
+          "bytes": 9721,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3fntmmi971322.js",
+          "transfer": 14677,
+          "bytes": 14377,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/1jxror4tuduqp.js",
+          "transfer": 3484,
+          "bytes": 3184,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/2_1sf8f16dp_3.js",
+          "transfer": 32595,
+          "bytes": 32295,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next._tree.txt?_rsc=Sdev7PUlRw12F58X",
+          "transfer": 831,
+          "bytes": 531,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next.__PAGE__.txt?_rsc=IbqYazZHyjXYH_Ld",
+          "transfer": 46943,
+          "bytes": 46643,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3yeobp7ra8qxh.js",
+          "transfer": 888,
+          "bytes": 588,
+          "type": "script"
+        }
+      ],
+      "dom": 346
+    },
+    {
+      "route": "/about/",
+      "run": 2,
+      "lcp": 2396,
+      "cls": 0,
+      "resources": [
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "transfer": 48732,
+          "bytes": 48432,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/c41ca59f1c34ba31-s.p.2y2uoi4t910qy.woff2",
+          "transfer": 33972,
+          "bytes": 33672,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-mark-160.30edn2f1pp-ve.webp",
+          "transfer": 10826,
+          "bytes": 10526,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-logo-transparent.1tur5mabof5-q.webp",
+          "transfer": 230226,
+          "bytes": 229926,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/1ulic93opz64p.css",
+          "transfer": 3364,
+          "bytes": 3064,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/0bgnzehpkno5i.css",
+          "transfer": 104069,
+          "bytes": 103769,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "transfer": 5898,
+          "bytes": 5598,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/19mx3mg6lkumu.js",
+          "transfer": 29207,
+          "bytes": 28907,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3g4px251sg85e.js",
+          "transfer": 229222,
+          "bytes": 228922,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/40yi8mw8lanui.js",
+          "transfer": 165765,
+          "bytes": 165465,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/turbopack-1ofnrety3g0g9.js",
+          "transfer": 10021,
+          "bytes": 9721,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3fntmmi971322.js",
+          "transfer": 14677,
+          "bytes": 14377,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/1jxror4tuduqp.js",
+          "transfer": 3484,
+          "bytes": 3184,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/2_1sf8f16dp_3.js",
+          "transfer": 32595,
+          "bytes": 32295,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next._tree.txt?_rsc=Sdev7PUlRw12F58X",
+          "transfer": 831,
+          "bytes": 531,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next.__PAGE__.txt?_rsc=IbqYazZHyjXYH_Ld",
+          "transfer": 46943,
+          "bytes": 46643,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3yeobp7ra8qxh.js",
+          "transfer": 888,
+          "bytes": 588,
+          "type": "script"
+        }
+      ],
+      "dom": 346
+    },
+    {
+      "route": "/about/",
+      "run": 3,
+      "lcp": 2408,
+      "cls": 0,
+      "resources": [
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2",
+          "transfer": 48732,
+          "bytes": 48432,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/c41ca59f1c34ba31-s.p.2y2uoi4t910qy.woff2",
+          "transfer": 33972,
+          "bytes": 33672,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-mark-160.30edn2f1pp-ve.webp",
+          "transfer": 10826,
+          "bytes": 10526,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/media/nest-logo-transparent.1tur5mabof5-q.webp",
+          "transfer": 230226,
+          "bytes": 229926,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/1ulic93opz64p.css",
+          "transfer": 3364,
+          "bytes": 3064,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/0bgnzehpkno5i.css",
+          "transfer": 104069,
+          "bytes": 103769,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3s6nzrbk-8mnv.js",
+          "transfer": 5898,
+          "bytes": 5598,
+          "type": "link"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/19mx3mg6lkumu.js",
+          "transfer": 29207,
+          "bytes": 28907,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3g4px251sg85e.js",
+          "transfer": 229222,
+          "bytes": 228922,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/40yi8mw8lanui.js",
+          "transfer": 165765,
+          "bytes": 165465,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/turbopack-1ofnrety3g0g9.js",
+          "transfer": 10021,
+          "bytes": 9721,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3fntmmi971322.js",
+          "transfer": 14677,
+          "bytes": 14377,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/1jxror4tuduqp.js",
+          "transfer": 3484,
+          "bytes": 3184,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/2_1sf8f16dp_3.js",
+          "transfer": 32595,
+          "bytes": 32295,
+          "type": "script"
+        },
+        {
+          "name": "http://127.0.0.1:4173/",
+          "transfer": 300,
+          "bytes": 0,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next._tree.txt?_rsc=Sdev7PUlRw12F58X",
+          "transfer": 831,
+          "bytes": 531,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/__next.__PAGE__.txt?_rsc=IbqYazZHyjXYH_Ld",
+          "transfer": 46943,
+          "bytes": 46643,
+          "type": "fetch"
+        },
+        {
+          "name": "http://127.0.0.1:4173/_next/static/chunks/3yeobp7ra8qxh.js",
+          "transfer": 888,
+          "bytes": 588,
+          "type": "script"
+        }
+      ],
+      "dom": 346
+    }
+  ],
+  "exceptions": [
+    {
+      "theme": "light",
+      "case": "blocked storage",
+      "resultsVisible": 1,
+      "questionVisible": 0
+    },
+    {
+      "theme": "dark",
+      "case": "blocked storage",
+      "resultsVisible": 1,
+      "questionVisible": 0
+    }
+  ],
+  "metadata": [
+    {
+      "route": "/",
+      "title": "NEST LMS | Learn, Create, Share",
+      "description": "A student-led learning experience from NEST Club, exploring cybersecurity, networking, and robotics through focused digital lessons.",
+      "canonical": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/",
+      "ogImage": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/images/social/nest-lms-social.webp",
+      "h1": 1
+    },
+    {
+      "route": "/courses/",
+      "title": "Course Catalogue | NEST LMS",
+      "description": "Explore NEST learning paths in cybersecurity, networking, and robotics.",
+      "canonical": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/courses/",
+      "ogImage": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/images/social/nest-lms-social.webp",
+      "h1": 1
+    },
+    {
+      "route": "/news/",
+      "title": "News | NEST LMS",
+      "description": "Read NEST Club stories, learning releases, community updates, and technology news.",
+      "canonical": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/news/",
+      "ogImage": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/images/social/nest-lms-social.webp",
+      "h1": 1
+    },
+    {
+      "route": "/announcements/",
+      "title": "Announcements | NEST LMS",
+      "description": "Read the latest NEST Club announcements, updates, research notices, and community news.",
+      "canonical": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/announcements/",
+      "ogImage": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/images/social/nest-lms-social.webp",
+      "h1": 1
+    },
+    {
+      "route": "/community/",
+      "title": "Join Community | NEST LMS",
+      "description": "Join the NEST Community WhatsApp group and follow official NEST Club learning updates.",
+      "canonical": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/community/",
+      "ogImage": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/images/social/nest-lms-social.webp",
+      "h1": 1
+    },
+    {
+      "route": "/about/",
+      "title": "About NEST Club | NEST LMS",
+      "description": "Meet NEST Club, its mission, vision, objectives, and student-led learning philosophy.",
+      "canonical": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/about/",
+      "ogImage": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/images/social/nest-lms-social.webp",
+      "h1": 1
+    },
+    {
+      "route": "/research/",
+      "title": "Research has moved to News | NEST LMS",
+      "description": "Research updates and other NEST Club stories are now published in News.",
+      "canonical": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/news/",
+      "robots": "noindex, follow",
+      "ogImage": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/images/social/nest-lms-social.webp",
+      "h1": 1
+    },
+    {
+      "route": "/privacy/",
+      "title": "Privacy and browser storage | NEST LMS",
+      "description": "How NEST handles local learning progress, enquiries, embedded videos and public photos.",
+      "canonical": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/privacy/",
+      "ogImage": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/images/social/nest-lms-social.webp",
+      "h1": 1
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/",
+      "title": "Cybersecurity Foundations | NEST LMS",
+      "description": "Recognise common attacks, protect accounts and devices, and build safer digital habits from the ground up.",
+      "canonical": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/courses/cybersecurity-foundations/",
+      "ogImage": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/images/social/nest-lms-social.webp",
+      "h1": 1
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "title": "What is Cybersecurity? · Cybersecurity Foundations | NEST LMS",
+      "description": "Understand how people, processes, and technology protect systems and information.",
+      "canonical": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/",
+      "ogImage": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/images/social/nest-lms-social.webp",
+      "h1": 1
+    },
+    {
+      "route": "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "title": "Introduction to Cybersecurity checkpoint · Cybersecurity Foundations | NEST LMS",
+      "description": "Complete the source-backed checkpoint for Introduction to Cybersecurity.",
+      "canonical": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/",
+      "ogImage": "https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/images/social/nest-lms-social.webp",
+      "h1": 1
+    }
+  ],
+  "network": [
+    {
+      "theme": "light",
+      "externalOrigins": [
+        "https://i.ytimg.com"
+      ]
+    },
+    {
+      "theme": "dark",
+      "externalOrigins": [
+        "https://i.ytimg.com"
+      ]
+    }
+  ],
+  "assets": {
+    "totalBytes": 18567769,
+    "js": [
+      {
+        "path": "out\\_next\\static\\chunks\\0-zikom21i2n-.js",
+        "bytes": 14384,
+        "gzip": 5461
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\09jfhsa7bg-qb.js",
+        "bytes": 22005,
+        "gzip": 7498
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\0cz1d0mv5g_q7.js",
+        "bytes": 112594,
+        "gzip": 39627
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\0t8xl7h0sov86.js",
+        "bytes": 59095,
+        "gzip": 14120
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\19mx3mg6lkumu.js",
+        "bytes": 28907,
+        "gzip": 7614
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\1aikc68qqcg6x.js",
+        "bytes": 23544,
+        "gzip": 8558
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\1jxror4tuduqp.js",
+        "bytes": 3184,
+        "gzip": 1307
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\2fc7dn4qqp77n.js",
+        "bytes": 4681,
+        "gzip": 1725
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\2snu834begfq3.js",
+        "bytes": 9090,
+        "gzip": 3712
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\2_1sf8f16dp_3.js",
+        "bytes": 32295,
+        "gzip": 11542
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\3eu0xftbzuzyd.js",
+        "bytes": 355,
+        "gzip": 253
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\3fntmmi971322.js",
+        "bytes": 14377,
+        "gzip": 3661
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\3g4px251sg85e.js",
+        "bytes": 228922,
+        "gzip": 71576
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\3s6nzrbk-8mnv.js",
+        "bytes": 5598,
+        "gzip": 2029
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\3wqjpo2i0e1ei.js",
+        "bytes": 820,
+        "gzip": 512
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\3yeobp7ra8qxh.js",
+        "bytes": 588,
+        "gzip": 359
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\40yi8mw8lanui.js",
+        "bytes": 165465,
+        "gzip": 45196
+      },
+      {
+        "path": "out\\_next\\static\\chunks\\turbopack-1ofnrety3g0g9.js",
+        "bytes": 9721,
+        "gzip": 3852
+      },
+      {
+        "path": "out\\_next\\static\\KRdYpzJCLwcB-B_BnI6Dp\\_buildManifest.js",
+        "bytes": 219,
+        "gzip": 154
+      },
+      {
+        "path": "out\\_next\\static\\KRdYpzJCLwcB-B_BnI6Dp\\_clientMiddlewareManifest.js",
+        "bytes": 96,
+        "gzip": 66
+      },
+      {
+        "path": "out\\_next\\static\\KRdYpzJCLwcB-B_BnI6Dp\\_ssgManifest.js",
+        "bytes": 246,
+        "gzip": 128
+      }
+    ],
+    "largestImages": [
+      {
+        "path": "out\\images\\events\\bsc-iot-workshop\\group.webp",
+        "bytes": 276338
+      },
+      {
+        "path": "out\\_next\\static\\media\\group.1tnpdvn3z2y3x.webp",
+        "bytes": 276338
+      },
+      {
+        "path": "out\\images\\events\\open-day\\portrait-01.webp",
+        "bytes": 234882
+      },
+      {
+        "path": "out\\_next\\static\\media\\portrait-01.2m7w2vucrd7v7.webp",
+        "bytes": 234882
+      },
+      {
+        "path": "out\\images\\brand\\nest-logo-transparent.webp",
+        "bytes": 229926
+      },
+      {
+        "path": "out\\_next\\static\\media\\nest-logo-transparent.1tur5mabof5-q.webp",
+        "bytes": 229926
+      },
+      {
+        "path": "out\\images\\events\\open-day\\presentation-01.webp",
+        "bytes": 229628
+      },
+      {
+        "path": "out\\_next\\static\\media\\presentation-01.3dmgzgm-u1ffe.webp",
+        "bytes": 229628
+      },
+      {
+        "path": "out\\images\\events\\open-day\\portrait-04.webp",
+        "bytes": 217592
+      },
+      {
+        "path": "out\\_next\\static\\media\\portrait-04.3gbk-bpg0py2f.webp",
+        "bytes": 217592
+      },
+      {
+        "path": "out\\images\\events\\open-day\\team.webp",
+        "bytes": 209234
+      },
+      {
+        "path": "out\\_next\\static\\media\\team.0siqoou9b22ym.webp",
+        "bytes": 209234
+      }
+    ]
+  }
+}

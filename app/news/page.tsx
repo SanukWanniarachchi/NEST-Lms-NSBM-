@@ -1,3 +1,4 @@
+import { publicPageUrl } from "@/lib/public-site";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,7 +8,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { newsArticles } from "@/data/news";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = { alternates: { canonical: publicPageUrl("news/") },
   title: "News",
   description: "Read NEST Club stories, learning releases, community updates, and technology news.",
 };
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
 export default function NewsPage() {
   const [featured, ...recent] = newsArticles;
 
-  return <><SiteHeader /><main>
+  return <><SiteHeader /><main id="main-content" tabIndex={-1}>
     <section className="page-hero page-hero--news"><div className="shell centered-intro"><p className="eyebrow">NEST News</p><h1>What the community is learning and building.</h1><p>Follow course releases, club stories, achievements, partnerships, and thoughtful updates from the NEST learning community.</p></div></section>
     <section className="section news-section"><div className="shell">
       <SectionHeading eyebrow="Latest story" title="News from NEST" copy="Longer stories live here. Deadlines and time-sensitive notices remain on the Announcements page." />

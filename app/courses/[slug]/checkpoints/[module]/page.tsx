@@ -1,3 +1,4 @@
+import { publicPageUrl } from "@/lib/public-site";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -16,7 +17,7 @@ type CheckpointPageProps = { params: Promise<{ slug: string; module: string }> }
 export async function generateMetadata({ params }: CheckpointPageProps): Promise<Metadata> {
   const { slug, module: moduleId } = await params;
   const found = getCourseModule(slug, moduleId);
-  return found ? { title: `${found.module.title} checkpoint · ${found.course.shortTitle}`, description: `Complete the source-backed checkpoint for ${found.module.title}.` } : {};
+  return found ? { title: `${found.module.title} checkpoint · ${found.course.shortTitle}`, description: `Complete the source-backed checkpoint for ${found.module.title}.`, alternates: { canonical: publicPageUrl(`courses/${slug}/checkpoints/${moduleId}/`) } } : {};
 }
 
 export default async function CheckpointPage({ params }: CheckpointPageProps) {
@@ -34,5 +35,5 @@ export default async function CheckpointPage({ params }: CheckpointPageProps) {
   const continuationHref = nextModule ? `/courses/${course.slug}/lessons/${nextModule.lessons[0].slug}` : `/courses/${course.slug}`;
   const continuationLabel = nextModule ? `Start ${nextModule.title}` : "Return to course overview";
 
-  return <main className="checkpoint-page"><header className="lesson-topbar"><Link href={`/courses/${course.slug}/lessons/${finalLesson.slug}`}><ArrowLeftIcon /> {course.shortTitle}</Link><div><span>Module {moduleIndex + 1} of {course.modules.length}</span><ThemeToggle /></div></header><div className="checkpoint-shell"><ModuleQuizRunner quiz={quiz} recommendations={getModuleRecommendations(course.slug, courseModule.id)} moduleTitle={courseModule.title} lessonHref={`/courses/${course.slug}/lessons/${finalLesson.slug}`} continuationHref={continuationHref} continuationLabel={continuationLabel} /></div></main>;
+  return <main id="main-content" tabIndex={-1} className="checkpoint-page"><header className="lesson-topbar"><Link href={`/courses/${course.slug}/lessons/${finalLesson.slug}`}><ArrowLeftIcon /> {course.shortTitle}</Link><div><span>Module {moduleIndex + 1} of {course.modules.length}</span><ThemeToggle /></div></header><div className="checkpoint-shell"><ModuleQuizRunner quiz={quiz} recommendations={getModuleRecommendations(course.slug, courseModule.id)} moduleTitle={courseModule.title} lessonHref={`/courses/${course.slug}/lessons/${finalLesson.slug}`} continuationHref={continuationHref} continuationLabel={continuationLabel} /></div></main>;
 }

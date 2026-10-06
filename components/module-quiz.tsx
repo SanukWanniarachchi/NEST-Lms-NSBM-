@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowLeftIcon, ArrowRightIcon, CheckIcon, CloseIcon } from "@/components/icons";
 import type { FollowUpCourse } from "@/data/follow-up-courses";
 import type { ModuleQuiz, QuizQuestion } from "@/types/quiz";
@@ -43,7 +43,15 @@ function prepareQuestions(questions: QuizQuestion[]) {
 function readResults() {
   try {
     const value = JSON.parse(window.localStorage.getItem(resultsKey) ?? "{}");
-    return value && typeof value === "object" ? value as Record<string, StoredResult> : {};
+    if (!value || typeof value !== "object" || Array.isArray(value)) return {};
+    return Object.fromEntries(Object.entries(value).filter(([, result]) => {
+      if (!result || typeof result !== "object" || Array.isArray(result)) return false;
+      const item = result as Partial<StoredResult>;
+      return Number.isSafeInteger(item.bestScore) && Number(item.bestScore) >= 0
+        && Number.isSafeInteger(item.attempts) && Number(item.attempts) >= 1
+        && typeof item.passed === "boolean"
+        && (item.completedAt === undefined || (typeof item.completedAt === "string" && Number.isFinite(Date.parse(item.completedAt))));
+    })) as Record<string, StoredResult>;
   } catch {
     return {};
   }
@@ -65,11 +73,20 @@ export function ModuleQuizRunner({ quiz, recommendations, moduleTitle, lessonHre
   const [answers, setAnswers] = useState<AnswerRecord[]>([]);
   const [phase, setPhase] = useState<"intro" | "quiz" | "results">("intro");
   const [previousResult, setPreviousResult] = useState<StoredResult>();
+  const [progressSaved, setProgressSaved] = useState(true);
+  const headingRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-    const frame = window.requestAnimationFrame(() => setPreviousResult(readResults()[quiz.id]));
+    const frame = window.requestAnimationFrame(() => {
+      const result = readResults()[quiz.id];
+      setPreviousResult(result && result.bestScore <= quiz.questions.length ? result : undefined);
+    });
     return () => window.cancelAnimationFrame(frame);
-  }, [quiz.id]);
+  }, [quiz.id, quiz.questions.length]);
+
+  useEffect(() => {
+    if (phase !== "intro") headingRef.current?.focus();
+  }, [phase, questionIndex]);
 
   const current = questions[questionIndex];
   const score = answers.filter((answer) => answer.selected === answer.question.correctAnswer).length;
@@ -80,6 +97,7 @@ export function ModuleQuizRunner({ quiz, recommendations, moduleTitle, lessonHre
     setQuestionIndex(0);
     setSelected(undefined);
     setAnswers([]);
+    setProgressSaved(true);
     setPhase("quiz");
   }
 
@@ -99,17 +117,23 @@ export function ModuleQuizRunner({ quiz, recommendations, moduleTitle, lessonHre
     const finalScore = answers.filter((answer) => answer.selected === answer.question.correctAnswer).length;
     const didPass = finalScore >= quiz.passingScore;
     const existingResults = readResults();
-    const oldResult = existingResults[quiz.id];
+    const storedResult = existingResults[quiz.id];
+    const oldResult = storedResult && storedResult.bestScore <= quiz.questions.length ? storedResult : previousResult;
     const nextResult: StoredResult = {
       bestScore: Math.max(oldResult?.bestScore ?? 0, finalScore),
       attempts: (oldResult?.attempts ?? 0) + 1,
-      passed: oldResult?.passed || didPass,
+      passed: Boolean(oldResult?.passed || didPass),
       completedAt: didPass ? new Date().toISOString() : oldResult?.completedAt,
     };
-    window.localStorage.setItem(resultsKey, JSON.stringify({ ...existingResults, [quiz.id]: nextResult }));
-    if (didPass) {
-      const completions = readCompletions();
-      if (!completions.includes(quiz.id)) window.localStorage.setItem(completionKey, JSON.stringify([...completions, quiz.id]));
+    try {
+      window.localStorage.setItem(resultsKey, JSON.stringify({ ...existingResults, [quiz.id]: nextResult }));
+      if (didPass) {
+        const completions = readCompletions();
+        if (!completions.includes(quiz.id)) window.localStorage.setItem(completionKey, JSON.stringify([...completions, quiz.id]));
+      }
+      setProgressSaved(true);
+    } catch {
+      setProgressSaved(false);
     }
     setPreviousResult(nextResult);
     setPhase("results");
@@ -132,7 +156,7 @@ export function ModuleQuizRunner({ quiz, recommendations, moduleTitle, lessonHre
     return <section className="quiz-panel" aria-labelledby="question-title">
       <div className="quiz-progress-row"><span>Question {questionIndex + 1} of {questions.length}</span><span>{answers.filter((answer) => answer.selected === answer.question.correctAnswer).length} correct</span></div>
       <div className="quiz-progress" aria-hidden="true"><span style={{ width: `${((questionIndex + 1) / questions.length) * 100}%` }} /></div>
-      <div className="quiz-question"><p className="eyebrow">Choose one answer</p><h1 id="question-title">{current.prompt}</h1>
+      <div className="quiz-question"><p className="eyebrow">Choose one answer</p><h1 id="question-title" ref={headingRef} tabIndex={-1}>{current.prompt}</h1>
         <div className="quiz-choices">{current.shuffledChoices.map((choice, index) => {
           const state = selected ? choice === current.correctAnswer ? "correct" : choice === selected ? "incorrect" : "muted" : "";
           return <button type="button" className={`quiz-choice ${state}`} onClick={() => selectAnswer(choice)} disabled={Boolean(selected)} key={choice}><span>{String.fromCharCode(65 + index)}</span><strong>{choice}</strong></button>;
@@ -146,8 +170,9 @@ export function ModuleQuizRunner({ quiz, recommendations, moduleTitle, lessonHre
   return <section className="quiz-panel quiz-results" aria-labelledby="results-title">
     <div className={`quiz-result-mark ${passed ? "passed" : "retry"}`}><strong>{score}/{quiz.questions.length}</strong><span>{passed ? "Passed" : "Review"}</span></div>
     <p className="eyebrow">Checkpoint complete</p>
-    <h1 id="results-title">{passed ? `${moduleTitle} completed` : "One more attempt will help"}</h1>
-    <p>{passed ? "You passed this checkpoint. Your result is saved in this browser, and you can now explore independent certificate courses or continue learning." : `You need ${quiz.passingScore} correct answers to pass. Review the sourced explanations below and retry when ready.`}</p>
+    <h1 id="results-title" ref={headingRef} tabIndex={-1}>{passed ? `${moduleTitle} completed` : "One more attempt will help"}</h1>
+    <p>{passed ? `You passed this checkpoint.${progressSaved ? " Your result is saved in this browser." : ""} You can now explore independent certificate courses or continue learning.` : `You need ${quiz.passingScore} correct answers to pass. Review the sourced explanations below and retry when ready.`}</p>
+    {!progressSaved ? <p className="quiz-storage-notice" role="status">Your result is available here, but your browser could not save all of your progress. It may be lost when you refresh or leave this page.</p> : null}
     <details className="quiz-review"><summary>Review all answers</summary><div>{answers.map((answer, index) => <article key={answer.question.id}><span className={answer.selected === answer.question.correctAnswer ? "correct" : "incorrect"}>{index + 1}</span><div><h2>{answer.question.prompt}</h2><p>Your answer: <strong>{answer.selected}</strong></p><p>{answer.question.explanation}</p><a href={answer.question.source.href} target="_blank" rel="noopener noreferrer">{answer.question.source.title} · {answer.question.source.section}</a></div></article>)}</div></details>
     {passed ? <section className="checkpoint-recommendations" aria-labelledby="recommendations-title"><div><p className="eyebrow">Continue with a certificate</p><h2 id="recommendations-title">University courses for your next step</h2><p>NEST does not issue a certificate for this checkpoint. These independent courses provide their own free or paid credential routes.</p></div><div className="course-recommendations__list">{recommendations.map((course) => <article className="course-recommendation" key={course.id}><div className="course-recommendation__top"><span className={`course-access course-access--${course.access === "Free certificate" ? "free" : course.access === "Free access, paid certificate" ? "mixed" : "paid"}`}>{course.access}</span><small>Verified {course.verifiedOn}</small></div><p className="eyebrow">{course.university} · {course.platform}</p><h3>{course.title}</h3><p>{course.fit}</p><details className="course-registration"><summary>How to register</summary><p>{course.registration}</p>{course.financialAid ? <span><CheckIcon /> Financial aid may be available</span> : null}</details><a href={course.href} target="_blank" rel="noopener noreferrer" className="button button--secondary">View official course <ArrowRightIcon /></a></article>)}</div><p className="checkpoint-disclaimer">Availability, prices, eligibility, and certificate terms are controlled by each university or platform and may change.</p></section> : null}
     <div className="quiz-actions"><button type="button" className="button button--secondary" onClick={startQuiz}>Retry checkpoint</button>{passed ? <Link href={continuationHref} className="button button--primary">{continuationLabel}<ArrowRightIcon /></Link> : <Link href={lessonHref} className="button button--secondary"><ArrowLeftIcon />Review final lesson</Link>}</div>

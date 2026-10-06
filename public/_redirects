@@ -1,0 +1,5 @@
+# Cloudflare Pages root-domain deployment only; existing static pages remain fallbacks.
+/contact /about/#contact 301
+/contact/ /about/#contact 301
+/research /news/ 301
+/research/ /news/ 301

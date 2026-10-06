@@ -1,3 +1,4 @@
+import { publicPageUrl } from "@/lib/public-site";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,7 +9,7 @@ import { ArrowRightIcon, ClockIcon } from "@/components/icons";
 import { announcements } from "@/data/announcements";
 import { eventHighlights } from "@/data/event-highlights";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = { alternates: { canonical: publicPageUrl("announcements/") },
   title: "Announcements",
   description: "Read the latest NEST Club announcements, updates, research notices, and community news.",
 };
@@ -17,7 +18,7 @@ export default function AnnouncementsPage() {
   return (
     <>
       <SiteHeader />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <section className="page-hero page-hero--announcements">
           <div className="shell centered-intro">
             <p className="eyebrow">Announcement board</p>

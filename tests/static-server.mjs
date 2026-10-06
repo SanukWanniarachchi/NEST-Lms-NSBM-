@@ -16,6 +16,7 @@ const mimeTypes = new Map([
   [".txt", "text/plain; charset=utf-8"],
   [".webp", "image/webp"],
   [".woff2", "font/woff2"],
+  [".xml", "application/xml; charset=utf-8"],
 ]);
 
 function resolveFile(urlPath) {
@@ -46,10 +47,24 @@ function resolveFile(urlPath) {
 }
 
 createServer((request, response) => {
-  const file = resolveFile(request.url ?? "/");
+  if (!["GET", "HEAD"].includes(request.method ?? "")) {
+    response.writeHead(405, { allow: "GET, HEAD" });
+    response.end("Method not allowed");
+    return;
+  }
+  let file;
+  try {
+    file = resolveFile(request.url ?? "/");
+  } catch {
+    response.writeHead(400, { "content-type": "text/plain; charset=utf-8" });
+    response.end("Bad request");
+    return;
+  }
   if (!file) {
-    response.writeHead(404, { "content-type": "text/plain; charset=utf-8" });
-    response.end("Not found");
+    const errorPage = join(root, "404.html");
+    response.writeHead(404, { "content-type": existsSync(errorPage) ? "text/html; charset=utf-8" : "text/plain; charset=utf-8" });
+    if (existsSync(errorPage)) createReadStream(errorPage).on("error", () => response.destroy()).pipe(response);
+    else response.end("Not found");
     return;
   }
 
@@ -57,7 +72,7 @@ createServer((request, response) => {
     "cache-control": "no-store",
     "content-type": mimeTypes.get(extname(file)) ?? "application/octet-stream",
   });
-  createReadStream(file).pipe(response);
+  createReadStream(file).on("error", () => response.destroy()).pipe(response);
 }).listen(port, "127.0.0.1", () => {
   console.log(`Serving ${root} at http://127.0.0.1:${port}`);
 });

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Sora } from "next/font/google";
+import { publicPageUrl, publicSiteUrl } from "@/lib/public-site";
 import "./globals.css";
 
 const inter = Inter({
@@ -15,7 +16,7 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sanukwanniarachchi.github.io/NEST-Lms-NSBM-/"),
+  metadataBase: publicSiteUrl,
   title: {
     default: "NEST LMS | Learn, Create, Share",
     template: "%s | NEST LMS",
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "NEST LMS",
     images: [{
-      url: "images/social/nest-lms-social.webp",
+      url: publicPageUrl("images/social/nest-lms-social.webp"),
       width: 1200,
       height: 630,
       alt: "NEST LMS — Learn together. Build what's next.",
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "NEST LMS | Learn, Create, Share",
     description: "Student-led technology learning through focused, visual courses.",
-    images: ["images/social/nest-lms-social.webp"],
+    images: [publicPageUrl("images/social/nest-lms-social.webp")],
   },
 };
 
@@ -58,7 +59,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning className={`${inter.variable} ${sora.variable}`}>
       <head><script dangerouslySetInnerHTML={{ __html: themeScript }} /></head>
-      <body>{children}</body>
+      <body><a href="#main-content" className="skip-link">Skip to main content</a>{children}</body>
     </html>
   );
 }

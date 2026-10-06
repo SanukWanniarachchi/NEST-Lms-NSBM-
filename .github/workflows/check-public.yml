@@ -1,0 +1,25 @@
+name: Check public static site
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npx playwright install --with-deps chromium
+      - name: Check public journeys and accessibility
+        run: npx playwright test tests/readiness.spec.ts tests/public-interactions.spec.ts tests/published-content.spec.ts tests/hero-motion.spec.ts tests/accessibility.spec.ts --workers=2

@@ -1,14 +1,19 @@
+import type { Metadata } from "next";
+import { publicPageUrl } from "@/lib/public-site";
 import Image from "next/image";
 import Link from "next/link";
 import heroImage from "@/public/images/illustrations/campus-hero.webp";
 import { SiteHeader } from "@/components/site-header";
 import { HeroHeading } from "@/components/hero-heading";
+import { ScrollingContent } from "@/components/scrolling-content";
 import { SiteFooter } from "@/components/site-footer";
 import { CourseCard } from "@/components/course-card";
 import { SectionHeading } from "@/components/section-heading";
 import { ArduinoIcon, ArrowRightIcon, BluetoothIcon, BookIcon, CheckIcon, CloudIcon, HttpsIcon, IotIcon, NetworkIcon, PacketTracerIcon, RobotIcon, ShieldIcon, UsersIcon, VpnIcon, WifiIcon } from "@/components/icons";
 import { courses, totalLessons } from "@/data/courses";
 import { clubContent, learnerBenefits } from "@/data/site";
+
+export const metadata: Metadata = { alternates: { canonical: publicPageUrl("") } };
 
 export default function Home() {
   const learningPaths = [
@@ -32,7 +37,7 @@ export default function Home() {
   return (
     <>
       <SiteHeader />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <section className="hero">
           <div className="shell hero-grid">
             <div className="hero-copy">
@@ -42,7 +47,7 @@ export default function Home() {
               <div className="hero-actions">
                 <Link href="/courses" className="button button--primary">Explore courses <ArrowRightIcon /></Link>
               </div>
-              <div className="hero-proof" aria-label="NEST LMS highlights">
+              <div className="hero-proof" role="group" aria-label="NEST LMS highlights">
                 <span><CheckIcon /> Bite-sized lessons</span>
                 <span><CheckIcon /> Learn from peers</span>
                 <span><CheckIcon /> Build practical confidence</span>
@@ -58,7 +63,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="trust-strip marquee-strip" aria-label="NEST learning paths">
+        <ScrollingContent><section className="trust-strip marquee-strip" aria-label="NEST learning paths">
           <div className="marquee-window">
             <div className="marquee-track marquee-track--paths">
               {Array.from({ length: 2 }).map((_, index) => (
@@ -80,7 +85,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </section>
+        </section></ScrollingContent>
 
         <section className="section courses-section">
           <div className="shell">

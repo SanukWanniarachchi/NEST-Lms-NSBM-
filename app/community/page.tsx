@@ -1,3 +1,4 @@
+import { publicPageUrl } from "@/lib/public-site";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,7 +8,7 @@ import { ArrowRightIcon, CheckIcon, PlayIcon, UsersIcon } from "@/components/ico
 import { community } from "@/data/community";
 import whatsappQr from "@/public/images/community/nest-whatsapp-qr.webp";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = { alternates: { canonical: publicPageUrl("community/") },
   title: "Join Community",
   description: "Join the NEST Community WhatsApp group and follow official NEST Club learning updates.",
 };
@@ -16,7 +17,7 @@ export default function CommunityPage() {
   return (
     <>
       <SiteHeader />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <section className="page-hero page-hero--community">
           <div className="shell community-hero">
             <div>

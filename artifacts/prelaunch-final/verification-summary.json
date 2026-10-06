@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-06",
+  "scope": "Local public static-site fixes; no commit, push, deployment or external configuration changes",
+  "sourceBaseCommit": "4bd2c9fdf6a43c873e083fd900bfa5f24af0a8a3",
+  "check": "passed",
+  "cleanInstallAndPrefixedConfiguredUrlCheck": "passed",
+  "fullPlaywright": { "passed": 161, "failed": 0, "durationMinutesRounded": 4.1, "updatedSnapshots": false },
+  "export": { "htmlFiles": 118, "localTargets": 180, "stylesheets": 2, "indexableSitemapPages": 113 },
+  "additionalBrowserAudit": { "accessibilityRuns": 22, "violations": 0, "responsiveChecks": 154, "horizontalOverflows": 0, "uncaughtPageErrors": 0 },
+  "npmAudit": { "productionAdvisories": 0, "developmentAffectedNodes": 5, "critical": 0, "developmentRoot": "braces stack exhaustion" },
+  "securityScan": { "scanId": "1721d7a1-26d5-423e-875a-2d54b4a90337", "status": "complete", "findings": 0, "sourceCoverage": "partial" },
+  "pending": ["chosen public URL", "photo publication permission and identities", "Cloudflare hosted verification", "manual browser/accessibility checks and operational owner"],
+  "whatsappChange": "deferred by explicit user instruction"
+}

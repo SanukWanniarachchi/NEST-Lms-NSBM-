@@ -27,7 +27,7 @@ export function CatalogueExplorer() {
 
   return <>
     <div className="catalogue-controls">
-      <div className="filter-pills" aria-label="Filter courses by subject">
+      <div className="filter-pills" role="group" aria-label="Filter courses by subject">
         {categories.map((item) => <button type="button" key={item} className={category === item ? "active" : ""} aria-pressed={category === item} onClick={() => setCategory(item)}>{item}</button>)}
       </div>
       <label className="catalogue-search">

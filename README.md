@@ -7,13 +7,15 @@ A responsive, statically published learning management experience for NEST Club 
 - Public NEST Club website
 - Cybersecurity, networking, and robotics learning paths
 - Statically generated course and lesson pages
-- Research library prepared for approved papers, videos, and documents
+- News covering research, learning releases and community progress
 - Official NEST community and YouTube links
 - 85 structured micro-lessons across 15 modules
 - Light and dark themes
 - GitHub Pages-compatible static export
 
-This GitHub Pages release does not include authentication, persistent learner progress, message delivery, or administrative editing. Those services will be introduced through the protected admin platform without changing the published curriculum structure.
+This static release has no authentication, shared learner records, message delivery or administrative editing. Checkpoint results and completions are saved only in the current browser when storage is available. The privacy page explains storage and includes a progress-clearing control.
+
+For publishing the public site on Cloudflare Pages and updating it through GitHub, see [`docs/CLOUDFLARE_PAGES.md`](docs/CLOUDFLARE_PAGES.md).
 
 The protected platform architecture and NSBM handover boundary are documented in [`docs/ADMIN_PLATFORM_ARCHITECTURE.md`](docs/ADMIN_PLATFORM_ARCHITECTURE.md). GitHub Pages is a public preview target and will not host authentication or admin APIs.
 
@@ -36,7 +38,7 @@ npm run build
 npm run check
 ```
 
-The production build is exported to `out/` for static hosting. GitHub Pages deployment is defined in `.github/workflows/deploy-pages.yml`.
+The production build is exported to `out/` for static hosting. Run `npm run preview` (or `npm start`) after building to view it at `http://127.0.0.1:4173`. GitHub Pages deployment is defined in `.github/workflows/deploy-pages.yml`; public validation also runs on pull requests.
 
 `check:export` checks exported local links, anchor targets, images, scripts, and stylesheet assets, and rejects demo or retired admin/login/dashboard routes. It also checks the configured deployment base path. External video playback and third-party URLs are checked separately.
 

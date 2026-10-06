@@ -19,6 +19,7 @@ export function SiteFooter() {
             <Link href="/courses">Course catalogue</Link>
             <Link href="/news">News</Link>
             <Link href="/announcements">Announcements</Link>
+            <Link href="/privacy">Privacy and browser storage</Link>
           </div>
         </div>
         <div>
