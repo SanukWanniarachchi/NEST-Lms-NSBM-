@@ -1,10 +1,9 @@
 import { expect, test } from "@playwright/test";
 import snapshot from "../data/generated/admin-content.json";
 
-test("the announcement board renders the reviewed snapshot in export order", async ({ page }) => {
-  await page.goto("/announcements/");
-  await expect(page.locator(".announcement-card h2")).toHaveText(snapshot.announcements.map(item => item.title));
-  if (!snapshot.announcements.length) await expect(page.getByText("No announcements have been published yet. Check back for club updates.")).toBeVisible();
+test("News preserves every reviewed published notice in date order", async ({ page }) => {
+  await page.goto("/news/");
+  await expect(page.locator('[data-published-notice="true"] h2')).toHaveText([...snapshot.announcements].sort((a, b) => b.date.localeCompare(a.date)).map(item => item.title));
 });
 
 test("published course and lesson routes use the snapshot curriculum", async ({ page }) => {

@@ -6,7 +6,7 @@ import { publicPageUrl } from "@/lib/public-site";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const paths = ["", "about/", "announcements/", "community/", "courses/", "news/", "privacy/"];
+  const paths = ["", "about/", "community/", "courses/", "news/", "privacy/"];
   for (const course of courses) {
     paths.push(`courses/${course.slug}/`);
     for (const courseModule of course.modules) {

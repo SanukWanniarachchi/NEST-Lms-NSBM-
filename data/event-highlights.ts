@@ -17,16 +17,16 @@ import openDayPortrait05 from "@/public/images/events/open-day/portrait-05.webp"
 // Keep this local photo collection separate from the admin-published dated notices.
 export const eventHighlights = [
   {
-    id: "bsc-college-iot-workshop",
-    title: "BSC College IoT workshop for Grade 6 students",
+    id: "school-iot-workshop",
+    title: "D.S. Senanayake College IoT workshop for Grade 6 students",
     category: "Workshop",
-    summary: "NEST at BSC College for an IoT workshop with Grade 6 students. A look at the school activities and the people learning together.",
+    summary: "NEST at D.S. Senanayake College for an IoT workshop with Grade 6 students. A look at the school activities and the people learning together.",
     photos: [
-      { image: schoolGroup, alt: "NEST members in white NSBM shirts at the BSC College IoT workshop" },
+      { image: schoolGroup, alt: "NEST members in white NSBM shirts at the D.S. Senanayake College IoT workshop" },
       { image: schoolActivity01, alt: "A NEST member helping students with a school workshop activity" },
       { image: schoolActivity02, alt: "Students gathering around an activity during the Grade 6 IoT workshop" },
       { image: schoolActivity03, alt: "NEST members working alongside students in the school classroom" },
-      { image: schoolActivity04, alt: "A classroom session during the BSC College IoT workshop" },
+      { image: schoolActivity04, alt: "A classroom session during the D.S. Senanayake College IoT workshop" },
       { image: schoolActivity05, alt: "NEST members and students together inside the school classroom" },
     ],
   },

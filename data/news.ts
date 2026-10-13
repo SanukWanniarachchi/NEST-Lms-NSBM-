@@ -31,7 +31,7 @@ export const newsArticles: NewsArticle[] = [
     body: [
       "The NEST community area gives students a clear route to the club's official WhatsApp group. It is intended for learning updates, student-led opportunities, and useful discussion around NEST activities.",
       "Everyone joining the space is expected to communicate respectfully, protect personal information, and keep shared material relevant to the club's educational purpose.",
-      "Official notices will continue to appear on the Announcements page, while longer stories and progress updates will be published here in News.",
+      "Official notices, upcoming projects, workshop highlights, and longer stories now share one home on the News page.",
     ],
   },
   {

@@ -13,7 +13,6 @@ const visualPages = [
   { name: "home", path: "/" },
   { name: "courses", path: "/courses/" },
   { name: "news", path: "/news/" },
-  { name: "announcements", path: "/announcements/" },
   { name: "community", path: "/community/" },
   { name: "about", path: "/about/" },
   { name: "contact", path: "/contact/" },
@@ -281,8 +280,8 @@ test.describe("event photo galleries", () => {
   for (const viewport of screenshotViewports) {
     test(`opens the school and Open Day galleries on ${viewport.name}`, async ({ page }) => {
       const runtimeProblems = watchRuntimeProblems(page);
-      await openPage(page, "/announcements/", "light", viewport);
-      const school = page.locator("#bsc-college-iot-workshop");
+      await openPage(page, "/news/", "light", viewport);
+      const school = page.locator("#school-iot-workshop");
       const openDay = page.locator("#nsbm-open-day");
       await expect(school).toContainText("Grade 6");
       await expect(school.locator("time")).toHaveCount(0);

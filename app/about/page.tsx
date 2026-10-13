@@ -4,11 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import nestLogo from "@/public/images/brand/nest-logo-transparent.webp";
 import heroImage from "@/public/images/illustrations/campus-hero.webp";
+import mentorPortrait from "@/public/images/team/supun-gajendrasinghe.webp";
 import { ContactSection } from "@/components/contact-section";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { SectionHeading } from "@/components/section-heading";
-import { ArrowRightIcon, CheckIcon, PlayIcon, UsersIcon } from "@/components/icons";
+import { ArrowRightIcon, CheckIcon, PlayIcon } from "@/components/icons";
 import { community } from "@/data/community";
 import { clubContent, objectives } from "@/data/site";
 import { teamMembers } from "@/data/team";
@@ -22,7 +23,7 @@ export default function AboutPage() {
     <section className="section objectives-section"><div className="shell"><SectionHeading eyebrow="What guides us" title="Six objectives, one learning community" copy="The club formation document places collaboration, confidence, creativity, accessibility, and meaningful impact at the centre of NEST." /><div className="objectives-grid">{objectives.map((objective, index) => <article key={objective}><span>{String(index + 1).padStart(2, "0")}</span><p>{objective}</p></article>)}</div></div></section>
     <section className="section leadership-section" id="team"><div className="shell">
       <SectionHeading eyebrow="Our team" title="Meet the people behind NEST" copy="Our academic mentor and student members support a community built around learning, sharing ideas, and creating together." />
-      <div className="mentor-profile"><div className="profile-photo profile-photo--mentor" role="img" aria-label="Master-in-Charge photo placeholder"><UsersIcon /></div><div className="mentor-profile__details"><small>Master-in-Charge</small><p>Lecturer overseeing NEST Club</p></div></div>
+      <div className="mentor-profile"><div className="profile-photo profile-photo--mentor"><Image src={mentorPortrait} alt={`${clubContent.masterInCharge}, Master-in-Charge of NEST Club`} sizes="(max-width: 560px) 200px, 240px" /></div><div className="mentor-profile__details"><small>Master-in-Charge</small><h3>{clubContent.masterInCharge}</h3><p>Lecturer overseeing NEST Club</p></div></div>
       <div className="board-heading"><div><p className="eyebrow">Learning together</p><h3>Club members</h3></div></div>
       <div className="board-grid">{teamMembers.map((member, index) => <article className="board-profile" key={member.id}>
         <div className="profile-photo profile-photo--portrait" style={{ position: "relative", height: "auto", aspectRatio: "240 / 270" }}><Image src={member.image} style={{ position: "absolute", left: "50%", transform: "translateX(-50%)", width: member.framing.width, top: member.framing.top, height: "auto", maxWidth: "none" }} alt={member.name ? `${member.name}, NEST club member` : `NEST club member portrait ${index + 1}`} sizes="(max-width: 560px) 100vw, (max-width: 1000px) 50vw, 25vw" /></div>

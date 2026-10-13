@@ -12,7 +12,6 @@ const primaryLinks = [
   { href: "/", label: "Home" },
   { href: "/courses", label: "Courses" },
   { href: "/news", label: "News" },
-  { href: "/announcements", label: "Announcements" },
   { href: "/about", label: "About" },
 ];
 

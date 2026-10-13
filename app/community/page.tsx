@@ -27,7 +27,7 @@ export default function CommunityPage() {
               <div className="hero-actions">
                 {community.whatsappInviteUrl ? <Link href={community.whatsappInviteUrl} className="button button--primary" target="_blank" rel="noreferrer">Open WhatsApp <ArrowRightIcon /></Link> : null}
                 <a href={community.youtubeChannelUrl} className="button button--primary" target="_blank" rel="noopener noreferrer"><PlayIcon /> Visit YouTube channel</a>
-                <Link href="/announcements" className="button button--secondary">View announcements</Link>
+                <Link href="/news" className="button button--secondary">View news</Link>
               </div>
             </div>
             <div className="qr-card">

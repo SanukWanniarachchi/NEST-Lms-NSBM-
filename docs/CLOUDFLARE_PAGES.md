@@ -8,7 +8,7 @@ Connect the intended GitHub repository to a Cloudflare Pages project. Use produc
 
 Set `NEXT_PUBLIC_SITE_URL` to the full chosen HTTPS public URL with a trailing slash, including a path prefix only if the actual host uses one. This is a public build-time setting, not a secret. Set it separately for production and preview as appropriate. Until the owner chooses a URL, code falls back to the existing GitHub Pages address; that fallback must be replaced in the Cloudflare build settings before launch. Changing the environment requires rebuilding.
 
-The export includes `_headers` and `_redirects`. They configure basic response headers, immutable caching for fingerprinted assets, and permanent redirects from retired Contact/Research routes. The CSP starts in **report-only** mode; it does not block content and has no reporting endpoint. Check browser console violations on the hosted preview before deciding on enforcement. Inline framework/theme scripts and styles currently require `unsafe-inline`. GitHub Pages and the local preview do not apply these Cloudflare files.
+The export includes `_headers` and `_redirects`. They configure basic response headers, immutable caching for fingerprinted assets, and permanent redirects from retired Contact/Research/Announcements routes. The CSP starts in **report-only** mode; it does not block content and has no reporting endpoint. Check browser console violations on the hosted preview before deciding on enforcement. Inline framework/theme scripts and styles currently require `unsafe-inline`. GitHub Pages and the local preview do not apply these Cloudflare files.
 
 ## Release checks
 

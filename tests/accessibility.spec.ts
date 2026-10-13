@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 import axe from "axe-core";
 
-const routes = ["/", "/about/", "/courses/", "/news/", "/community/", "/announcements/", "/privacy/", "/courses/cybersecurity-foundations/", "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/", "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/"];
+const routes = ["/", "/about/", "/courses/", "/news/", "/community/", "/privacy/", "/courses/cybersecurity-foundations/", "/courses/cybersecurity-foundations/lessons/what-is-cybersecurity/", "/courses/cybersecurity-foundations/checkpoints/introduction-to-cybersecurity/"];
 
 for (const theme of ["light", "dark"]) {
   test(`public routes pass automated accessibility checks in ${theme} theme`, async ({ page }) => {

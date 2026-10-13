@@ -3,6 +3,7 @@ import Link from "next/link";
 import nestLogo from "@/public/images/brand/nest-logo-footer.webp";
 import { MailIcon, LocationIcon, PlayIcon } from "@/components/icons";
 import { community } from "@/data/community";
+import { SiteCredits } from "@/components/site-credits";
 
 export function SiteFooter() {
   return (
@@ -18,7 +19,6 @@ export function SiteFooter() {
             <Link href="/about">About NEST</Link>
             <Link href="/courses">Course catalogue</Link>
             <Link href="/news">News</Link>
-            <Link href="/announcements">Announcements</Link>
             <Link href="/privacy">Privacy and browser storage</Link>
           </div>
         </div>
@@ -42,7 +42,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="shell footer-bottom">
-        <p>© 2026 NEST Club. All rights reserved.</p>
+        <div className="credits-copyright"><p>© 2026 NEST Club. All rights reserved.</p><span aria-hidden="true">·</span><SiteCredits /></div>
         <p>NSBM Educators and Scholars Together</p>
       </div>
     </footer>

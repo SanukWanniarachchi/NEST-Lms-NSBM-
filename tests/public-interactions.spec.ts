@@ -8,6 +8,57 @@ const enquiry = {
 };
 const preparedMessage = `Name: ${enquiry.name}\nEmail: ${enquiry.email}\nTopic: ${enquiry.topic}\n\n${enquiry.message}`;
 
+for (const theme of ["light", "dark"]) {
+  for (const width of [390, 1440]) {
+    test(`site credits trap focus and close with Escape in ${theme} at ${width}px`, async ({ page }) => {
+      await page.setViewportSize({ width, height: 900 });
+      await page.addInitScript(value => localStorage.setItem("nest-theme", value), theme);
+      await page.goto("/news/");
+      const trigger = page.getByRole("button", { name: "Site credits", exact: true });
+      await trigger.focus();
+      await page.keyboard.press("Enter");
+      const dialog = page.getByRole("dialog", { name: "The people behind NEST LMS" });
+      await expect(dialog).toBeVisible();
+      await expect(dialog.locator("li")).toHaveText(["Sanuk Wanniarachchi", "Vidumini Gamage", "Dulen Dayarathna"]);
+      await expect(dialog.getByRole("button", { name: "Close site credits" })).toBeFocused();
+      await page.keyboard.press("Tab");
+      // A native dialog with one control cycles through the browser's focus
+      // boundary before returning; it must not focus the underlying page.
+      expect(await page.evaluate(() => document.activeElement === document.body || Boolean(document.activeElement?.closest("dialog")))).toBe(true);
+      await page.keyboard.press("Tab");
+      await expect(dialog.getByRole("button", { name: "Close site credits" })).toBeFocused();
+      await page.keyboard.press("Escape");
+      await expect(dialog).not.toBeVisible();
+      await expect(trigger).toBeFocused();
+      expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(width + 2);
+    });
+  }
+}
+
+test("legacy announcements lead to the News hub with full poster and preserved galleries", async ({ page }) => {
+  await page.goto("/announcements/");
+  await expect(page).toHaveURL("/news/");
+  await expect(page.getByRole("heading", { name: "Upcoming Projects", exact: true })).toBeVisible();
+  const project = page.locator("#game-development-workshop");
+  await expect(project).toContainText("Details to be announced");
+  const poster = project.locator("img");
+  await expect(poster).toBeVisible();
+  await expect.poll(() => poster.evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth > 0)).toBe(true);
+  expect(await poster.evaluate(image => getComputedStyle(image).objectFit)).not.toBe("cover");
+  const school = page.locator("#school-iot-workshop");
+  await expect(school).toContainText("D.S. Senanayake College");
+  for (const [id, count] of [["school-iot-workshop", 6], ["nsbm-open-day", 8]] as const) {
+    const gallery = page.locator(`#${id}`);
+    await gallery.locator("summary").click();
+    await expect(gallery.locator(".event-gallery__grid img")).toHaveCount(count);
+    await expect(gallery.locator("details")).toHaveAttribute("open", "");
+  }
+  await expect(page.locator('nav[aria-label="Main navigation"]')).not.toContainText("Announcements");
+  await expect(page.locator('#latest-updates a[href^="/news/"]')).toHaveCount(3);
+  await page.goto("/about/");
+  await expect(page.locator(".profile-photo--mentor img")).toHaveAttribute("alt", "Mr. Supun Gajendrasinghe, Master-in-Charge of NEST Club");
+});
+
 async function prepareEnquiry(page: Page) {
   await page.goto("/about/#contact");
   await page.getByRole("textbox", { name: "Full name", exact: true }).fill(enquiry.name);
@@ -77,7 +128,6 @@ for (const width of [390, 820]) {
     for (const [label, path] of [
       ["Courses", "/courses/"],
       ["News", "/news/"],
-      ["Announcements", "/announcements/"],
       ["About", "/about/"],
       ["Join community", "/community/"],
       ["Home", "/"],

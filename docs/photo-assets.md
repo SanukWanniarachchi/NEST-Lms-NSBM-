@@ -45,7 +45,7 @@ previews that should be reviewed against the originals before publication.
 
 ## Event photos
 
-- BSC College IoT workshop for Grade 6 students: six white-NSBM-shirt school
+- D.S. Senanayake College IoT workshop for Grade 6 students: six white-NSBM-shirt school
   photos, 11.07.36 through 11.07.46. Assets: `public/images/events/bsc-iot-workshop/`.
 - NSBM Open Day 2026: all eight billboard/event photos at 11.16.33, 11.16.44,
   11.16.45, 11.16.46, 11.16.51 (without suffix), 11.16.52, 11.16.53 and 11.21.57.
@@ -61,3 +61,18 @@ are not represented as event dates. Photo highlights are maintained separately
 from the dated admin-published announcement snapshot, preserving its import
 contract. The gallery uses native details/summary controls and static image
 imports so it works in the public static export and with deployment base paths.
+
+## October 2026 additions
+
+- The owner supplied `WhatsApp Image 2026-10-13 at 10.14.19.jpeg` and confirmed
+  it depicts Mr. Supun Gajendrasinghe, the Master-in-Charge. Its WebP copy is
+  `public/images/team/supun-gajendrasinghe.webp` (720 × 626). The original
+  circular photograph is retained without generating or altering facial details.
+- The owner supplied `WhatsApp Image 2026-10-13 at 10.19.30.jpeg` for the
+  Game Development Workshop. Its full, uncropped WebP copy is
+  `public/images/events/game-development-workshop/coming-soon.webp` (844 × 1055).
+  Date, venue, tools, and registration remain unconfirmed. The poster's visual
+  theme does not establish the workshop engine.
+- The owner corrected the school name to D.S. Senanayake College. Existing
+  school photo paths remain stable; the public gallery ID is `school-iot-workshop`.
+- Event galleries and notices now appear together under `/news/`.

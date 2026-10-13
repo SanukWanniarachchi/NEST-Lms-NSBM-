@@ -15,8 +15,8 @@ function inspect(directory) {
       const path = relative(root, file).split(sep).join("/");
       if (path === "404.html" || path.startsWith("404/") || path.startsWith("_not-found/")) continue;
       const route = path === "index.html" ? "" : path.replace(/index\.html$/, "");
-      const retired = route === "contact/" || route === "research/";
-      const canonicalRoute = route === "contact/" ? "about/" : route === "research/" ? "news/" : route;
+      const retired = ["contact/", "research/", "announcements/"].includes(route);
+      const canonicalRoute = route === "contact/" ? "about/" : retired ? "news/" : route;
       const html = readFileSync(file, "utf8");
       const canonical = html.match(/<link rel="canonical" href="([^"]+)"/g) || [];
       if (canonical.length !== 1 || !canonical[0].includes(`href="${pageUrl(canonicalRoute)}"`)) errors.push(`${path}: missing or incorrect canonical`);
