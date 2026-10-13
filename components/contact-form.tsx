@@ -2,6 +2,7 @@
 
 import { useState, type ChangeEvent } from "react";
 import { ArrowRightIcon, CheckIcon } from "@/components/icons";
+import { community } from "@/data/community";
 
 export function ContactForm() {
   const [prepared, setPrepared] = useState(false);
@@ -40,10 +41,11 @@ export function ContactForm() {
     {prepared ? <div className="form-success">
       <span><CheckIcon /></span>
       <h3>Your enquiry is ready</h3>
-      <p>Copy your enquiry and share it through an official NEST Club channel. The website has not transmitted or stored your details.</p>
+      <p>Open a draft addressed to NEST Club in your email app, or copy the message. You review and send it yourself; this website has not sent your enquiry.</p>
       <label className="form-message-preview">Prepared enquiry<textarea readOnly rows={8} value={preparedMessage} onFocus={(event) => event.currentTarget.select()} /></label>
       <div className="form-success-actions">
-        <button type="button" className="button button--primary" disabled={copyState === "copying"} onClick={copyMessage}>{copyState === "copying" ? "Copying…" : "Copy message"}</button>
+        <a className="button button--primary" href={`mailto:${community.emailAddress}?subject=${encodeURIComponent(`NEST enquiry: ${enquiry.topic || "General question"}`)}&body=${encodeURIComponent(preparedMessage)}`}>Open email draft</a>
+        <button type="button" className="button button--secondary" disabled={copyState === "copying"} onClick={copyMessage}>{copyState === "copying" ? "Copying…" : "Copy message"}</button>
         <button type="button" className="text-link" onClick={() => { setCopyState("idle"); setPrepared(false); }}>Edit your message</button>
       </div>
       <p className="form-copy-status" role="status">{copyState === "copied" ? "Message copied. Paste it into your preferred club channel." : copyState === "error" ? "Automatic copying is unavailable. Select the prepared enquiry above and copy it manually." : ""}</p>

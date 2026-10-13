@@ -8,6 +8,37 @@ const enquiry = {
 };
 const preparedMessage = `Name: ${enquiry.name}\nEmail: ${enquiry.email}\nTopic: ${enquiry.topic}\n\n${enquiry.message}`;
 
+test("club destinations and prepared email match the supplied contact details", async ({ page }) => {
+  const whatsapp = "https://chat.whatsapp.com/IGyFVvdwHQDF0TrTnYL5V0";
+  const instagram = "https://www.instagram.com/nsbmnest/";
+  await page.goto("/community/");
+  await expect(page.locator("main").getByRole("link", { name: "Join on WhatsApp", exact: true })).toHaveAttribute("href", whatsapp);
+  await expect(page.locator("main").getByRole("link", { name: "Follow on Instagram", exact: true })).toHaveAttribute("href", instagram);
+  await prepareEnquiry(page);
+  const draft = page.getByRole("link", { name: "Open email draft", exact: true });
+  const draftUrl = new URL((await draft.getAttribute("href"))!);
+  expect(draftUrl.protocol).toBe("mailto:");
+  expect(draftUrl.pathname).toBe("nsbmnest@gmail.com");
+  expect(draftUrl.searchParams.get("subject")).toBe(`NEST enquiry: ${enquiry.topic}`);
+  expect(draftUrl.searchParams.get("body")).toBe(preparedMessage);
+  await expect(page.locator("#contact").getByRole("link", { name: "Join on WhatsApp", exact: true })).toHaveAttribute("href", whatsapp);
+  await expect(page.locator("footer").getByRole("link", { name: "nsbmnest@gmail.com", exact: true })).toHaveAttribute("href", "mailto:nsbmnest@gmail.com");
+  await expect(page.locator("footer").getByRole("link", { name: "Join on WhatsApp", exact: true })).toHaveAttribute("href", whatsapp);
+});
+
+test("News section buttons move to their intended sections on mobile", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/news/");
+  for (const [label, id] of [["Upcoming projects", "upcoming-projects"], ["NEST in action", "nest-in-action"], ["Latest updates", "latest-updates"]]) {
+    const link = page.getByRole("navigation", { name: "News sections" }).getByRole("link", { name: label, exact: true });
+    await link.click();
+    await expect(page).toHaveURL(new RegExp(`#${id}$`));
+    const bounds = await link.boundingBox();
+    expect(bounds!.height).toBeGreaterThanOrEqual(44);
+  }
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(392);
+});
+
 for (const theme of ["light", "dark"]) {
   for (const width of [390, 1440]) {
     test(`site credits trap focus and close with Escape in ${theme} at ${width}px`, async ({ page }) => {

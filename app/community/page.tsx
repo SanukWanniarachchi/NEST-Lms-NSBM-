@@ -6,7 +6,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { ArrowRightIcon, CheckIcon, PlayIcon, UsersIcon } from "@/components/icons";
 import { community } from "@/data/community";
-import whatsappQr from "@/public/images/community/nest-whatsapp-qr.webp";
+import whatsappQr from "@/public/images/community/nest-whatsapp-qr.svg";
 
 export const metadata: Metadata = { alternates: { canonical: publicPageUrl("community/") },
   title: "Join Community",
@@ -25,8 +25,9 @@ export default function CommunityPage() {
               <h1>Stay close to the learning happening inside NEST.</h1>
               <p>{community.description}</p>
               <div className="hero-actions">
-                {community.whatsappInviteUrl ? <Link href={community.whatsappInviteUrl} className="button button--primary" target="_blank" rel="noreferrer">Open WhatsApp <ArrowRightIcon /></Link> : null}
-                <a href={community.youtubeChannelUrl} className="button button--primary" target="_blank" rel="noopener noreferrer"><PlayIcon /> Visit YouTube channel</a>
+                {community.whatsappInviteUrl ? <a href={community.whatsappInviteUrl} className="button button--primary" target="_blank" rel="noopener noreferrer">Join on WhatsApp <ArrowRightIcon /></a> : null}
+                <a href={community.instagramUrl} className="button button--secondary" target="_blank" rel="noopener noreferrer">Follow on Instagram <ArrowRightIcon /></a>
+                <a href={community.youtubeChannelUrl} className="button button--secondary" target="_blank" rel="noopener noreferrer"><PlayIcon /> Visit YouTube channel</a>
                 <Link href="/news" className="button button--secondary">View news</Link>
               </div>
             </div>

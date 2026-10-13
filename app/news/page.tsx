@@ -21,7 +21,7 @@ export default function NewsPage() {
       <p className="eyebrow">NEST News</p><h1>Club updates in one clear place.</h1>
       <p>Discover what is coming next, revisit our workshops, and follow the latest from the NEST community.</p>
       <nav className="news-section-links" aria-label="News sections">
-        <a href="#upcoming-projects">Upcoming projects</a><a href="#nest-in-action">NEST in action</a><a href="#latest-updates">Latest updates</a>
+        <a href="#upcoming-projects">Upcoming projects <span aria-hidden="true">↓</span></a><a href="#nest-in-action">NEST in action <span aria-hidden="true">↓</span></a><a href="#latest-updates">Latest updates <span aria-hidden="true">↓</span></a>
       </nav>
     </div></section>
     <section className="section upcoming-projects-section" id="upcoming-projects"><div className="shell">
